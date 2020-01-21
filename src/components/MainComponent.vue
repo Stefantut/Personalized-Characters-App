@@ -4,7 +4,7 @@
       <!-- Display images -->
       <div id="view">
         <!-- Display skin -->
-        <img :src="form.skin.image" :alt="form.skin.image" class="img-view img-skin-tone" />
+        <img :src="form.skin.image" :alt="form.skin.name" class="img-view img-skin-tone" />
         <!-- Display hair -->
         <div v-for="image in form.hairColor.image" :key="image.number">
           <img
@@ -21,6 +21,8 @@
             v-if="form.eyeShape.eyeNumber == image.eyeNumber"
           />
         </div>
+        <!-- Display glasses -->
+        <img :src="form.glasses.image" :alt="form.glasses.name" class="img-view img-glasses" />
       </div>
 
       <div class="form-container">
@@ -245,7 +247,29 @@
               </ul>
             </div>
           </div>
+
+          <!-- Glasses -->
+          <div class="glasses flex-col py-1">
+            <h1 class="py-2 flex justify-center">Glasses?</h1>
+            <div class="glasses-boxes flex justify-between px-5">
+              <ul class="flex justify-between px-5 all-boxes">
+                <li v-for="(glasses, index) in form.glassesType" :key="index.id">
+                  <p-input
+                    class="p-icon p-jelly p-round p-bigger"
+                    type="radio"
+                    :id="glasses.name"
+                    :name="glasses.name"
+                    v-model="form.glasses"
+                    :value="glasses"
+                  >
+                    <img :src="glasses.iconSource" class="svg-2" />
+                  </p-input>
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
+
         <section class="buttons flex justify-between p-1 w-100">
           <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button>
           <button
@@ -265,6 +289,7 @@
           <p class="haircolor-selected">Hair color: {{ form.hairColor.name }}</p>
           <p class="eyeshape-selected">Eye shape: {{ form.eyeShape.name }}</p>
           <p class="eyecolor-selected">Eye color: {{ form.eyeColor.name }}</p>
+          <p class="eyecolor-selected">Glasses: {{ form.glasses.name }}</p>
         </div>
       </div>
     </form>
@@ -1013,6 +1038,34 @@ export default {
               }
             ],
             iconSource: "/img/blue-icon.svg"
+          }
+        ],
+        glasses: "",
+        glassesType: [
+          {
+            name: "1-glasses",
+            iconSource: "/img/black-icon.svg",
+            image: "./img/skin-girl-1.png"
+          },
+          {
+            name: "2-glasses",
+            iconSource: "/img/red-icon.svg",
+            image: "./img/skin-girl-1.png"
+          },
+          {
+            name: "3-glasses",
+            iconSource: "/img/green-icon.svg",
+            image: "./img/skin-girl-1.png"
+          },
+          {
+            name: "4-glasses",
+            iconSource: "/img/yellow-icon.svg",
+            image: "./img/skin-girl-1.png"
+          },
+          {
+            name: "5-glasses",
+            iconSource: "/img/blue-icon.svg",
+            image: "./img/skin-girl-1.png"
           }
         ]
       }
