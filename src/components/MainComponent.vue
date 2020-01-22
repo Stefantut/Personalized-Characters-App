@@ -63,7 +63,7 @@
           />
 
           <div class="skin-tone flex-col py-1">
-            <h1 class="py-2 flex justify-center">Select your Skin Tone</h1>
+            <h4 class="py-2 flex justify-center">Select your Skin Tone</h4>
             <div class="skin-tone-boxes">
               <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(skinInfo, index) in form.skinToneMale" :key="index.id">
@@ -73,7 +73,7 @@
                     :id="skinInfo.name"
                     :name="skinInfo.name"
                     v-model="form.skin"
-                    :value="skinInfo"
+                    :value="skinInfo.name"
                   >
                     <img :src="skinInfo.iconSource" class="svg-2" />
                   </p-input>
@@ -88,7 +88,7 @@
                     :id="skinInfo.name"
                     :name="skinInfo.name"
                     v-model="form.skin"
-                    :value="skinInfo"
+                    :value="skinInfo.name"
                   >
                     <img :src="skinInfo.iconSource" class="svg-2" />
                   </p-input>
@@ -100,18 +100,8 @@
 
         <section class="hair" v-if="step == 2">
           <div class="hair-type flex-col py-1">
-            <h1 class="py-2 flex justify-center">Select your Hair Type</h1>
+            <h4 class="py-2 flex justify-center">Select your Hair Type</h4>
             <div class="hair-type-boxes flex justify-between px-5">
-              <!-- <input type="radio" id="1" value="1" v-model="form.hairType" />
-              <label for="1">1</label>
-              <input type="radio" id="2" value="2" v-model="form.hairType" />
-              <label for="2">2</label>
-              <input type="radio" id="3" value="3" v-model="form.hairType" />
-              <label for="3">3</label>
-              <input type="radio" id="4" value="4" v-model="form.hairType" />
-              <label for="4">4</label>
-              <input type="radio" id="5" value="5" v-model="form.hairType" />
-              <label for="5">5</label>-->
               <ul class="flex justify-between px-2 all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(hairType, index) in form.hairTypeMale" :key="index.hair">
                   <p-input
@@ -120,7 +110,7 @@
                     :id="hairType.name"
                     :name="hairType.name"
                     v-model="form.hairType"
-                    :value="hairType"
+                    :value="hairType.name"
                   >
                     <img :src="hairType.iconSource" class="svg-2" />
                   </p-input>
@@ -135,7 +125,7 @@
                     :id="hairType.name"
                     :name="hairType.name"
                     v-model="form.hairType"
-                    :value="hairType"
+                    :value="hairType.name"
                   >
                     <img :src="hairType.iconSource" class="svg-2" />
                   </p-input>
@@ -144,7 +134,7 @@
             </div>
           </div>
           <div class="hair-color flex-col py-1">
-            <h1 class="py-2 flex justify-center">Select your Hair Color</h1>
+            <h4 class="py-2 flex justify-center">Select your Hair Color</h4>
             <div class="hair-color-boxes flex justify-between px-5">
               <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(hairColor, index) in form.hairColorMale" :key="index.id">
@@ -154,7 +144,7 @@
                     :id="hairColor.name"
                     :name="hairColor.name"
                     v-model="form.hairColor"
-                    :value="hairColor"
+                    :value="hairColor.name"
                   >
                     <img :src="hairColor.iconSource" class="svg-2" />
                   </p-input>
@@ -169,7 +159,7 @@
                     :id="hairColor.name"
                     :name="hairColor.name"
                     v-model="form.hairColor"
-                    :value="hairColor"
+                    :value="hairColor.name"
                   >
                     <img :src="hairColor.iconSource" class="svg-2" />
                   </p-input>
@@ -180,7 +170,7 @@
         </section>
         <section class="eye" v-if="step == 3">
           <div class="eye-shape flex-col py-1">
-            <h1 class="py-2 flex justify-center">Select your Eye Shape</h1>
+            <h4 class="py-2 flex justify-center">Select your Eye Shape</h4>
             <div class="eye-shape-boxes flex justify-between px-5">
               <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(eyeShape, index) in form.eyeShapeMale" :key="index.id">
@@ -190,7 +180,7 @@
                     :id="eyeShape.name"
                     :name="eyeShape.name"
                     v-model="form.eyeShape"
-                    :value="eyeShape"
+                    :value="eyeShape.name"
                   >
                     <img :src="eyeShape.iconSource" class="svg-2" />
                   </p-input>
@@ -205,7 +195,7 @@
                     :id="eyeShape.name"
                     :name="eyeShape.name"
                     v-model="form.eyeShape"
-                    :value="eyeShape"
+                    :value="eyeShape.name"
                   >
                     <img :src="eyeShape.iconSource" class="svg-2" />
                   </p-input>
@@ -214,7 +204,7 @@
             </div>
           </div>
           <div class="eye-color flex-col py-1">
-            <h1 class="py-2 flex justify-center">Select your Eye Color</h1>
+            <h4 class="py-2 flex justify-center">Select your Eye Color</h4>
             <div class="eye-color-boxes flex justify-between px-5">
               <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(eyeColor, index) in form.eyeColorMale" :key="index.id">
@@ -224,7 +214,7 @@
                     :id="eyeColor.name"
                     :name="eyeColor.name"
                     v-model="form.eyeColor"
-                    :value="eyeColor"
+                    :value="eyeColor.name"
                   >
                     <img :src="eyeColor.iconSource" class="svg-2" />
                   </p-input>
@@ -239,7 +229,7 @@
                     :id="eyeColor.name"
                     :name="eyeColor.name"
                     v-model="form.eyeColor"
-                    :value="eyeColor"
+                    :value="eyeColor.name"
                   >
                     <img :src="eyeColor.iconSource" class="svg-2" />
                   </p-input>
@@ -250,7 +240,7 @@
 
           <!-- Glasses -->
           <div class="glasses flex-col py-1">
-            <h1 class="py-2 flex justify-center">Glasses?</h1>
+            <h4 class="py-2 flex justify-center">Glasses?</h4>
             <div class="glasses-boxes flex justify-between px-5">
               <ul class="flex justify-between px-5 all-boxes">
                 <li v-for="(glasses, index) in form.glassesType" :key="index.id">
@@ -260,7 +250,7 @@
                     :id="glasses.name"
                     :name="glasses.name"
                     v-model="form.glasses"
-                    :value="glasses"
+                    :value="glasses.name"
                   >
                     <img :src="glasses.iconSource" class="svg-2" />
                   </p-input>
@@ -280,8 +270,9 @@
         </section>
         <button v-if="step == 3" @click.prevent="send" class="send btn btn-warning">Send</button>
         <hr class="my-3" />
+        <!-- Display Selected items -->
         <div id="selected">
-          <h1 class="first-parent font-bold text-success">First Parent:</h1>
+          <h4 class="first-parent font-bold text-success">First Parent:</h4>
           <p class="gender-selected">Gender: {{ form.gender }}</p>
           <p class="name-selected">Name: {{ form.firstName }}</p>
           <p class="skin-selected">Skin tone: {{ form.skin.name }}</p>
@@ -1083,9 +1074,8 @@ export default {
         } else {
           this.errors = null;
         }
-
-        if (!this.form.firstName) {
-          this.errors = "Please type the parent name";
+        if (!this.form.firstName || this.form.firstName.length < 2) {
+          this.errors = "Please type in parent name, min 2 characters";
           return false;
         } else {
           this.errors = null;
@@ -1190,6 +1180,9 @@ label:after {
 .img-eye-color {
   z-index: 4;
 }
+.img-glasses {
+  z-index: 5;
+}
 .form-container {
   width: 400px;
 }
@@ -1226,6 +1219,47 @@ label:after {
   flex-direction: row;
   li {
     list-style-type: none;
+  }
+}
+
+.pulse {
+  margin: 100px;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #cca92c;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+  animation: pulse 2s infinite;
+}
+.pulse:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
   }
 }
 </style>
