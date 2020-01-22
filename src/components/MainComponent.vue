@@ -29,8 +29,7 @@
         <div class="error text-center my-3">
           <span v-for="e in errors" class="font-italic font-weight-normal" :key="e.errors">{{ e }}</span>
         </div>
-
-<!-- Step 1 -->
+        <!-- Step 1 -->
         <section class="details" v-if="step == 1">
           <!-- using direct svg file -->
 
@@ -74,7 +73,7 @@
                     :id="skinInfo.name"
                     :name="skinInfo.name"
                     v-model="form.skin"
-                    :value="skinInfo"
+                    :value="skinInfo.name"
                   >
                     <img :src="skinInfo.iconSource" class="svg-2" />
                   </p-input>
@@ -89,7 +88,7 @@
                     :id="skinInfo.name"
                     :name="skinInfo.name"
                     v-model="form.skin"
-                    :value="skinInfo"
+                    :value="skinInfo.name"
                   >
                     <img :src="skinInfo.iconSource" class="svg-2" />
                   </p-input>
@@ -111,7 +110,7 @@
                     :id="hairType.name"
                     :name="hairType.name"
                     v-model="form.hairType"
-                    :value="hairType"
+                    :value="hairType.name"
                   >
                     <img :src="hairType.iconSource" class="svg-2" />
                   </p-input>
@@ -126,7 +125,7 @@
                     :id="hairType.name"
                     :name="hairType.name"
                     v-model="form.hairType"
-                    :value="hairType"
+                    :value="hairType.name"
                   >
                     <img :src="hairType.iconSource" class="svg-2" />
                   </p-input>
@@ -145,7 +144,7 @@
                     :id="hairColor.name"
                     :name="hairColor.name"
                     v-model="form.hairColor"
-                    :value="hairColor"
+                    :value="hairColor.name"
                   >
                     <img :src="hairColor.iconSource" class="svg-2" />
                   </p-input>
@@ -160,7 +159,7 @@
                     :id="hairColor.name"
                     :name="hairColor.name"
                     v-model="form.hairColor"
-                    :value="hairColor"
+                    :value="hairColor.name"
                   >
                     <img :src="hairColor.iconSource" class="svg-2" />
                   </p-input>
@@ -182,7 +181,7 @@
                     :id="eyeShape.name"
                     :name="eyeShape.name"
                     v-model="form.eyeShape"
-                    :value="eyeShape"
+                    :value="eyeShape.name"
                   >
                     <img :src="eyeShape.iconSource" class="svg-2" />
                   </p-input>
@@ -197,7 +196,7 @@
                     :id="eyeShape.name"
                     :name="eyeShape.name"
                     v-model="form.eyeShape"
-                    :value="eyeShape"
+                    :value="eyeShape.name"
                   >
                     <img :src="eyeShape.iconSource" class="svg-2" />
                   </p-input>
@@ -216,7 +215,7 @@
                     :id="eyeColor.name"
                     :name="eyeColor.name"
                     v-model="form.eyeColor"
-                    :value="eyeColor"
+                    :value="eyeColor.name"
                   >
                     <img :src="eyeColor.iconSource" class="svg-2" />
                   </p-input>
@@ -231,7 +230,7 @@
                     :id="eyeColor.name"
                     :name="eyeColor.name"
                     v-model="form.eyeColor"
-                    :value="eyeColor"
+                    :value="eyeColor.name"
                   >
                     <img :src="eyeColor.iconSource" class="svg-2" />
                   </p-input>
@@ -252,7 +251,7 @@
                     :id="glasses.name"
                     :name="glasses.name"
                     v-model="form.glasses"
-                    :value="glasses"
+                    :value="glasses.name"
                   >
                     <img :src="glasses.iconSource" class="svg-2" />
                   </p-input>
@@ -277,12 +276,12 @@
           <h4 class="first-parent font-bold text-success">First Parent:</h4>
           <p class="gender-selected">Gender: {{ form.gender }}</p>
           <p class="name-selected">Name: {{ form.firstName }}</p>
-          <p class="skin-selected">Skin tone: {{ form.skin.name }}</p>
-          <p class="hairtype-selected">Hair type: {{ form.hairType.name }}</p>
-          <p class="haircolor-selected">Hair color: {{ form.hairColor.name }}</p>
-          <p class="eyeshape-selected">Eye shape: {{ form.eyeShape.name }}</p>
-          <p class="eyecolor-selected">Eye color: {{ form.eyeColor.name }}</p>
-          <p class="eyecolor-selected">Glasses: {{ form.glasses.name }}</p>
+          <p class="skin-selected">Skin tone: {{ form.skin }}</p>
+          <p class="hairtype-selected">Hair type: {{ form.hairType }}</p>
+          <p class="haircolor-selected">Hair color: {{ form.hairColor }}</p>
+          <p class="eyeshape-selected">Eye shape: {{ form.eyeShape }}</p>
+          <p class="eyecolor-selected">Eye color: {{ form.eyeColor }}</p>
+          <p class="eyecolor-selected">Glasses: {{ form.glasses }}</p>
         </div>
       </div>
     </form>
@@ -1224,15 +1223,9 @@ display:none;
 }
 
 .pulse {
-  margin: 100px;
-  display: block;
-  width: 22px;
-  height: 22px;
   border-radius: 50%;
-  background: #cca92c;
-  cursor: pointer;
   box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
-  animation: pulse 2s infinite;
+  animation: pulse 1s infinite;
 }
 .pulse:hover {
   animation: none;
