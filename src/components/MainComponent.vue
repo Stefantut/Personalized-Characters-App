@@ -27,9 +27,10 @@
 
       <div class="form-container">
         <div class="error text-center my-3">
-          <span v-for="e in errors" class="text-warning font-italic" :key="e.errors">{{ e }}</span>
+          <span v-for="e in errors" class="font-italic font-weight-normal" :key="e.errors">{{ e }}</span>
         </div>
 
+<!-- Step 1 -->
         <section class="details" v-if="step == 1">
           <!-- using direct svg file -->
 
@@ -73,7 +74,7 @@
                     :id="skinInfo.name"
                     :name="skinInfo.name"
                     v-model="form.skin"
-                    :value="skinInfo.name"
+                    :value="skinInfo"
                   >
                     <img :src="skinInfo.iconSource" class="svg-2" />
                   </p-input>
@@ -88,7 +89,7 @@
                     :id="skinInfo.name"
                     :name="skinInfo.name"
                     v-model="form.skin"
-                    :value="skinInfo.name"
+                    :value="skinInfo"
                   >
                     <img :src="skinInfo.iconSource" class="svg-2" />
                   </p-input>
@@ -97,7 +98,7 @@
             </div>
           </div>
         </section>
-
+        <!-- Step 2 -->
         <section class="hair" v-if="step == 2">
           <div class="hair-type flex-col py-1">
             <h4 class="py-2 flex justify-center">Select your Hair Type</h4>
@@ -110,7 +111,7 @@
                     :id="hairType.name"
                     :name="hairType.name"
                     v-model="form.hairType"
-                    :value="hairType.name"
+                    :value="hairType"
                   >
                     <img :src="hairType.iconSource" class="svg-2" />
                   </p-input>
@@ -125,7 +126,7 @@
                     :id="hairType.name"
                     :name="hairType.name"
                     v-model="form.hairType"
-                    :value="hairType.name"
+                    :value="hairType"
                   >
                     <img :src="hairType.iconSource" class="svg-2" />
                   </p-input>
@@ -144,7 +145,7 @@
                     :id="hairColor.name"
                     :name="hairColor.name"
                     v-model="form.hairColor"
-                    :value="hairColor.name"
+                    :value="hairColor"
                   >
                     <img :src="hairColor.iconSource" class="svg-2" />
                   </p-input>
@@ -159,7 +160,7 @@
                     :id="hairColor.name"
                     :name="hairColor.name"
                     v-model="form.hairColor"
-                    :value="hairColor.name"
+                    :value="hairColor"
                   >
                     <img :src="hairColor.iconSource" class="svg-2" />
                   </p-input>
@@ -168,6 +169,7 @@
             </div>
           </div>
         </section>
+        <!-- Step 3 -->
         <section class="eye" v-if="step == 3">
           <div class="eye-shape flex-col py-1">
             <h4 class="py-2 flex justify-center">Select your Eye Shape</h4>
@@ -180,7 +182,7 @@
                     :id="eyeShape.name"
                     :name="eyeShape.name"
                     v-model="form.eyeShape"
-                    :value="eyeShape.name"
+                    :value="eyeShape"
                   >
                     <img :src="eyeShape.iconSource" class="svg-2" />
                   </p-input>
@@ -195,7 +197,7 @@
                     :id="eyeShape.name"
                     :name="eyeShape.name"
                     v-model="form.eyeShape"
-                    :value="eyeShape.name"
+                    :value="eyeShape"
                   >
                     <img :src="eyeShape.iconSource" class="svg-2" />
                   </p-input>
@@ -214,7 +216,7 @@
                     :id="eyeColor.name"
                     :name="eyeColor.name"
                     v-model="form.eyeColor"
-                    :value="eyeColor.name"
+                    :value="eyeColor"
                   >
                     <img :src="eyeColor.iconSource" class="svg-2" />
                   </p-input>
@@ -229,7 +231,7 @@
                     :id="eyeColor.name"
                     :name="eyeColor.name"
                     v-model="form.eyeColor"
-                    :value="eyeColor.name"
+                    :value="eyeColor"
                   >
                     <img :src="eyeColor.iconSource" class="svg-2" />
                   </p-input>
@@ -250,7 +252,7 @@
                     :id="glasses.name"
                     :name="glasses.name"
                     v-model="form.glasses"
-                    :value="glasses.name"
+                    :value="glasses"
                   >
                     <img :src="glasses.iconSource" class="svg-2" />
                   </p-input>
@@ -1130,7 +1132,9 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
-
+.error{
+  color:red;
+}
 .svg {
   height: 30px;
 }
@@ -1143,7 +1147,7 @@ export default {
 
 .pretty.p-round .state label:before,
 label:after {
-  opacity: 0;
+display:none;
 }
 
 #view {
@@ -1200,9 +1204,6 @@ label:after {
   display: none !important;
 }
 
-.pulse {
-  background-color: red;
-}
 @keyframes rotateee {
   0% {
     transform: rotate(0deg);
@@ -1262,4 +1263,5 @@ label:after {
     box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
   }
 }
+
 </style>
