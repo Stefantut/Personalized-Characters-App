@@ -71,7 +71,7 @@
                     class="p-icon p-jelly p-round p-bigger"
                     type="radio"
                     :id="skinInfo.name"
-                    :name="skinInfo.name"
+                    :name="form.skin"
                     v-model="form.skin"
                     :value="skinInfo.name"
                   >
@@ -86,7 +86,7 @@
                     class="p-icon p-jelly p-round p-bigger"
                     type="radio"
                     :id="skinInfo.name"
-                    :name="skinInfo.name"
+                    :name="form.skin"
                     v-model="form.skin"
                     :value="skinInfo.name"
                   >
@@ -273,7 +273,7 @@
         <hr class="my-3" />
         <!-- Display Selected items -->
         <div id="selected">
-          <h4 class="first-parent font-bold text-success">First Parent:</h4>
+          <h4 class="first-parent font-bold text-success">Selected Parent Details:</h4>
           <p class="gender-selected">Gender: {{ form.gender }}</p>
           <p class="name-selected">Name: {{ form.firstName }}</p>
           <p class="skin-selected">Skin tone: {{ form.skin }}</p>
@@ -295,6 +295,7 @@ import Vue from "vue";
 Vue.use(PrettyCheckbox);
 
 export default {
+  name: 'Parent',
   components: {},
   data: function() {
     return {
@@ -1118,6 +1119,9 @@ export default {
       alert("was sent");
     }
   },
+ props:{
+    checked: Boolean
+      },
   mounted() {}
 };
 </script>
@@ -1146,7 +1150,7 @@ export default {
 
 .pretty.p-round .state label:before,
 label:after {
-display:none;
+opacity:0;
 }
 
 #view {
@@ -1199,9 +1203,9 @@ display:none;
 .b-wrap {
   padding: 0 !important;
 }
-.b-counter {
-  display: none !important;
-}
+// .b-counter {
+//   display: none !important;
+// }
 
 @keyframes rotateee {
   0% {
