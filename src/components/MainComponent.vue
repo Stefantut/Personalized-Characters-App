@@ -43,6 +43,7 @@
           <span class="step-number text-success">{{step}}</span>
           <!-- using direct svg file -->
           <div class="gender flex justify-center mb-4">
+            <h4 class="py-2 flex text-center">Select Gender</h4>
             <p-input
               class="p-icon p-jelly p-round p-bigger"
               type="radio"
@@ -51,6 +52,7 @@
               v-model="form.gender"
               name="male"
             >
+              Male
               <img src="/img/man.svg" class="svg" />
             </p-input>
             <p-input
@@ -61,6 +63,7 @@
               v-model="form.gender"
               name="female"
             >
+              Female
               <img src="/img/woman.svg" class="svg" />
             </p-input>
           </div>
@@ -1202,10 +1205,10 @@ export default {
   left: 0;
   font-weight: 600;
   font-size: 18px;
-  border: 2px solid black;
-  border-radius: 100%;
+  border-radius: 10px;
+  border: 1px solid #8ba68f;
   padding: 0 10px;
-  background-color: antiquewhite;
+  background-color: #ffefe2;
 }
 .error {
   color: red;
@@ -1219,7 +1222,6 @@ export default {
 .text {
   font-size: 12px;
 }
-
 .pretty.p-round .state label:before,
 label:after {
   opacity: 0;
