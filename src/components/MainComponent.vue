@@ -4,14 +4,14 @@
       <!-- Display images -->
       <div id="view">
         <!-- Display images - Preview Skin-->
-        <div v-for="image in form.skinToneMale" :key="image.name" class="preview-image-skin-male">
+        <!-- <div v-for="image in form.skinToneMale" :key="image.name" class="preview-image-skin-male">
           <img
             :src="image.image"
             :alt="image.name"
             class="img-view img-skin-tone"
             v-if="form.skinToneMale.preview == 1"
           />
-        </div>
+        </div>-->
         <!-- Display skin -->
         <img :src="form.skin.image" :alt="form.skin.name" class="img-view img-skin-tone" />
         <!-- Display hair -->
@@ -69,6 +69,11 @@
             placeholder="What is your first name?"
             class="first-name form-control form-control-md"
           />
+        </section>
+
+        <!-- Step 2 -->
+        <section class="details" v-if="step == 2">
+          <!-- using direct svg file -->
 
           <div class="skin-tone flex-col py-1">
             <h4 class="py-2 flex justify-center">Select your Skin Tone</h4>
@@ -104,9 +109,31 @@
               </ul>
             </div>
           </div>
+
+          <!-- Glasses -->
+          <div class="glasses flex-col py-1">
+            <h4 class="py-2 flex justify-center">Glasses?</h4>
+            <div class="glasses-boxes flex justify-between px-5">
+              <ul class="flex justify-between px-5 all-boxes">
+                <li v-for="(glasses, index) in form.glassesType" :key="index.id">
+                  <p-input
+                    class="p-icon p-jelly p-round p-bigger"
+                    type="radio"
+                    :id="glasses.name"
+                    :name="glasses.name"
+                    v-model="form.glasses"
+                    :value="glasses"
+                  >
+                    <img :src="glasses.iconSource" class="svg-2" />
+                  </p-input>
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
+
         <!-- Step 2 -->
-        <section class="hair" v-if="step == 2">
+        <section class="hair" v-if="step == 3">
           <div class="hair-type flex-col py-1">
             <h4 class="py-2 flex justify-center">Select your Hair Type</h4>
             <div class="hair-type-boxes flex justify-between px-5">
@@ -177,7 +204,7 @@
           </div>
         </section>
         <!-- Step 3 -->
-        <section class="eye" v-if="step == 3">
+        <section class="eye" v-if="step == 4">
           <div class="eye-shape flex-col py-1">
             <h4 class="py-2 flex justify-center">Select your Eye Shape</h4>
             <div class="eye-shape-boxes flex justify-between px-5">
@@ -246,27 +273,6 @@
               </ul>
             </div>
           </div>
-
-          <!-- Glasses -->
-          <div class="glasses flex-col py-1">
-            <h4 class="py-2 flex justify-center">Glasses?</h4>
-            <div class="glasses-boxes flex justify-between px-5">
-              <ul class="flex justify-between px-5 all-boxes">
-                <li v-for="(glasses, index) in form.glassesType" :key="index.id">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="glasses.name"
-                    :name="glasses.name"
-                    v-model="form.glasses"
-                    :value="glasses"
-                  >
-                    <img :src="glasses.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
-            </div>
-          </div>
         </section>
 
         <section class="buttons flex justify-between p-1 w-100">
@@ -277,7 +283,7 @@
             class="next btn btn-success"
           >Continue</button>
         </section>
-        <button v-if="step == 3" @click.prevent="send" class="send btn btn-warning">Send</button>
+        <button v-if="step == 4" @click.prevent="send" class="send btn btn-warning">Send</button>
         <hr class="my-3" />
         <!-- Display Selected items -->
         <div id="selected">
@@ -307,7 +313,7 @@ export default {
   data: function() {
     return {
       step: 1,
-      totalsteps: 3,
+      totalsteps: 4,
       errors: [],
       // selectedItem: {},
       // selected: undefined,
@@ -319,28 +325,28 @@ export default {
         skinToneMale: [
           {
             name: "Black-male",
-            image: "./img/skin-girl-1.png",
+            image: "./img/man-1.png",
             iconSource: "/img/black-icon.svg",
             preview: 1
           },
           {
             name: "Red-male",
-            image: "/img/skin-girl-2.png",
+            image: "/img/man-2.png",
             iconSource: "/img/red-icon.svg"
           },
           {
             name: "Green-male",
-            image: "/img/skin-girl-3.png",
+            image: "/img/man-3.png",
             iconSource: "/img/green-icon.svg"
           },
           {
             name: "Yellow-male",
-            image: "/img/skin-girl-4.png",
+            image: "/img/man-4.png",
             iconSource: "/img/yellow-icon.svg"
           },
           {
             name: "Blue-male",
-            image: "/img/skin-girl-5.png",
+            image: "/img/man-5.png",
             iconSource: "/img/blue-icon.svg"
           }
         ],
@@ -348,27 +354,56 @@ export default {
         skinToneFemale: [
           {
             name: "Black-female",
-            image: "./img/skin-girl-5.png",
+            image: "./img/female-1.png",
             iconSource: "/img/black-icon.svg"
           },
           {
             name: "Red-female",
-            image: "/img/skin-girl-5.png",
+            image: "/img/female-2.png",
             iconSource: "/img/red-icon.svg"
           },
           {
             name: "Green-female",
-            image: "/img/skin-girl-5.png",
+            image: "/img/female-3.png",
             iconSource: "/img/green-icon.svg"
           },
           {
             name: "Yellow-female",
-            image: "/img/skin-girl-5.png",
+            image: "/img/female-4.png",
             iconSource: "/img/yellow-icon.svg"
           },
           {
             name: "Blue-female",
-            image: "/img/skin-girl-5.png",
+            image: "/img/female-5.png",
+            iconSource: "/img/blue-icon.svg"
+          }
+        ],
+        //Glasses
+        glasses: "",
+        glassesType: [
+          {
+            name: "1-glasses",
+            image: "./img/glasses-1.png",
+            iconSource: "/img/black-icon.svg"
+          },
+          {
+            name: "2-glasses",
+            image: "./img/glasses-2.png",
+            iconSource: "/img/red-icon.svg"
+          },
+          {
+            name: "3-glasses",
+            image: "./img/glasses-3.png",
+            iconSource: "/img/green-icon.svg"
+          },
+          {
+            name: "4-glasses",
+            image: "./img/glasses-4.png",
+            iconSource: "/img/yellow-icon.svg"
+          },
+          {
+            name: "5-glasses",
+            image: "./img/glasses-5.png",
             iconSource: "/img/blue-icon.svg"
           }
         ],
@@ -1041,34 +1076,6 @@ export default {
             ],
             iconSource: "/img/blue-icon.svg"
           }
-        ],
-        glasses: "",
-        glassesType: [
-          {
-            name: "1-glasses",
-            iconSource: "/img/black-icon.svg",
-            image: "./img/skin-girl-1.png"
-          },
-          {
-            name: "2-glasses",
-            iconSource: "/img/red-icon.svg",
-            image: "./img/skin-girl-1.png"
-          },
-          {
-            name: "3-glasses",
-            iconSource: "/img/green-icon.svg",
-            image: "./img/skin-girl-1.png"
-          },
-          {
-            name: "4-glasses",
-            iconSource: "/img/yellow-icon.svg",
-            image: "./img/skin-girl-1.png"
-          },
-          {
-            name: "5-glasses",
-            iconSource: "/img/blue-icon.svg",
-            image: "./img/skin-girl-1.png"
-          }
         ]
       }
     };
@@ -1091,14 +1098,20 @@ export default {
         } else {
           this.errors = null;
         }
+      }
+      if (this.step == 2) {
         if (!this.form.skin) {
           this.errors = "Please select the skin tone";
           return false;
         } else {
           this.errors = null;
         }
+        if (!this.form.glasses) {
+          this.errors = "Do you wear glasses? Please select an option";
+          return false;
+        }
       }
-      if (this.step == 2) {
+      if (this.step == 3) {
         if (!this.form.hairType) {
           this.errors = "Please select the hair type";
           return false;
@@ -1115,7 +1128,7 @@ export default {
       this.step++;
     },
     send: function() {
-      if (this.step == 3) {
+      if (this.step == 4) {
         if (!this.form.eyeShape) {
           this.errors = "Please select your eye shape";
           return false;
