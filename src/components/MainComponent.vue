@@ -291,7 +291,7 @@
           @click.prevent="send"
           class="send btn btn-warning"
         >Save and Preview Book</button>
-        <hr class="my-3" />
+        <hr class="my-3 text-success" />
         <!-- Display Selected items -->
         <div id="selected">
           <h4
@@ -301,11 +301,11 @@
           <p class="gender-selected" v-if="form.gender">Gender: {{ form.gender }}</p>
           <p class="name-selected" v-if="form.firstName">Name: {{ form.firstName }}</p>
           <p class="skin-selected" v-if="form.skin">Skin tone: {{ form.skin.name }}</p>
+          <p class="eyecolor-selected" v-if="form.glasses">Glasses: {{ form.glasses.name }}</p>
           <p class="hairtype-selected" v-if="form.hairType">Hair type: {{ form.hairType.name }}</p>
           <p class="haircolor-selected" v-if="form.hairColor">Hair color: {{ form.hairColor.name }}</p>
           <p class="eyeshape-selected" v-if="form.eyeShape">Eye shape: {{ form.eyeShape.name }}</p>
           <p class="eyecolor-selected" v-if="form.eyeColor">Eye color: {{ form.eyeColor.name }}</p>
-          <p class="eyecolor-selected" v-if="form.glasses">Glasses: {{ form.glasses.name }}</p>
         </div>
       </div>
     </form>
@@ -1180,7 +1180,7 @@ export default {
   font-size: 18px;
   border: 2px solid black;
   border-radius: 100%;
-  padding: 0 11px;
+  padding: 0 10px;
   background-color: antiquewhite;
 }
 .error {
