@@ -3,6 +3,15 @@
     <form id="form">
       <!-- Display images -->
       <div id="view">
+        <!-- Display images - Preview Skin-->
+        <div v-for="image in form.skinToneMale" :key="image.name" class="preview-image-skin-male">
+          <img
+            :src="image.image"
+            :alt="image.name"
+            class="img-view img-skin-tone"
+            v-if="form.skinToneMale.preview == 1"
+          />
+        </div>
         <!-- Display skin -->
         <img :src="form.skin.image" :alt="form.skin.name" class="img-view img-skin-tone" />
         <!-- Display hair -->
@@ -300,8 +309,8 @@ export default {
       step: 1,
       totalsteps: 3,
       errors: [],
-      selectedItem: {},
-      selected: undefined,
+      // selectedItem: {},
+      // selected: undefined,
       form: {
         gender: null,
         firstName: null,
@@ -309,27 +318,28 @@ export default {
         //Skin Tone Male
         skinToneMale: [
           {
-            name: "Black",
+            name: "Black-male",
             image: "./img/skin-girl-1.png",
-            iconSource: "/img/black-icon.svg"
+            iconSource: "/img/black-icon.svg",
+            preview: 1
           },
           {
-            name: "Red",
+            name: "Red-male",
             image: "/img/skin-girl-2.png",
             iconSource: "/img/red-icon.svg"
           },
           {
-            name: "Green",
+            name: "Green-male",
             image: "/img/skin-girl-3.png",
             iconSource: "/img/green-icon.svg"
           },
           {
-            name: "Yellow",
+            name: "Yellow-male",
             image: "/img/skin-girl-4.png",
             iconSource: "/img/yellow-icon.svg"
           },
           {
-            name: "Blue",
+            name: "Blue-male",
             image: "/img/skin-girl-5.png",
             iconSource: "/img/blue-icon.svg"
           }
@@ -337,27 +347,27 @@ export default {
         // Skin Tone Female
         skinToneFemale: [
           {
-            name: "Black",
+            name: "Black-female",
             image: "./img/skin-girl-5.png",
             iconSource: "/img/black-icon.svg"
           },
           {
-            name: "Red",
+            name: "Red-female",
             image: "/img/skin-girl-5.png",
             iconSource: "/img/red-icon.svg"
           },
           {
-            name: "Green",
+            name: "Green-female",
             image: "/img/skin-girl-5.png",
             iconSource: "/img/green-icon.svg"
           },
           {
-            name: "Yellow",
+            name: "Yellow-female",
             image: "/img/skin-girl-5.png",
             iconSource: "/img/yellow-icon.svg"
           },
           {
-            name: "Blue",
+            name: "Blue-female",
             image: "/img/skin-girl-5.png",
             iconSource: "/img/blue-icon.svg"
           }
