@@ -39,7 +39,8 @@
           <span v-for="e in errors" class="font-italic font-weight-normal" :key="e.errors">{{ e }}</span>
         </div>
         <!-- Step 1 -->
-        <section class="details" v-if="step == 1">
+        <section class="step gender name" v-if="step == 1">
+          <span class="step-number text-success">{{step}}</span>
           <!-- using direct svg file -->
           <div class="gender flex justify-center mb-4">
             <p-input
@@ -72,11 +73,11 @@
         </section>
 
         <!-- Step 2 -->
-        <section class="details" v-if="step == 2">
+        <section class="step skin-tone glasses" v-if="step == 2">
           <!-- using direct svg file -->
-
+          <span class="step-number text-success">{{step}}</span>
           <div class="skin-tone flex-col py-1">
-            <h4 class="py-2 flex justify-center">Select your Skin Tone</h4>
+            <h4 class="py-2 flex text-center">Select your Skin Tone</h4>
             <div class="skin-tone-boxes">
               <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(skinInfo, index) in form.skinToneMale" :key="index.id">
@@ -112,7 +113,7 @@
 
           <!-- Glasses -->
           <div class="glasses flex-col py-1">
-            <h4 class="py-2 flex justify-center">Glasses?</h4>
+            <h4 class="py-2 flex text-center">Glasses?</h4>
             <div class="glasses-boxes flex justify-between px-5">
               <ul class="flex justify-between px-5 all-boxes">
                 <li v-for="(glasses, index) in form.glassesType" :key="index.id">
@@ -132,10 +133,11 @@
           </div>
         </section>
 
-        <!-- Step 2 -->
-        <section class="hair" v-if="step == 3">
+        <!-- Step 3 -->
+        <section class="step hair" v-if="step == 3">
+          <span class="step-number text-success">{{step}}</span>
           <div class="hair-type flex-col py-1">
-            <h4 class="py-2 flex justify-center">Select your Hair Type</h4>
+            <h4 class="py-2 flex text-center">Select your Hair Type</h4>
             <div class="hair-type-boxes flex justify-between px-5">
               <ul class="flex justify-between px-2 all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(hairType, index) in form.hairTypeMale" :key="index.hair">
@@ -169,7 +171,7 @@
             </div>
           </div>
           <div class="hair-color flex-col py-1">
-            <h4 class="py-2 flex justify-center">Select your Hair Color</h4>
+            <h4 class="py-2 flex text-center">Select your Hair Color</h4>
             <div class="hair-color-boxes flex justify-between px-5">
               <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(hairColor, index) in form.hairColorMale" :key="index.id">
@@ -203,10 +205,11 @@
             </div>
           </div>
         </section>
-        <!-- Step 3 -->
-        <section class="eye" v-if="step == 4">
+        <!-- Step 4 -->
+        <section class="step eye" v-if="step == 4">
+          <span class="step-number text-success">{{step}}</span>
           <div class="eye-shape flex-col py-1">
-            <h4 class="py-2 flex justify-center">Select your Eye Shape</h4>
+            <h4 class="py-2 flex text-center">Select your Eye Shape</h4>
             <div class="eye-shape-boxes flex justify-between px-5">
               <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(eyeShape, index) in form.eyeShapeMale" :key="index.id">
@@ -240,7 +243,7 @@
             </div>
           </div>
           <div class="eye-color flex-col py-1">
-            <h4 class="py-2 flex justify-center">Select your Eye Color</h4>
+            <h4 class="py-2 flex text-center">Select your Eye Color</h4>
             <div class="eye-color-boxes flex justify-between px-5">
               <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(eyeColor, index) in form.eyeColorMale" :key="index.id">
@@ -274,7 +277,7 @@
             </div>
           </div>
         </section>
-
+        <!-- Steps Buttons -->
         <section class="buttons flex justify-between p-1 w-100">
           <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button>
           <button
@@ -283,7 +286,11 @@
             class="next btn btn-success"
           >Continue</button>
         </section>
-        <button v-if="step == 4" @click.prevent="send" class="send btn btn-warning">Send</button>
+        <button
+          v-if="step == 4"
+          @click.prevent="send"
+          class="send btn btn-warning"
+        >Save and Preview Book</button>
         <hr class="my-3" />
         <!-- Display Selected items -->
         <div id="selected">
@@ -1153,6 +1160,24 @@ export default {
   width: 900px;
   display: flex;
   flex-wrap: wrap;
+}
+.step {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.step-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 600;
+  border: 2px solid;
+  border-radius: 100%;
+  padding: 0 9px;
+  background-color: antiquewhite;
 }
 .error {
   color: red;
