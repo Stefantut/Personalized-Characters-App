@@ -207,7 +207,7 @@
         </section>
         <!-- Step 4 -->
         <section class="step eye" v-if="step == 4">
-          <span class="step-number text-success">{{step}}</span>
+          <p class="step-number text-success">{{step}}</p>
           <div class="eye-shape flex-col py-1">
             <h4 class="py-2 flex text-center">Select your Eye Shape</h4>
             <div class="eye-shape-boxes flex justify-between px-5">
@@ -278,7 +278,7 @@
           </div>
         </section>
         <!-- Steps Buttons -->
-        <section class="buttons flex justify-between p-1 w-100">
+        <section class="buttons flex justify-between p-1">
           <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button>
           <button
             v-if="step != totalsteps"
@@ -298,14 +298,38 @@
             class="first-parent font-bold text-success"
             v-if="form.gender || form.firstName"
           >Selected Parent Details:</h4>
-          <p class="gender-selected" v-if="form.gender">Gender: {{ form.gender }}</p>
-          <p class="name-selected" v-if="form.firstName">Name: {{ form.firstName }}</p>
-          <p class="skin-selected" v-if="form.skin">Skin tone: {{ form.skin.name }}</p>
-          <p class="eyecolor-selected" v-if="form.glasses">Glasses: {{ form.glasses.name }}</p>
-          <p class="hairtype-selected" v-if="form.hairType">Hair type: {{ form.hairType.name }}</p>
-          <p class="haircolor-selected" v-if="form.hairColor">Hair color: {{ form.hairColor.name }}</p>
-          <p class="eyeshape-selected" v-if="form.eyeShape">Eye shape: {{ form.eyeShape.name }}</p>
-          <p class="eyecolor-selected" v-if="form.eyeColor">Eye color: {{ form.eyeColor.name }}</p>
+          <p class="gender-selected font-weight-bold" v-if="form.gender">
+            Gender:
+            <span class="font-weight-normal">{{ form.gender }}</span>
+          </p>
+          <p class="name-selected font-weight-bold" v-if="form.firstName">
+            Name:
+            <span class="font-weight-normal">{{ form.firstName }}</span>
+          </p>
+          <p class="skin-selected font-weight-bold" v-if="form.skin">
+            Skin tone:
+            <span class="font-weight-normal">{{ form.skin.name }}</span>
+          </p>
+          <p class="eyecolor-selected font-weight-bold" v-if="form.glasses">
+            Glasses:
+            <span class="font-weight-normal">{{ form.glasses.name }}</span>
+          </p>
+          <p class="hairtype-selected font-weight-bold" v-if="form.hairType">
+            Hair type:
+            <span class="font-weight-normal">{{ form.hairType.name }}</span>
+          </p>
+          <p class="haircolor-selected font-weight-bold" v-if="form.hairColor">
+            Hair color:
+            <span class="font-weight-normal">{{ form.hairColor.name }}</span>
+          </p>
+          <p class="eyeshape-selected font-weight-bold" v-if="form.eyeShape">
+            Eye shape:
+            <span class="font-weight-normal">{{ form.eyeShape.name }}</span>
+          </p>
+          <p class="eyecolor-selected font-weight-bold" v-if="form.eyeColor">
+            Eye color:
+            <span class="font-weight-normal">{{ form.eyeColor.name }}</span>
+          </p>
         </div>
       </div>
     </form>
