@@ -294,15 +294,18 @@
         <hr class="my-3" />
         <!-- Display Selected items -->
         <div id="selected">
-          <h4 class="first-parent font-bold text-success">Selected Parent Details:</h4>
-          <p class="gender-selected">Gender: {{ form.gender }}</p>
-          <p class="name-selected">Name: {{ form.firstName }}</p>
-          <p class="skin-selected">Skin tone: {{ form.skin.name }}</p>
-          <p class="hairtype-selected">Hair type: {{ form.hairType.name }}</p>
-          <p class="haircolor-selected">Hair color: {{ form.hairColor.name }}</p>
-          <p class="eyeshape-selected">Eye shape: {{ form.eyeShape.name }}</p>
-          <p class="eyecolor-selected">Eye color: {{ form.eyeColor.name }}</p>
-          <p class="eyecolor-selected">Glasses: {{ form.glasses.name }}</p>
+          <h4
+            class="first-parent font-bold text-success"
+            v-if="form.gender || form.firstName"
+          >Selected Parent Details:</h4>
+          <p class="gender-selected" v-if="form.gender">Gender: {{ form.gender }}</p>
+          <p class="name-selected" v-if="form.firstName">Name: {{ form.firstName }}</p>
+          <p class="skin-selected" v-if="form.skin">Skin tone: {{ form.skin.name }}</p>
+          <p class="hairtype-selected" v-if="form.hairType">Hair type: {{ form.hairType.name }}</p>
+          <p class="haircolor-selected" v-if="form.hairColor">Hair color: {{ form.hairColor.name }}</p>
+          <p class="eyeshape-selected" v-if="form.eyeShape">Eye shape: {{ form.eyeShape.name }}</p>
+          <p class="eyecolor-selected" v-if="form.eyeColor">Eye color: {{ form.eyeColor.name }}</p>
+          <p class="eyecolor-selected" v-if="form.glasses">Glasses: {{ form.glasses.name }}</p>
         </div>
       </div>
     </form>
@@ -1174,9 +1177,10 @@ export default {
   top: 0;
   left: 0;
   font-weight: 600;
-  border: 2px solid;
+  font-size: 18px;
+  border: 2px solid black;
   border-radius: 100%;
-  padding: 0 9px;
+  padding: 0 11px;
   background-color: antiquewhite;
 }
 .error {
