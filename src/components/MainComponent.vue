@@ -35,9 +35,6 @@
       </div>
 
       <div class="form-container">
-        <div class="error text-center my-3">
-          <span v-for="e in errors" class="font-italic font-weight-normal" :key="e.errors">{{ e }}</span>
-        </div>
         <!-- Step 1 -->
         <section class="step gender name" v-if="step == 1">
           <div class="step-number-wrap text-success">
@@ -305,8 +302,13 @@
             </div>
           </div>
         </section>
+
+        <!-- Display error Message -->
+        <div class="error text-center my-3">
+          <span v-for="e in errors" class="font-italic font-weight-normal" :key="e.errors">{{ e }}</span>
+        </div>
         <!-- Steps Buttons -->
-        <section class="buttons flex justify-between p-1">
+        <section class="buttons">
           <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button>
           <!-- <button v-if="step != 1 && step != 2" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button> -->
           <button
@@ -314,13 +316,13 @@
             @click.prevent="nextStep"
             class="next btn btn-success"
           >Continue</button>
+          <button
+            v-if="step == 4"
+            @click.prevent="send"
+            class="send btn btn-warning"
+          >Save and Preview Book</button>
         </section>
-        <button
-          v-if="step == 4"
-          @click.prevent="send"
-          class="send btn btn-warning"
-        >Save and Preview Book</button>
-        <hr class="my-3 text-success" />
+        <hr class="my-2 text-success" />
         <!-- Display Selected items -->
         <div id="selected">
           <h4
@@ -1293,6 +1295,20 @@ export default {
         }
         .svg-2 {
           height: 20px;
+        }
+      }
+      .buttons {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "left-btn right-btn";
+        grid-column-gap: 15%;
+        .prev {
+          grid-area: left-btn;
+        }
+        .next,
+        .send {
+          grid-area: right-btn;
         }
       }
       #selected {
