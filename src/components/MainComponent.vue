@@ -40,13 +40,16 @@
         </div>
         <!-- Step 1 -->
         <section class="step gender name" v-if="step == 1">
-          <span class="step-number text-success">{{step}}</span>
+          <div class="step-number-wrap text-success">
+            <div class="step-number">{{step}}<sup>st</sup></div>
+            <div class="step-text">Step</div>
+          </div>
           <!-- using direct svg file -->
           <div class="gender flex justify-center mb-4">
             <h4 class="py-2 flex text-center">Select Gender</h4>
             <p-input
-              class="p-icon p-jelly p-round p-bigger"
               type="radio"
+              class="p-icon p-jelly p-round p-bigger"
               id="male"
               value="Male"
               v-model="form.gender"
@@ -55,6 +58,7 @@
               Male
               <img src="/img/man.svg" class="svg" />
             </p-input>
+
             <p-input
               class="p-icon p-jelly p-round p-bigger"
               type="radio"
@@ -78,7 +82,10 @@
         <!-- Step 2 -->
         <section class="step skin-tone glasses" v-if="step == 2">
           <!-- using direct svg file -->
-          <span class="step-number text-success">{{step}}</span>
+          <div class="step-number-wrap text-success">
+            <p class="step-number">{{step}}<sup>nd</sup></p>
+            <p class="step-text">Step</p>
+          </div>
           <div class="skin-tone flex-col py-1">
             <h4 class="py-2 flex text-center">Select your Skin Tone</h4>
             <div class="skin-tone-boxes">
@@ -138,7 +145,10 @@
 
         <!-- Step 3 -->
         <section class="step hair" v-if="step == 3">
-          <span class="step-number text-success">{{step}}</span>
+          <div class="step-number-wrap text-success">
+            <p class="step-number">{{step}}<sup>rd</sup></p>
+            <p class="step-text">Step</p>
+          </div>
           <div class="hair-type flex-col py-1">
             <h4 class="py-2 flex text-center">Select your Hair Type</h4>
             <div class="hair-type-boxes flex justify-between px-5">
@@ -210,7 +220,10 @@
         </section>
         <!-- Step 4 -->
         <section class="step eye" v-if="step == 4">
-          <p class="step-number text-success">{{step}}</p>
+          <div class="step-number-wrap text-success">
+            <p class="step-number">{{step}}<sup>th</sup></p>
+            <p class="step-text">Step</p>
+          </div>
           <div class="eye-shape flex-col py-1">
             <h4 class="py-2 flex text-center">Select your Eye Shape</h4>
             <div class="eye-shape-boxes flex justify-between px-5">
@@ -283,6 +296,7 @@
         <!-- Steps Buttons -->
         <section class="buttons flex justify-between p-1">
           <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button>
+          <!-- <button v-if="step != 1 && step != 2" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button> -->
           <button
             v-if="step != totalsteps"
             @click.prevent="nextStep"
@@ -1176,6 +1190,7 @@ export default {
         }
       }
       alert("was sent");
+      console.log("was sent");
     }
   },
   mounted() {}
@@ -1185,6 +1200,8 @@ export default {
 <style lang="scss">
 .wrapper {
   display: flex;
+  flex-wrap:nowrap;
+    margin-top: 50px;
 }
 #form {
   width: 900px;
@@ -1192,23 +1209,36 @@ export default {
   flex-wrap: wrap;
 }
 .step {
-  height: 200px;
+  height: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  padding-top:30px;
 }
-.step-number {
+.step-number-wrap {
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
   font-weight: 600;
+  display:flex;
+
+  .step-number{
   font-size: 18px;
   border-radius: 10px;
   border: 1px solid #8ba68f;
-  padding: 0 10px;
+  padding: 0 5px;
   background-color: #ffefe2;
+  sup{
+    font-size: 12px;
+    margin-left:1px;
+  }
+  }
+  .step-text{
+    font-size:20px;
+    margin-left:5px;
+  }
 }
 .error {
   color: red;
@@ -1237,7 +1267,6 @@ label:after {
   width: 400px;
   background-color: #ffefe2;
   margin-right: 50px;
-  margin-top: 25px;
   border-radius: 10px;
   border: 1px solid #8ba68f;
   display: flex;
@@ -1312,37 +1341,30 @@ label:after {
 }
 
 .pulse {
+  background: transparent;
   border-radius: 50%;
-  box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
-  animation: pulse 1s infinite;
-}
-.pulse:hover {
-  animation: none;
+  margin: 20px;
+  height: 40px;
+  width: 40px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
-  }
-  70% {
-    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
-  }
-}
 @keyframes pulse {
   0% {
-    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
-    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
   }
+
   70% {
-    -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
-    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
   }
+
   100% {
-    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
-    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
 </style>
