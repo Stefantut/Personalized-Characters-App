@@ -41,7 +41,10 @@
         <!-- Step 1 -->
         <section class="step gender name" v-if="step == 1">
           <div class="step-number-wrap text-success">
-            <div class="step-number">{{step}}<sup>st</sup></div>
+            <div class="step-number">
+              {{step}}
+              <sup>st</sup>
+            </div>
             <div class="step-text">Step</div>
           </div>
           <!-- using direct svg file -->
@@ -83,7 +86,10 @@
         <section class="step skin-tone glasses" v-if="step == 2">
           <!-- using direct svg file -->
           <div class="step-number-wrap text-success">
-            <p class="step-number">{{step}}<sup>nd</sup></p>
+            <p class="step-number">
+              {{step}}
+              <sup>nd</sup>
+            </p>
             <p class="step-text">Step</p>
           </div>
           <div class="skin-tone flex-col py-1">
@@ -146,7 +152,10 @@
         <!-- Step 3 -->
         <section class="step hair" v-if="step == 3">
           <div class="step-number-wrap text-success">
-            <p class="step-number">{{step}}<sup>rd</sup></p>
+            <p class="step-number">
+              {{step}}
+              <sup>rd</sup>
+            </p>
             <p class="step-text">Step</p>
           </div>
           <div class="hair-type flex-col py-1">
@@ -221,7 +230,10 @@
         <!-- Step 4 -->
         <section class="step eye" v-if="step == 4">
           <div class="step-number-wrap text-success">
-            <p class="step-number">{{step}}<sup>th</sup></p>
+            <p class="step-number">
+              {{step}}
+              <sup>th</sup>
+            </p>
             <p class="step-text">Step</p>
           </div>
           <div class="eye-shape flex-col py-1">
@@ -1200,110 +1212,99 @@ export default {
 <style lang="scss">
 .wrapper {
   display: flex;
-  flex-wrap:nowrap;
-    margin-top: 50px;
-}
-#form {
-  width: 900px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.step {
-  height: 230px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding-top:30px;
-}
-.step-number-wrap {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  font-weight: 600;
-  display:flex;
-
-  .step-number{
-  font-size: 18px;
-  border-radius: 10px;
-  border: 1px solid #8ba68f;
-  padding: 0 5px;
-  background-color: #ffefe2;
-  sup{
-    font-size: 12px;
-    margin-left:1px;
+  flex-wrap: nowrap;
+  margin-top: 50px;
+  #form {
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    #view {
+      height: 400px;
+      width: 400px;
+      background-color: #ffefe2;
+      margin-right: 50px;
+      border-radius: 10px;
+      border: 1px solid #8ba68f;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      .img-view {
+        height: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      .img-skin-tone {
+        z-index: 1;
+      }
+      .img-hair-type {
+        z-index: 2;
+      }
+      .img-hair-color {
+        z-index: 3;
+      }
+      .img-eye-color {
+        z-index: 4;
+      }
+      .img-glasses {
+        z-index: 5;
+      }
+    }
+    .form-container {
+      width: 400px;
+      .error {
+        color: red;
+      }
+      .step {
+        height: 230px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding-top: 30px;
+        .step-number-wrap {
+          position: absolute;
+          top: 0px;
+          left: 0;
+          font-weight: 600;
+          display: flex;
+          .step-number {
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid #8ba68f;
+            padding: 0 5px;
+            background-color: #ffefe2;
+            sup {
+              font-size: 12px;
+              margin-left: -4px;
+            }
+          }
+          .step-text {
+            font-size: 20px;
+            margin-left: 5px;
+          }
+        }
+        .svg {
+          height: 30px;
+        }
+        .svg-2 {
+          height: 20px;
+        }
+      }
+      #selected {
+        .name-selected {
+          text-transform: capitalize;
+        }
+      }
+    }
   }
-  }
-  .step-text{
-    font-size:20px;
-    margin-left:5px;
-  }
-}
-.error {
-  color: red;
-}
-.svg {
-  height: 30px;
-}
-.svg-2 {
-  height: 20px;
-}
-.text {
-  font-size: 12px;
-}
-.pretty.p-round .state label:before,
-label:after {
-  opacity: 0;
-  pointer-events: none;
 }
 
-.pretty {
-  margin-right: 0 !important;
-}
-
-#view {
-  height: 400px;
-  width: 400px;
-  background-color: #ffefe2;
-  margin-right: 50px;
-  border-radius: 10px;
-  border: 1px solid #8ba68f;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.img-view {
-  height: 300px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-.img-skin-tone {
-  z-index: 1;
-}
-.img-hair-type {
-  z-index: 2;
-}
-.img-hair-color {
-  z-index: 3;
-}
-.img-eye-color {
-  z-index: 4;
-}
-.img-glasses {
-  z-index: 5;
-}
-.form-container {
-  width: 400px;
-}
-.name-selected {
-  text-transform: capitalize;
-}
+// Fixes
 .block {
   display: block !important;
 }
@@ -1315,6 +1316,36 @@ label:after {
 //   display: none !important;
 // }
 
+// Fixes for Pretty
+.pretty.p-round .state label:before,
+label:after {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pretty {
+  margin-right: 0 !important;
+}
+
+// Others
+.active {
+  background: #f00;
+  color: #fff;
+  font-size: 30px;
+}
+
+.pulse {
+  background: transparent;
+  border-radius: 50%;
+  margin: 20px;
+  height: 40px;
+  width: 40px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+// KeyFrames
 @keyframes rotateee {
   0% {
     transform: rotate(0deg);
@@ -1332,23 +1363,6 @@ label:after {
   li {
     list-style-type: none;
   }
-}
-
-.active {
-  background: #f00;
-  color: #fff;
-  font-size: 30px;
-}
-
-.pulse {
-  background: transparent;
-  border-radius: 50%;
-  margin: 20px;
-  height: 40px;
-  width: 40px;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-  transform: scale(1);
-  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
