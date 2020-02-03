@@ -325,42 +325,60 @@
         <hr class="my-2 text-success" />
         <!-- Display Selected items -->
         <div id="selected">
-          <h4
-            class="first-parent font-bold text-success"
-            v-if="form.gender || form.firstName"
-          >Selected Parent Details:</h4>
-          <p class="gender-selected font-weight-bold" v-if="form.gender">
-            Gender:
-            <span class="font-weight-normal">{{ form.gender }}</span>
-          </p>
-          <p class="name-selected font-weight-bold" v-if="form.firstName">
-            Name:
-            <span class="font-weight-normal">{{ form.firstName }}</span>
-          </p>
-          <p class="skin-selected font-weight-bold" v-if="form.skin">
-            Skin tone:
-            <span class="font-weight-normal">{{ form.skin.name }}</span>
-          </p>
-          <p class="eyecolor-selected font-weight-bold" v-if="form.glasses">
-            Glasses:
-            <span class="font-weight-normal">{{ form.glasses.name }}</span>
-          </p>
-          <p class="hairtype-selected font-weight-bold" v-if="form.hairType">
-            Hair type:
-            <span class="font-weight-normal">{{ form.hairType.name }}</span>
-          </p>
-          <p class="haircolor-selected font-weight-bold" v-if="form.hairColor">
-            Hair color:
-            <span class="font-weight-normal">{{ form.hairColor.name }}</span>
-          </p>
-          <p class="eyeshape-selected font-weight-bold" v-if="form.eyeShape">
-            Eye shape:
-            <span class="font-weight-normal">{{ form.eyeShape.name }}</span>
-          </p>
-          <p class="eyecolor-selected font-weight-bold" v-if="form.eyeColor">
-            Eye color:
-            <span class="font-weight-normal">{{ form.eyeColor.name }}</span>
-          </p>
+          <transition name="fade">
+            <h4
+              class="first-parent font-bold text-success"
+              v-if="form.gender || form.firstName"
+            >Selected Parent Details:</h4>
+          </transition>
+          <transition name="fade">
+            <p class="gender-selected font-weight-bold" v-if="form.gender">
+              Gender:
+              <span class="font-weight-normal">{{ form.gender }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="name-selected font-weight-bold" v-if="form.firstName">
+              Name:
+              <span class="font-weight-normal">{{ form.firstName }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="skin-selected font-weight-bold" v-if="form.skin">
+              Skin tone:
+              <span class="font-weight-normal">{{ form.skin.name }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="eyecolor-selected font-weight-bold" v-if="form.glasses">
+              Glasses:
+              <span class="font-weight-normal">{{ form.glasses.name }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="hairtype-selected font-weight-bold" v-if="form.hairType">
+              Hair type:
+              <span class="font-weight-normal">{{ form.hairType.name }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="haircolor-selected font-weight-bold" v-if="form.hairColor">
+              Hair color:
+              <span class="font-weight-normal">{{ form.hairColor.name }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="eyeshape-selected font-weight-bold" v-if="form.eyeShape">
+              Eye shape:
+              <span class="font-weight-normal">{{ form.eyeShape.name }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="eyecolor-selected font-weight-bold" v-if="form.eyeColor">
+              Eye color:
+              <span class="font-weight-normal">{{ form.eyeColor.name }}</span>
+            </p>
+          </transition>
         </div>
       </div>
     </form>
@@ -1343,6 +1361,16 @@ export default {
       }
     }
   }
+}
+
+// Transitions
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 
 // Fixes
