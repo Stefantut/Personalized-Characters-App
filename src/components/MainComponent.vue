@@ -64,7 +64,7 @@
               type="radio"
               id="female"
               value="Female"
-              v-model="form.gender"
+              v-model.lazy="form.gender"
               name="female"
             >
               Female
@@ -72,7 +72,7 @@
             </p-input>
           </div>
           <input
-            v-model="form.firstName"
+            v-model.lazy="form.firstName"
             type="text"
             placeholder="What is your first name?"
             class="first-name form-control form-control-md"
@@ -99,7 +99,7 @@
                     type="radio"
                     :id="skinInfo.name"
                     :name="skinInfo.name"
-                    v-model="form.skin"
+                    v-model.lazy="form.skin"
                     :value="skinInfo"
                   >
                     <img :src="skinInfo.iconSource" class="svg-2" />
@@ -114,7 +114,7 @@
                     type="radio"
                     :id="skinInfo.name"
                     :name="skinInfo.name"
-                    v-model="form.skin"
+                    v-model.lazy="form.skin"
                     :value="skinInfo"
                   >
                     <img :src="skinInfo.iconSource" class="svg-2" />
@@ -135,7 +135,7 @@
                     type="radio"
                     :id="glasses.name"
                     :name="glasses.name"
-                    v-model="form.glasses"
+                    v-model.lazy="form.glasses"
                     :value="glasses"
                   >
                     <img :src="glasses.iconSource" class="svg-2" />
@@ -165,7 +165,7 @@
                     type="radio"
                     :id="hairType.name"
                     :name="hairType.name"
-                    v-model="form.hairType"
+                    v-model.lazy="form.hairType"
                     :value="hairType"
                   >
                     <img :src="hairType.iconSource" class="svg-2" />
@@ -180,7 +180,7 @@
                     type="radio"
                     :id="hairType.name"
                     :name="hairType.name"
-                    v-model="form.hairType"
+                    v-model.lazy="form.hairType"
                     :value="hairType"
                   >
                     <img :src="hairType.iconSource" class="svg-2" />
@@ -199,7 +199,7 @@
                     type="radio"
                     :id="hairColor.name"
                     :name="hairColor.name"
-                    v-model="form.hairColor"
+                    v-model.lazy="form.hairColor"
                     :value="hairColor"
                   >
                     <img :src="hairColor.iconSource" class="svg-2" />
@@ -214,7 +214,7 @@
                     type="radio"
                     :id="hairColor.name"
                     :name="hairColor.name"
-                    v-model="form.hairColor"
+                    v-model.lazy="form.hairColor"
                     :value="hairColor"
                   >
                     <img :src="hairColor.iconSource" class="svg-2" />
@@ -243,7 +243,7 @@
                     type="radio"
                     :id="eyeShape.name"
                     :name="eyeShape.name"
-                    v-model="form.eyeShape"
+                    v-model.lazy="form.eyeShape"
                     :value="eyeShape"
                   >
                     <img :src="eyeShape.iconSource" class="svg-2" />
@@ -258,7 +258,7 @@
                     type="radio"
                     :id="eyeShape.name"
                     :name="eyeShape.name"
-                    v-model="form.eyeShape"
+                    v-model.lazy="form.eyeShape"
                     :value="eyeShape"
                   >
                     <img :src="eyeShape.iconSource" class="svg-2" />
@@ -277,7 +277,7 @@
                     type="radio"
                     :id="eyeColor.name"
                     :name="eyeColor.name"
-                    v-model="form.eyeColor"
+                    v-model.lazy="form.eyeColor"
                     :value="eyeColor"
                   >
                     <img :src="eyeColor.iconSource" class="svg-2" />
@@ -292,7 +292,7 @@
                     type="radio"
                     :id="eyeColor.name"
                     :name="eyeColor.name"
-                    v-model="form.eyeColor"
+                    v-model.lazy="form.eyeColor"
                     :value="eyeColor"
                   >
                     <img :src="eyeColor.iconSource" class="svg-2" />
@@ -392,27 +392,32 @@ export default {
             name: "Black-male",
             image: "./img/man-1.png",
             iconSource: "/img/black-icon.svg",
-            preview: 1
+            preview: 1,
+            gender: "Male"
           },
           {
             name: "Red-male",
             image: "/img/man-2.png",
-            iconSource: "/img/red-icon.svg"
+            iconSource: "/img/red-icon.svg",
+            gender: "Male"
           },
           {
             name: "Green-male",
             image: "/img/man-3.png",
-            iconSource: "/img/green-icon.svg"
+            iconSource: "/img/green-icon.svg",
+            gender: "Male"
           },
           {
             name: "Yellow-male",
             image: "/img/man-4.png",
-            iconSource: "/img/yellow-icon.svg"
+            iconSource: "/img/yellow-icon.svg",
+            gender: "Male"
           },
           {
             name: "Blue-male",
             image: "/img/man-5.png",
-            iconSource: "/img/blue-icon.svg"
+            iconSource: "/img/blue-icon.svg",
+            gender: "Male"
           }
         ],
         // Skin Tone Female
@@ -420,27 +425,32 @@ export default {
           {
             name: "Black-female",
             image: "./img/female-1.png",
-            iconSource: "/img/black-icon.svg"
+            iconSource: "/img/black-icon.svg",
+            gender: "Female"
           },
           {
             name: "Red-female",
             image: "/img/female-2.png",
-            iconSource: "/img/red-icon.svg"
+            iconSource: "/img/red-icon.svg",
+            gender: "Female"
           },
           {
             name: "Green-female",
             image: "/img/female-3.png",
-            iconSource: "/img/green-icon.svg"
+            iconSource: "/img/green-icon.svg",
+            gender: "Female"
           },
           {
             name: "Yellow-female",
             image: "/img/female-4.png",
-            iconSource: "/img/yellow-icon.svg"
+            iconSource: "/img/yellow-icon.svg",
+            gender: "Female"
           },
           {
             name: "Blue-female",
             image: "/img/female-5.png",
-            iconSource: "/img/blue-icon.svg"
+            iconSource: "/img/blue-icon.svg",
+            gender: "Female"
           }
         ],
         //Glasses
@@ -1145,8 +1155,15 @@ export default {
       }
     };
   },
+  // watch: {
+  //   "form.gender": {
+  //     handler: function() {},
+  //     deep: true
+  //   }
+  // },
   methods: {
     prevStep: function() {
+      this.errors = null;
       this.step--;
     },
     nextStep: function() {
@@ -1156,6 +1173,14 @@ export default {
           return false;
         } else {
           this.errors = null;
+        }
+        if (this.form.gender != this.form.skin.gender) {
+          this.form.skin = "";
+          this.form.glasses = "";
+          this.form.hairType = "";
+          this.form.hairColor = "";
+          this.form.eyeShape = "";
+          this.form.eyeColor = "";
         }
         if (!this.form.firstName || this.form.firstName.length < 2) {
           this.errors = "Please type in parent name, min 2 characters";
