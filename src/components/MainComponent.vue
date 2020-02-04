@@ -49,26 +49,30 @@
             <h4 class="py-2 flex text-center">Select Gender</h4>
             <p-input
               type="radio"
-              class="p-icon p-jelly p-round p-bigger"
+              class="p-icon p-jelly p-round p-bigger ml-5 mr-1"
               id="male"
               value="Male"
               v-model="form.gender"
               name="male"
             >
-              Male
-              <img src="/img/man.svg" class="svg" />
+              <label class="d-flex align-items-center">
+                Male
+                <img src="/img/man.svg" class="svg ml-2" />
+              </label>
             </p-input>
 
             <p-input
-              class="p-icon p-jelly p-round p-bigger"
+              class="p-icon p-jelly p-round p-bigger ml-5"
               type="radio"
               id="female"
               value="Female"
               v-model="form.gender"
               name="female"
             >
-              Female
-              <img src="/img/woman.svg" class="svg" />
+              <label class="d-flex flex-row-reverse align-items-center">
+                Female
+                <img src="/img/woman.svg" class="svg mr-2" />
+              </label>
             </p-input>
           </div>
           <!-- First Name -->
