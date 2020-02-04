@@ -36,7 +36,6 @@
 
       <div class="form-container">
         <!-- Step 1 -->
-        <!-- <transition name="appear"> -->
         <section class="step gender name" v-if="step == 1">
           <div class="step-number-wrap text-success">
             <p class="step-number">
@@ -79,11 +78,8 @@
             class="first-name form-control form-control-md"
           />
         </section>
-        <!-- </transition> -->
-
         <!-- Step 2 -->
-        <!-- <transition name="appear"> -->
-        <section class="step skin-tone glasses" v-if="step == 2">
+        <section class="step" v-if="step == 2">
           <!-- using direct svg file -->
           <div class="step-number-wrap text-success">
             <p class="step-number">
@@ -92,10 +88,10 @@
             </p>
             <p class="step-text">Step</p>
           </div>
-          <div class="skin-tone flex-col py-1">
+          <div class="skin-tone all-boxes-wrap flex-col py-1">
             <h4 class="py-2 flex text-center">Select your Skin Tone</h4>
             <div class="skin-tone-boxes">
-              <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
+              <ul class="all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(skinInfo, index) in form.skinToneMale" :key="index.id">
                   <p-input
                     class="p-icon p-jelly p-round p-bigger"
@@ -110,7 +106,7 @@
                 </li>
               </ul>
 
-              <ul class="flex justify-between px-5 all-boxes" v-else>
+              <ul class="all-boxes" v-else>
                 <li v-for="(skinInfo, index) in form.skinToneFemale" :key="index.id">
                   <p-input
                     class="p-icon p-jelly p-round p-bigger"
@@ -128,10 +124,10 @@
           </div>
 
           <!-- Glasses -->
-          <div class="glasses flex-col py-1">
+          <div class="glasses all-boxes-wrap flex-col py-1">
             <h4 class="py-2 flex text-center">Glasses?</h4>
-            <div class="glasses-boxes flex justify-between px-5">
-              <ul class="flex justify-between px-5 all-boxes">
+            <div class="glasses-boxes">
+              <ul class="all-boxes">
                 <li v-for="(glasses, index) in form.glassesType" :key="index.id">
                   <p-input
                     class="p-icon p-jelly p-round p-bigger"
@@ -148,10 +144,8 @@
             </div>
           </div>
         </section>
-        <!-- </transition> -->
 
         <!-- Step 3 -->
-        <!-- <transition name="appear"> -->
         <section class="step hair" v-if="step == 3">
           <div class="step-number-wrap text-success">
             <p class="step-number">
@@ -161,10 +155,10 @@
 
             <p class="step-text">Step</p>
           </div>
-          <div class="hair-type flex-col py-1">
+          <div class="hair-type all-boxes-wrap flex-col py-1">
             <h4 class="py-2 flex text-center">Select your Hair Type</h4>
-            <div class="hair-type-boxes flex justify-between px-5">
-              <ul class="flex justify-between px-2 all-boxes" v-if="form.gender === 'Male'">
+            <div class="hair-type-boxes">
+              <ul class="all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(hairType, index) in form.hairTypeMale" :key="index.hair">
                   <p-input
                     class="p-icon p-jelly p-round p-bigger"
@@ -179,7 +173,7 @@
                 </li>
               </ul>
 
-              <ul class="flex justify-between px-5 all-boxes" v-else>
+              <ul class="all-boxes" v-else>
                 <li v-for="(hairType, index) in form.hairTypeFemale" :key="index">
                   <p-input
                     class="p-icon p-jelly p-round p-bigger"
@@ -195,10 +189,10 @@
               </ul>
             </div>
           </div>
-          <div class="hair-color flex-col py-1">
+          <div class="hair-color all-boxes-wrap flex-col py-1">
             <h4 class="py-2 flex text-center">Select your Hair Color</h4>
-            <div class="hair-color-boxes flex justify-between px-5">
-              <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
+            <div class="hair-color-boxes">
+              <ul class="all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(hairColor, index) in form.hairColorMale" :key="index.id">
                   <p-input
                     class="p-icon p-jelly p-round p-bigger"
@@ -213,7 +207,7 @@
                 </li>
               </ul>
 
-              <ul class="flex justify-between px-5 all-boxes" v-else>
+              <ul class="all-boxes" v-else>
                 <li v-for="(hairColor, index) in form.hairColorFemale" :key="index.id">
                   <p-input
                     class="p-icon p-jelly p-round p-bigger"
@@ -230,10 +224,8 @@
             </div>
           </div>
         </section>
-        <!-- </transition> -->
 
         <!-- Step 4 -->
-        <!-- <transition name="appear"> -->
         <section class="step eye" v-if="step == 4">
           <div class="step-number-wrap text-success">
             <p class="step-number">
@@ -243,10 +235,10 @@
 
             <p class="step-text">Step</p>
           </div>
-          <div class="eye-shape flex-col py-1">
+          <div class="eye-shape all-boxes-wrap flex-col py-1">
             <h4 class="py-2 flex text-center">Select your Eye Shape</h4>
-            <div class="eye-shape-boxes flex justify-between px-5">
-              <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
+            <div class="eye-shape-boxes">
+              <ul class="all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(eyeShape, index) in form.eyeShapeMale" :key="index.id">
                   <p-input
                     class="p-icon p-jelly p-round p-bigger"
@@ -261,7 +253,7 @@
                 </li>
               </ul>
 
-              <ul class="flex justify-between px-5 all-boxes" v-else>
+              <ul class="all-boxes" v-else>
                 <li v-for="(eyeShape, index) in form.eyeShapeFemale" :key="index.id">
                   <p-input
                     class="p-icon p-jelly p-round p-bigger"
@@ -277,10 +269,10 @@
               </ul>
             </div>
           </div>
-          <div class="eye-color flex-col py-1">
+          <div class="eye-color all-boxes-wrap flex-col py-1">
             <h4 class="py-2 flex text-center">Select your Eye Color</h4>
-            <div class="eye-color-boxes flex justify-between px-5">
-              <ul class="flex justify-between px-5 all-boxes" v-if="form.gender === 'Male'">
+            <div class="eye-color-boxes">
+              <ul class="all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(eyeColor, index) in form.eyeColorMale" :key="index.id">
                   <p-input
                     class="p-icon p-jelly p-round p-bigger"
@@ -295,7 +287,7 @@
                 </li>
               </ul>
 
-              <ul class="flex justify-between px-5 all-boxes" v-else>
+              <ul class="all-boxes" v-else>
                 <li v-for="(eyeColor, index) in form.eyeColorFemale" :key="index.id">
                   <p-input
                     class="p-icon p-jelly p-round p-bigger"
@@ -312,7 +304,6 @@
             </div>
           </div>
         </section>
-        <!-- </transition> -->
 
         <!-- Display error Message -->
         <div class="error text-center my-3">
@@ -327,11 +318,7 @@
             @click.prevent="nextStep"
             class="next btn btn-success"
           >Continue</button>
-          <button
-            v-if="step == 4"
-            @click.prevent="send"
-            class="send btn btn-warning"
-          >Save and Preview Book</button>
+          <button v-if="step == 4" @click.prevent="send" class="send btn btn-warning">Preview Book</button>
         </section>
         <hr class="my-2 text-success" />
         <!-- Display Selected items -->
@@ -343,49 +330,49 @@
             >Selected Parent Details:</h4>
           </transition>
           <transition name="fade">
-            <p class="gender-selected font-weight-bold" v-if="form.gender">
+            <p class="gender-selected font-weight-bold mb-0" v-if="form.gender">
               Gender:
               <span class="font-weight-normal">{{ form.gender }}</span>
             </p>
           </transition>
           <transition name="fade">
-            <p class="name-selected font-weight-bold" v-if="form.firstName">
+            <p class="name-selected font-weight-bold mb-0" v-if="form.firstName">
               Name:
               <span class="font-weight-normal">{{ form.firstName }}</span>
             </p>
           </transition>
           <transition name="fade">
-            <p class="skin-selected font-weight-bold" v-if="form.skin">
+            <p class="skin-selected font-weight-bold mb-0" v-if="form.skin">
               Skin tone:
               <span class="font-weight-normal">{{ form.skin.name }}</span>
             </p>
           </transition>
           <transition name="fade">
-            <p class="eyecolor-selected font-weight-bold" v-if="form.glasses">
+            <p class="eyecolor-selected font-weight-bold mb-0" v-if="form.glasses">
               Glasses:
               <span class="font-weight-normal">{{ form.glasses.name }}</span>
             </p>
           </transition>
           <transition name="fade">
-            <p class="hairtype-selected font-weight-bold" v-if="form.hairType">
+            <p class="hairtype-selected font-weight-bold mb-0" v-if="form.hairType">
               Hair type:
               <span class="font-weight-normal">{{ form.hairType.name }}</span>
             </p>
           </transition>
           <transition name="fade">
-            <p class="haircolor-selected font-weight-bold" v-if="form.hairColor">
+            <p class="haircolor-selected font-weight-bold mb-0" v-if="form.hairColor">
               Hair color:
               <span class="font-weight-normal">{{ form.hairColor.name }}</span>
             </p>
           </transition>
           <transition name="fade">
-            <p class="eyeshape-selected font-weight-bold" v-if="form.eyeShape">
+            <p class="eyeshape-selected font-weight-bold mb-0" v-if="form.eyeShape">
               Eye shape:
               <span class="font-weight-normal">{{ form.eyeShape.name }}</span>
             </p>
           </transition>
           <transition name="fade">
-            <p class="eyecolor-selected font-weight-bold" v-if="form.eyeColor">
+            <p class="eyecolor-selected font-weight-bold mb-0" v-if="form.eyeColor">
               Eye color:
               <span class="font-weight-normal">{{ form.eyeColor.name }}</span>
             </p>
@@ -1206,7 +1193,7 @@ export default {
           this.form.eyeColor = "";
         }
         if (!this.form.firstName || this.form.firstName.length < 2) {
-          this.errors = "Please type in parent name, min 2 characters";
+          this.errors = "Please type in parent name, at least 2 characters";
           return false;
         } else {
           this.errors = null;
@@ -1304,12 +1291,11 @@ export default {
       }
     }
     .form-container {
-      width: 400px;
+      width: 300px;
       .error {
         color: red;
       }
       .step {
-        // transition: ease-in 0.2s;
         height: 230px;
         display: flex;
         flex-direction: column;
@@ -1379,18 +1365,6 @@ export default {
   opacity: 0;
 }
 
-.appear-enter-active {
-  transition: opacity 1s ease-in-out;
-}
-
-.appear-enter-to {
-  opacity: 1;
-}
-
-.appear-enter {
-  opacity: 0;
-}
-
 // Fixes
 .block {
   display: block !important;
@@ -1402,7 +1376,19 @@ export default {
 // .b-counter {
 //   display: none !important;
 // }
-
+.all-boxes-wrap {
+  width: 90%;
+  .all-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    transform: translateX(20px);
+    li {
+      list-style-type: none;
+    }
+  }
+}
 // Fixes for Pretty
 .pretty.p-round .state label:before,
 label:after {
@@ -1412,6 +1398,12 @@ label:after {
 
 .pretty {
   margin-right: 0 !important;
+  transform: translateX(-15px);
+}
+
+.pretty .state label {
+  margin: 0;
+  display: flex;
 }
 
 // Others
@@ -1442,13 +1434,6 @@ label:after {
   }
   100% {
     transform: rotate(0deg);
-  }
-}
-.all-boxes {
-  display: flex;
-  flex-direction: row;
-  li {
-    list-style-type: none;
   }
 }
 
