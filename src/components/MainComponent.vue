@@ -64,17 +64,18 @@
               type="radio"
               id="female"
               value="Female"
-              v-model.lazy="form.gender"
+              v-model="form.gender"
               name="female"
             >
               Female
               <img src="/img/woman.svg" class="svg" />
             </p-input>
           </div>
+          <!-- First Name -->
           <input
-            v-model.lazy="form.firstName"
+            v-model="form.firstName"
             type="text"
-            placeholder="What is your first name?"
+            placeholder="Type in first name?"
             class="first-name form-control form-control-md"
           />
         </section>
@@ -98,7 +99,7 @@
                     type="radio"
                     :id="skinInfo.name"
                     :name="skinInfo.name"
-                    v-model.lazy="form.skin"
+                    v-model="form.skin"
                     :value="skinInfo"
                   >
                     <img :src="skinInfo.iconSource" class="svg-2" />
@@ -113,7 +114,7 @@
                     type="radio"
                     :id="skinInfo.name"
                     :name="skinInfo.name"
-                    v-model.lazy="form.skin"
+                    v-model="form.skin"
                     :value="skinInfo"
                   >
                     <img :src="skinInfo.iconSource" class="svg-2" />
@@ -134,7 +135,7 @@
                     type="radio"
                     :id="glasses.name"
                     :name="glasses.name"
-                    v-model.lazy="form.glasses"
+                    v-model="form.glasses"
                     :value="glasses"
                   >
                     <img :src="glasses.iconSource" class="svg-2" />
@@ -165,7 +166,7 @@
                     type="radio"
                     :id="hairType.name"
                     :name="hairType.name"
-                    v-model.lazy="form.hairType"
+                    v-model="form.hairType"
                     :value="hairType"
                   >
                     <img :src="hairType.iconSource" class="svg-2" />
@@ -180,7 +181,7 @@
                     type="radio"
                     :id="hairType.name"
                     :name="hairType.name"
-                    v-model.lazy="form.hairType"
+                    v-model="form.hairType"
                     :value="hairType"
                   >
                     <img :src="hairType.iconSource" class="svg-2" />
@@ -199,7 +200,7 @@
                     type="radio"
                     :id="hairColor.name"
                     :name="hairColor.name"
-                    v-model.lazy="form.hairColor"
+                    v-model="form.hairColor"
                     :value="hairColor"
                   >
                     <img :src="hairColor.iconSource" class="svg-2" />
@@ -214,7 +215,7 @@
                     type="radio"
                     :id="hairColor.name"
                     :name="hairColor.name"
-                    v-model.lazy="form.hairColor"
+                    v-model="form.hairColor"
                     :value="hairColor"
                   >
                     <img :src="hairColor.iconSource" class="svg-2" />
@@ -245,7 +246,7 @@
                     type="radio"
                     :id="eyeShape.name"
                     :name="eyeShape.name"
-                    v-model.lazy="form.eyeShape"
+                    v-model="form.eyeShape"
                     :value="eyeShape"
                   >
                     <img :src="eyeShape.iconSource" class="svg-2" />
@@ -260,7 +261,7 @@
                     type="radio"
                     :id="eyeShape.name"
                     :name="eyeShape.name"
-                    v-model.lazy="form.eyeShape"
+                    v-model="form.eyeShape"
                     :value="eyeShape"
                   >
                     <img :src="eyeShape.iconSource" class="svg-2" />
@@ -279,7 +280,7 @@
                     type="radio"
                     :id="eyeColor.name"
                     :name="eyeColor.name"
-                    v-model.lazy="form.eyeColor"
+                    v-model="form.eyeColor"
                     :value="eyeColor"
                   >
                     <img :src="eyeColor.iconSource" class="svg-2" />
@@ -294,7 +295,7 @@
                     type="radio"
                     :id="eyeColor.name"
                     :name="eyeColor.name"
-                    v-model.lazy="form.eyeColor"
+                    v-model="form.eyeColor"
                     :value="eyeColor"
                   >
                     <img :src="eyeColor.iconSource" class="svg-2" />
@@ -325,9 +326,9 @@
         <div id="selected">
           <transition name="fade">
             <h4
-              class="first-parent font-bold text-success"
+              class="first-child font-bold text-success"
               v-if="form.gender || form.firstName"
-            >Selected Parent Details:</h4>
+            >Selected Child Details:</h4>
           </transition>
           <transition name="fade">
             <p class="gender-selected font-weight-bold mb-0" v-if="form.gender">
@@ -390,7 +391,7 @@ import Vue from "vue";
 Vue.use(PrettyCheckbox);
 
 export default {
-  name: "Parent",
+  name: "Child",
   data: function() {
     return {
       step: 1,
@@ -1193,7 +1194,7 @@ export default {
           this.form.eyeColor = "";
         }
         if (!this.form.firstName || this.form.firstName.length < 2) {
-          this.errors = "Please type in parent name, at least 2 characters";
+          this.errors = "Please type in child's name, at least 2 characters";
           return false;
         } else {
           this.errors = null;
