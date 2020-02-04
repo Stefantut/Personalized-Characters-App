@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <MainComponent />
+    <FirstChild />
   </div>
 </template>
 
 <script>
 // import HelloWorld from "./components/HelloWorld.vue";
-import MainComponent from "./components/MainComponent";
+import FirstChild from "./components/FirstChild";
 
 export default {
   name: "app",
   components: {
     // HelloWorld,
-    MainComponent
+    FirstChild
   }
 };
 </script>

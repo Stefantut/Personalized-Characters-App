@@ -396,6 +396,9 @@ Vue.use(PrettyCheckbox);
 
 export default {
   name: "Child",
+  props: {
+    firstChild: String
+  },
   data: function() {
     return {
       step: 1,
