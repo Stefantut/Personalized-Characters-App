@@ -36,13 +36,14 @@
 
       <div class="form-container">
         <!-- Step 1 -->
+        <!-- <transition name="appear"> -->
         <section class="step gender name" v-if="step == 1">
           <div class="step-number-wrap text-success">
-            <div class="step-number">
+            <p class="step-number">
               {{step}}
               <sup>st</sup>
-            </div>
-            <div class="step-text">Step</div>
+            </p>
+            <p class="step-text">Step</p>
           </div>
           <!-- using direct svg file -->
           <div class="gender flex justify-center mb-4">
@@ -78,8 +79,10 @@
             class="first-name form-control form-control-md"
           />
         </section>
+        <!-- </transition> -->
 
         <!-- Step 2 -->
+        <!-- <transition name="appear"> -->
         <section class="step skin-tone glasses" v-if="step == 2">
           <!-- using direct svg file -->
           <div class="step-number-wrap text-success">
@@ -145,14 +148,17 @@
             </div>
           </div>
         </section>
+        <!-- </transition> -->
 
         <!-- Step 3 -->
+        <!-- <transition name="appear"> -->
         <section class="step hair" v-if="step == 3">
           <div class="step-number-wrap text-success">
             <p class="step-number">
               {{step}}
               <sup>rd</sup>
             </p>
+
             <p class="step-text">Step</p>
           </div>
           <div class="hair-type flex-col py-1">
@@ -224,13 +230,17 @@
             </div>
           </div>
         </section>
+        <!-- </transition> -->
+
         <!-- Step 4 -->
+        <!-- <transition name="appear"> -->
         <section class="step eye" v-if="step == 4">
           <div class="step-number-wrap text-success">
             <p class="step-number">
               {{step}}
               <sup>th</sup>
             </p>
+
             <p class="step-text">Step</p>
           </div>
           <div class="eye-shape flex-col py-1">
@@ -302,6 +312,7 @@
             </div>
           </div>
         </section>
+        <!-- </transition> -->
 
         <!-- Display error Message -->
         <div class="error text-center my-3">
@@ -1173,12 +1184,6 @@ export default {
       }
     };
   },
-  // watch: {
-  //   "form.gender": {
-  //     handler: function() {},
-  //     deep: true
-  //   }
-  // },
   methods: {
     prevStep: function() {
       this.errors = null;
@@ -1304,6 +1309,7 @@ export default {
         color: red;
       }
       .step {
+        // transition: ease-in 0.2s;
         height: 230px;
         display: flex;
         flex-direction: column;
@@ -1370,6 +1376,18 @@ export default {
   transition: opacity 0.5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.appear-enter-active {
+  transition: opacity 1s ease-in-out;
+}
+
+.appear-enter-to {
+  opacity: 1;
+}
+
+.appear-enter {
   opacity: 0;
 }
 
