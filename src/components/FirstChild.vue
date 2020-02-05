@@ -396,9 +396,6 @@ Vue.use(PrettyCheckbox);
 
 export default {
   name: "Child",
-  props: {
-    firstChild: String
-  },
   data: function() {
     return {
       step: 1,
@@ -407,7 +404,8 @@ export default {
       // selectedItem: {},
       // selected: undefined,
       form: {
-        gender: null,
+        nameStefan: "stefan",
+        gender: "",
         firstName: null,
         skin: "",
         //Skin Tone Male
@@ -1179,7 +1177,16 @@ export default {
       }
     };
   },
+  created() {
+    this.emitToParent();
+  },
   methods: {
+    emitToParent() {
+      this.$emit("genderPassed", this.form.gender);
+      this.$emit("namePassed", this.form.firstName);
+      this.$emit("skinPassed", this.form.skin.name);
+      this.$emit("glassesPassed", this.form.glasses.name);
+    },
     prevStep: function() {
       this.errors = null;
       this.step--;
@@ -1248,6 +1255,14 @@ export default {
       }
       alert("was sent");
       console.log("was sent");
+    }
+  },
+  watch: {
+    form: {
+      handler(newValue) {
+        this.emitToParent(newValue);
+      },
+      deep: true
     }
   },
   mounted() {}
