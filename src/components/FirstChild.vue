@@ -1186,6 +1186,10 @@ export default {
       this.$emit("namePassed", this.form.firstName);
       this.$emit("skinPassed", this.form.skin.name);
       this.$emit("glassesPassed", this.form.glasses.name);
+      this.$emit("hairTypePassed", this.form.hairType.name);
+      this.$emit("hairColorPassed", this.form.hairColor.name);
+      this.$emit("eyeShapePassed", this.form.eyeShape.name);
+      this.$emit("eyeColorPassed", this.form.eyeColor.name);
     },
     prevStep: function() {
       this.errors = null;

@@ -6,12 +6,18 @@
       v-on:namePassed="updateName"
       v-on:skinPassed="updateSkin"
       v-on:glassesPassed="updateGlasses"
+      v-on:hairTypePassed="updateHairType"
+      v-on:hairColorPassed="updateHairColor"
+      v-on:eyeShapePassed="updateEyeShape"
+      v-on:eyeColorPassed="updateEyeColor"
     />
-
-    {{firstChild.gender}}
-    {{firstChild.name}}
-    {{firstChild.skin}}
-    {{firstChild.glasses}}
+    <div class="final-selection">
+      <p>
+        Your personalized child name is {{firstChild.name}}, and it is a {{firstChild.gender}}.
+        Has {{firstChild.skin}} and {{firstChild.glasses}}. The hair is {{firstChild.hairColor}} with {{firstChild.hairType}}. The eyes are {{firstChild.eyeColor}} with shape {{firstChild.eyeShape}}
+      </p>
+      <span></span>
+    </div>
   </div>
 </template>
 
@@ -27,7 +33,11 @@ export default {
         name: "",
         gender: "",
         skin: "",
-        glasses: ""
+        glasses: "",
+        hairType: "",
+        hairColor: "",
+        eyeShape: "",
+        eyeColor: ""
       }
     };
   },
@@ -43,6 +53,18 @@ export default {
     },
     updateGlasses(data) {
       this.firstChild.glasses = data;
+    },
+    updateHairType(data) {
+      this.firstChild.hairType = data;
+    },
+    updateHairColor(data) {
+      this.firstChild.hairColor = data;
+    },
+    updateEyeShape(data) {
+      this.firstChild.eyeShape = data;
+    },
+    updateEyeColor(data) {
+      this.firstChild.eyeColor = data;
     }
   },
   components: {
