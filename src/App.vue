@@ -11,6 +11,7 @@
       v-on:eyeShapePassed="updateEyeShape"
       v-on:eyeColorPassed="updateEyeColor"
     />
+    <FirstParent />>
     <!-- Display Selected items for child -->
     <div id="selected">
       <transition name="fade">
@@ -74,6 +75,7 @@
 <script>
 // import HelloWorld from "./components/HelloWorld.vue";
 import FirstChild from "./components/FirstChild";
+import FirstParent from "./components/FirstParent";
 
 export default {
   name: "app",
@@ -119,7 +121,8 @@ export default {
   },
   components: {
     // HelloWorld,
-    FirstChild
+    FirstChild,
+    FirstParent
   }
 };
 </script>
