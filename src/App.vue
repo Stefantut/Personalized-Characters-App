@@ -11,12 +11,62 @@
       v-on:eyeShapePassed="updateEyeShape"
       v-on:eyeColorPassed="updateEyeColor"
     />
-    <div class="final-selection">
-      <p>
-        Your personalized child name is {{firstChild.name}}, and it is a {{firstChild.gender}}.
-        Has {{firstChild.skin}} and {{firstChild.glasses}}. The hair is {{firstChild.hairColor}} with {{firstChild.hairType}}. The eyes are {{firstChild.eyeColor}} with shape {{firstChild.eyeShape}}
-      </p>
-      <span></span>
+    <!-- Display Selected items for child -->
+    <div id="selected">
+      <transition name="fade">
+        <h5
+          class="first-child font-bold text-success"
+          v-if="firstChild.gender || firstChild.name"
+        >Selected Child Details:</h5>
+      </transition>
+      <transition name="fade">
+        <p class="gender-selected font-weight-bold mb-0" v-if="firstChild.gender">
+          Gender:
+          <span class="font-weight-normal">{{ firstChild.gender }}</span>
+        </p>
+      </transition>
+      <transition name="fade">
+        <p class="name-selected font-weight-bold mb-0" v-if="firstChild.name">
+          Name:
+          <span class="font-weight-normal">{{ firstChild.name }}</span>
+        </p>
+      </transition>
+      <transition name="fade">
+        <p class="skin-selected font-weight-bold mb-0" v-if="firstChild.skin">
+          Skin tone:
+          <span class="font-weight-normal">{{ firstChild.skin }}</span>
+        </p>
+      </transition>
+      <transition name="fade">
+        <p class="eyecolor-selected font-weight-bold mb-0" v-if="firstChild.glasses">
+          Glasses:
+          <span class="font-weight-normal">{{ firstChild.glasses }}</span>
+        </p>
+      </transition>
+      <transition name="fade">
+        <p class="hairtype-selected font-weight-bold mb-0" v-if="firstChild.hairType">
+          Hair type:
+          <span class="font-weight-normal">{{ firstChild.hairType }}</span>
+        </p>
+      </transition>
+      <transition name="fade">
+        <p class="haircolor-selected font-weight-bold mb-0" v-if="firstChild.hairColor">
+          Hair color:
+          <span class="font-weight-normal">{{ firstChild.hairColor }}</span>
+        </p>
+      </transition>
+      <transition name="fade">
+        <p class="eyeshape-selected font-weight-bold mb-0" v-if="firstChild.eyeShape">
+          Eye shape:
+          <span class="font-weight-normal">{{ firstChild.eyeShape }}</span>
+        </p>
+      </transition>
+      <transition name="fade">
+        <p class="eyecolor-selected font-weight-bold mb-0" v-if="firstChild.eyeColor">
+          Eye color:
+          <span class="font-weight-normal">{{ firstChild.eyeColor }}</span>
+        </p>
+      </transition>
     </div>
   </div>
 </template>
@@ -74,16 +124,36 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-#form {
+
+#selected {
+  max-width: 800px;
   margin: 0 auto;
+  padding: 0 30px;
+  padding-top: 50px;
+  .name-selected {
+    text-transform: capitalize;
+  }
 }
-p {
-  margin-bottom: 2px !important;
+/* Pretty fix  */
+.pretty.p-round .state label:before,
+label:after {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pretty {
+  margin-right: 0 !important;
+  transform: translateX(-15px);
+}
+
+.pretty .state label {
+  margin: 0;
+  display: flex;
 }
 </style>

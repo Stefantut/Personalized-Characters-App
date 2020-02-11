@@ -325,9 +325,8 @@
           >Continue</button>
           <button v-if="step == 4" @click.prevent="send" class="send btn btn-warning">Preview Book</button>
         </section>
-        <hr class="my-2 text-success" />
         <!-- Display Selected items -->
-        <div id="selected">
+        <!-- <div id="selected">
           <transition name="fade">
             <h4
               class="first-child font-bold text-success"
@@ -382,7 +381,7 @@
               <span class="font-weight-normal">{{ form.eyeColor.name }}</span>
             </p>
           </transition>
-        </div>
+        </div>-->
       </div>
     </form>
   </div>
@@ -1279,12 +1278,16 @@ export default {
   flex-wrap: nowrap;
   margin-top: 50px;
   #form {
-    width: 900px;
+    max-width: 800px;
+    width: 100%;
+    padding: 0 30px;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+    margin: 0 auto;
     #view {
-      height: 400px;
-      width: 400px;
+      height: 350px;
+      width: 350px;
       background-color: #ffefe2;
       margin-right: 50px;
       border-radius: 10px;
@@ -1373,11 +1376,6 @@ export default {
           grid-area: right-btn;
         }
       }
-      #selected {
-        .name-selected {
-          text-transform: capitalize;
-        }
-      }
     }
   }
 }
@@ -1400,9 +1398,6 @@ export default {
 .b-wrap {
   padding: 0 !important;
 }
-// .b-counter {
-//   display: none !important;
-// }
 .all-boxes-wrap {
   width: 90%;
   .all-boxes {
@@ -1415,22 +1410,6 @@ export default {
       list-style-type: none;
     }
   }
-}
-// Fixes for Pretty
-.pretty.p-round .state label:before,
-label:after {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.pretty {
-  margin-right: 0 !important;
-  transform: translateX(-15px);
-}
-
-.pretty .state label {
-  margin: 0;
-  display: flex;
 }
 
 // Others
