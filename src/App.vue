@@ -230,6 +230,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./scss/_variables.scss";
+@import "./scss/_mixins.scss";
+@import "./scss/_fonts.scss";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -316,6 +319,8 @@ export default {
             .step-text {
               font-size: 20px;
               margin-left: 5px;
+              font-family: $firstFont;
+              font-weight: $medium;
             }
           }
           .svg {
