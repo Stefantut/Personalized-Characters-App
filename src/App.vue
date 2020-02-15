@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+    <TopMessage />
     <FirstChild
       v-on:genderPassed="updateGender"
       v-on:namePassed="updateName"
@@ -141,6 +142,7 @@
 
 <script>
 // import HelloWorld from "./components/HelloWorld.vue";
+import TopMessage from "./components/TopMessage";
 import FirstChild from "./components/FirstChild";
 import FirstParent from "./components/FirstParent";
 
@@ -223,6 +225,7 @@ export default {
   },
   components: {
     // HelloWorld,
+    TopMessage,
     FirstChild,
     FirstParent
   }
@@ -237,6 +240,8 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: $small;
 }
 #app {
   .wrapper {
