@@ -10,6 +10,9 @@
 export default {};
 </script>
 <style lang="scss" scoped>
+@import ".././scss/_variables.scss";
+@import ".././scss/_mixins.scss";
+@import ".././scss/_fonts.scss";
 .top-section {
   height: 40px;
   width: 100%;

@@ -11,6 +11,7 @@
       v-on:hairColorPassed="updateHairColor"
       v-on:eyeShapePassed="updateEyeShape"
       v-on:eyeColorPassed="updateEyeColor"
+      v-on:childHidden="updateHiddenChild"
     />
     <FirstParent
       v-on:parentGenderPassed="updateParentGender"
@@ -21,120 +22,128 @@
       v-on:parentHairColorPassed="updateParentHairColor"
       v-on:parentEyeShapePassed="updateParentEyeShape"
       v-on:parentEyeColorPassed="updateParentEyeColor"
+      :isHiddenChild="firstChild.isHidden"
     />
     <!-- Display Selected items for child -->
     <div class="selected-items">
-      <div id="selectedChild">
-        <transition name="fade">
-          <h5
-            class="first-child font-bold text-success"
-            v-if="firstChild.gender || firstChild.name"
-          >Selected Child Details:</h5>
-        </transition>
-        <transition name="fade">
-          <p class="gender-selected font-weight-bold mb-0" v-if="firstChild.gender">
-            Gender:
-            <span class="font-weight-normal">{{ firstChild.gender }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="name-selected font-weight-bold mb-0" v-if="firstChild.name">
-            Name:
-            <span class="font-weight-normal">{{ firstChild.name }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="skin-selected font-weight-bold mb-0" v-if="firstChild.skin">
-            Skin tone:
-            <span class="font-weight-normal">{{ firstChild.skin }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="eyecolor-selected font-weight-bold mb-0" v-if="firstChild.glasses">
-            Glasses:
-            <span class="font-weight-normal">{{ firstChild.glasses }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="hairtype-selected font-weight-bold mb-0" v-if="firstChild.hairType">
-            Hair type:
-            <span class="font-weight-normal">{{ firstChild.hairType }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="haircolor-selected font-weight-bold mb-0" v-if="firstChild.hairColor">
-            Hair color:
-            <span class="font-weight-normal">{{ firstChild.hairColor }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="eyeshape-selected font-weight-bold mb-0" v-if="firstChild.eyeShape">
-            Eye shape:
-            <span class="font-weight-normal">{{ firstChild.eyeShape }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="eyecolor-selected font-weight-bold mb-0" v-if="firstChild.eyeColor">
-            Eye color:
-            <span class="font-weight-normal">{{ firstChild.eyeColor }}</span>
-          </p>
-        </transition>
-      </div>
-      <div id="selectedParent">
-        <transition name="fade">
-          <h5
-            class="first-child font-bold text-success"
-            v-if="firstParent.gender || firstParent.name"
-          >Selected Parent Details:</h5>
-        </transition>
-        <transition name="fade">
-          <p class="gender-selected font-weight-bold mb-0" v-if="firstParent.gender">
-            Gender:
-            <span class="font-weight-normal">{{ firstParent.gender }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="name-selected font-weight-bold mb-0" v-if="firstParent.name">
-            Name:
-            <span class="font-weight-normal">{{ firstParent.name }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="skin-selected font-weight-bold mb-0" v-if="firstParent.skin">
-            Skin tone:
-            <span class="font-weight-normal">{{ firstParent.skin }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="eyecolor-selected font-weight-bold mb-0" v-if="firstParent.glasses">
-            Glasses:
-            <span class="font-weight-normal">{{ firstParent.glasses }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="hairtype-selected font-weight-bold mb-0" v-if="firstParent.hairType">
-            Hair type:
-            <span class="font-weight-normal">{{ firstParent.hairType }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="haircolor-selected font-weight-bold mb-0" v-if="firstParent.hairColor">
-            Hair color:
-            <span class="font-weight-normal">{{ firstParent.hairColor }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="eyeshape-selected font-weight-bold mb-0" v-if="firstParent.eyeShape">
-            Eye shape:
-            <span class="font-weight-normal">{{ firstParent.eyeShape }}</span>
-          </p>
-        </transition>
-        <transition name="fade">
-          <p class="eyecolor-selected font-weight-bold mb-0" v-if="firstParent.eyeColor">
-            Eye color:
-            <span class="font-weight-normal">{{ firstParent.eyeColor }}</span>
-          </p>
-        </transition>
+      <!-- Component Title -->
+      <h3
+        class="component-title text-success"
+        v-if="firstChild.gender || firstChild.name"
+      >What you have selected:</h3>
+      <div class="display-selected">
+        <div id="selectedChild">
+          <transition name="fade">
+            <h4
+              class="first-child selected-title text-success"
+              v-if="firstChild.gender || firstChild.name"
+            >Child Details:</h4>
+          </transition>
+          <transition name="fade">
+            <p class="gender-selected font-weight-bold option mb-0" v-if="firstChild.gender">
+              Gender:
+              <span class="font-weight-normal">{{ firstChild.gender }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="name-selected font-weight-bold option mb-0" v-if="firstChild.name">
+              Name:
+              <span class="font-weight-normal">{{ firstChild.name }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="skin-selected font-weight-bold option mb-0" v-if="firstChild.skin">
+              Skin tone:
+              <span class="font-weight-normal">{{ firstChild.skin }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="eyecolor-selected font-weight-bold option mb-0" v-if="firstChild.glasses">
+              Glasses:
+              <span class="font-weight-normal">{{ firstChild.glasses }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="hairtype-selected font-weight-bold option mb-0" v-if="firstChild.hairType">
+              Hair type:
+              <span class="font-weight-normal">{{ firstChild.hairType }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="haircolor-selected font-weight-bold option mb-0" v-if="firstChild.hairColor">
+              Hair color:
+              <span class="font-weight-normal">{{ firstChild.hairColor }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="eyeshape-selected font-weight-bold option mb-0" v-if="firstChild.eyeShape">
+              Eye shape:
+              <span class="font-weight-normal">{{ firstChild.eyeShape }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="eyecolor-selected font-weight-bold option mb-0" v-if="firstChild.eyeColor">
+              Eye color:
+              <span class="font-weight-normal">{{ firstChild.eyeColor }}</span>
+            </p>
+          </transition>
+        </div>
+        <div id="selectedParent">
+          <transition name="fade">
+            <h4
+              class="first-child selected-title text-success"
+              v-if="firstParent.gender || firstParent.name"
+            >Parent Details:</h4>
+          </transition>
+          <transition name="fade">
+            <p class="gender-selected font-weight-bold option mb-0" v-if="firstParent.gender">
+              Gender:
+              <span class="font-weight-normal">{{ firstParent.gender }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="name-selected font-weight-bold option mb-0" v-if="firstParent.name">
+              Name:
+              <span class="font-weight-normal">{{ firstParent.name }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="skin-selected font-weight-bold option mb-0" v-if="firstParent.skin">
+              Skin tone:
+              <span class="font-weight-normal">{{ firstParent.skin }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="eyecolor-selected font-weight-bold option mb-0" v-if="firstParent.glasses">
+              Glasses:
+              <span class="font-weight-normal">{{ firstParent.glasses }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="hairtype-selected font-weight-bold option mb-0" v-if="firstParent.hairType">
+              Hair type:
+              <span class="font-weight-normal">{{ firstParent.hairType }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="haircolor-selected font-weight-bold option mb-0" v-if="firstParent.hairColor">
+              Hair color:
+              <span class="font-weight-normal">{{ firstParent.hairColor }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="eyeshape-selected font-weight-bold option mb-0" v-if="firstParent.eyeShape">
+              Eye shape:
+              <span class="font-weight-normal">{{ firstParent.eyeShape }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="eyecolor-selected font-weight-bold option mb-0" v-if="firstParent.eyeColor">
+              Eye color:
+              <span class="font-weight-normal">{{ firstParent.eyeColor }}</span>
+            </p>
+          </transition>
+        </div>
       </div>
     </div>
   </div>
@@ -158,7 +167,8 @@ export default {
         hairType: "",
         hairColor: "",
         eyeShape: "",
-        eyeColor: ""
+        eyeColor: "",
+        isHidden: false
       },
       firstParent: {
         name: "",
@@ -196,6 +206,9 @@ export default {
     },
     updateEyeColor(data) {
       this.firstChild.eyeColor = data;
+    },
+    updateHiddenChild(data) {
+      this.firstChild.isHidden = data;
     },
 
     updateParentName(data) {
@@ -297,7 +310,7 @@ export default {
           color: red;
         }
         .step {
-          height: 230px;
+          height: 250px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -316,15 +329,17 @@ export default {
               border: 1px solid #8ba68f;
               padding: 0 5px;
               background-color: #ffefe2;
+              font-family: $thirdFont;
               sup {
                 font-size: 12px;
                 margin-left: -4px;
+                font-family: $thirdFont;
               }
             }
             .step-text {
               font-size: 20px;
               margin-left: 5px;
-              font-family: $firstFont;
+              font-family: $thirdFont;
               font-weight: $medium;
             }
           }
@@ -357,12 +372,26 @@ export default {
     max-width: 800px;
     margin: 0 auto;
     padding: 50px 30px;
-    display: flex;
-    justify-content: space-between;
-    #selectedChild,
-    #selectedParent {
-      .name-selected {
-        text-transform: capitalize;
+    .component-title {
+      width: 100%;
+      text-align: center;
+      margin: 0 0 30px 0;
+      font-family: $thirdFont;
+    }
+    .display-selected {
+      display: flex;
+      justify-content: space-between;
+      #selectedChild,
+      #selectedParent {
+        .name-selected {
+          text-transform: capitalize;
+        }
+        .selected-title {
+          font-family: $thirdFont;
+        }
+        .option {
+          font-family: "Courgette", cursive;
+        }
       }
     }
   }

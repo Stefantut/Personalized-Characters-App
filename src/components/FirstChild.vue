@@ -1,6 +1,9 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" v-if="!isHidden">
     <form id="form">
+      <!-- Component Title -->
+      <h3 class="component-title text-success">Let's create the child first:</h3>
+
       <!-- Display images -->
       <div id="view">
         <!-- Display images - Preview Skin-->
@@ -46,7 +49,7 @@
           </div>
           <!-- using direct svg file -->
           <div class="gender flex justify-center mb-4">
-            <h4 class="py-2 flex text-center">Select Gender</h4>
+            <h5 class="py-2 flex text-center">Select Gender</h5>
             <p-input
               type="radio"
               class="p-icon p-jelly p-round p-bigger ml-5 mr-1"
@@ -94,7 +97,7 @@
             <p class="step-text">Step</p>
           </div>
           <div class="skin-tone all-boxes-wrap flex-col py-1">
-            <h4 class="py-2 flex text-center">Select your Skin Tone</h4>
+            <h5 class="py-2 flex text-center">Select your Skin Tone</h5>
             <div class="skin-tone-boxes">
               <ul class="all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(skinInfo, index) in form.skinToneMale" :key="index.id">
@@ -130,7 +133,7 @@
 
           <!-- Glasses -->
           <div class="glasses all-boxes-wrap flex-col py-1">
-            <h4 class="py-2 flex text-center">Glasses?</h4>
+            <h5 class="py-2 flex text-center">Glasses?</h5>
             <div class="glasses-boxes">
               <ul class="all-boxes">
                 <li v-for="(glasses, index) in form.glassesType" :key="index.id">
@@ -161,7 +164,7 @@
             <p class="step-text">Step</p>
           </div>
           <div class="hair-type all-boxes-wrap flex-col py-1">
-            <h4 class="py-2 flex text-center">Select your Hair Type</h4>
+            <h5 class="py-2 flex text-center">Select your Hair Type</h5>
             <div class="hair-type-boxes">
               <ul class="all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(hairType, index) in form.hairTypeMale" :key="index.hair">
@@ -195,7 +198,7 @@
             </div>
           </div>
           <div class="hair-color all-boxes-wrap flex-col py-1">
-            <h4 class="py-2 flex text-center">Select your Hair Color</h4>
+            <h5 class="py-2 flex text-center">Select your Hair Color</h5>
             <div class="hair-color-boxes">
               <ul class="all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(hairColor, index) in form.hairColorMale" :key="index.id">
@@ -241,7 +244,7 @@
             <p class="step-text">Step</p>
           </div>
           <div class="eye-shape all-boxes-wrap flex-col py-1">
-            <h4 class="py-2 flex text-center">Select your Eye Shape</h4>
+            <h5 class="py-2 flex text-center">Select your Eye Shape</h5>
             <div class="eye-shape-boxes">
               <ul class="all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(eyeShape, index) in form.eyeShapeMale" :key="index.id">
@@ -275,7 +278,7 @@
             </div>
           </div>
           <div class="eye-color all-boxes-wrap flex-col py-1">
-            <h4 class="py-2 flex text-center">Select your Eye Color</h4>
+            <h5 class="py-2 flex text-center">Select your Eye Color</h5>
             <div class="eye-color-boxes">
               <ul class="all-boxes" v-if="form.gender === 'Male'">
                 <li v-for="(eyeColor, index) in form.eyeColorMale" :key="index.id">
@@ -397,13 +400,13 @@ export default {
   name: "Child",
   data: function() {
     return {
+      isHidden: false,
       step: 1,
       totalsteps: 4,
       errors: [],
       // selectedItem: {},
       // selected: undefined,
       form: {
-        nameStefan: "stefan",
         gender: "",
         firstName: null,
         skin: "",
@@ -1256,8 +1259,8 @@ export default {
           return false;
         }
       }
-      alert("was sent");
-      console.log("was sent");
+      this.isHidden = true;
+      this.$emit("childHidden", this.isHidden);
     }
   },
   watch: {
@@ -1272,5 +1275,14 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import ".././scss/_variables.scss";
+@import ".././scss/_mixins.scss";
+@import ".././scss/_fonts.scss";
+.component-title {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 30px 0;
+  font-family: $thirdFont;
+}
 </style>

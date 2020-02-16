@@ -1,6 +1,8 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" v-if="isHiddenChild">
     <form id="form">
+      <!-- Component Title -->
+      <h3 class="component-title text-success">Let's create the parent now:</h3>
       <!-- Display images -->
       <div id="view">
         <!-- Display images - Preview Skin-->
@@ -401,7 +403,6 @@ export default {
       totalsteps: 4,
       errors: [],
       form: {
-        nameStefan: "stefan",
         gender: "",
         firstName: null,
         skin: "",
@@ -1177,6 +1178,9 @@ export default {
   created() {
     this.emitToParent();
   },
+  props: {
+    isHiddenChild: Boolean
+  },
   methods: {
     emitToParent() {
       this.$emit("parentGenderPassed", this.form.gender);
@@ -1209,7 +1213,7 @@ export default {
           this.form.eyeColor = "";
         }
         if (!this.form.firstName || this.form.firstName.length < 2) {
-          this.errors = "Please type in child's name, at least 2 characters";
+          this.errors = "Please type in parent's name, at least 2 characters";
           return false;
         } else {
           this.errors = null;
@@ -1270,5 +1274,14 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import ".././scss/_variables.scss";
+@import ".././scss/_mixins.scss";
+@import ".././scss/_fonts.scss";
+.component-title {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 30px 0;
+  font-family: $thirdFont;
+}
 </style>
