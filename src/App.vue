@@ -325,13 +325,18 @@ export default {
           color: red;
         }
         .step {
-          height: 350px;
+          height: 300px;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           position: relative;
           padding-top: 30px;
+          .gender {
+            justify-content: center;
+            h5 {
+            }
+          }
           .step-number-wrap {
             position: absolute;
             top: 0px;
@@ -393,7 +398,7 @@ export default {
     .component-title {
       width: 100%;
       text-align: center;
-      margin: 0 0 30px 0;
+      margin: 0 0 20px 0;
       font-family: $thirdFont;
     }
     .display-selected {

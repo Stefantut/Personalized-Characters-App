@@ -48,8 +48,8 @@
             <p class="step-text">Step</p>
           </div>
           <!-- using direct svg file -->
-          <div class="gender flex justify-center mb-4">
-            <h5 class="py-2 flex text-center">Select Child's Gender</h5>
+          <div class="gender flex justify-center mb-5">
+            <h5 class="py-2 flex">Select Child's Gender</h5>
             <p-input
               type="radio"
               class="p-icon p-jelly p-round p-bigger ml-5 mr-1"
@@ -59,7 +59,7 @@
               name="male"
             >
               <label class="d-flex align-items-center">
-                Male
+                Boy
                 <img src="/img/man.svg" class="svg ml-2" />
               </label>
             </p-input>
@@ -73,7 +73,7 @@
               name="female"
             >
               <label class="d-flex flex-row-reverse align-items-center">
-                Female
+                Girl
                 <img src="/img/woman.svg" class="svg mr-2" />
               </label>
             </p-input>
