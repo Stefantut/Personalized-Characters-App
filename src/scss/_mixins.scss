@@ -1,1 +1,200 @@
-// Mixins
+/* mixins.scss */
+
+/*  Flexbox  */
+
+@mixin flex {
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex; /* NEW, Spec - Firefox, Chrome, Opera */
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+// assign to class
+.flex {
+  @include flex;
+}
+
+// Center items horizontally using Flex
+@mixin flex-center {
+  @include flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+// assign to class
+.flex-center {
+  @include flex-center;
+}
+
+// Center items vertically using Flex
+@mixin flex-v-center {
+  @include flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+// assign to class
+.flex-v-center {
+  @include flex-v-center;
+}
+
+/* ----------------------------- */
+
+// Center items without flex
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// assign to class
+.vertical-center {
+  @include vertical-center;
+}
+
+/* ----------------------------- */
+
+// Transitions
+@mixin default-transition {
+  -webkit-transition: 0.25s ease;
+  -o-transition: 0.25s ease;
+  transition: 0.25s ease;
+}
+
+// assign to class
+.default-transition {
+  @include default-transition;
+}
+
+/* ----------------------------- */
+
+// Background sizes (cover)
+@mixin background-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// assign to class
+.background-cover {
+  @include background-cover;
+}
+
+// Background sizes (contain)
+@mixin background-contain {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// assign to class
+.background-contain {
+  @include background-contain;
+}
+
+/* ----------------------------- */
+
+// Absolute position - not massively required, but speeds things up a tad.
+@mixin absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// assign to class
+.absolute {
+  @include absolute;
+}
+
+/* ----------------------------- */
+
+// Border Radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.border-radius {
+  @include border-radius(3px);
+}
+
+// Transition
+@mixin transition($timing) {
+  -webkit-transition: $timing;
+  -o-transition: $timing;
+  transition: $timing;
+}
+
+// Translate Y
+@mixin translateY($distance) {
+  -webkit-transform: translateY($distance);
+  -ms-transform: translateY($distance);
+  transform: translateY($distance);
+}
+
+// Scale
+@mixin scale($size) {
+  -webkit-transform: scale($size);
+  -ms-transform: scale($size);
+  transform: scale($size);
+}
+
+@mixin brand-gradient {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00a8a8+0,008c93+100 */
+  background: #00a8a8; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #00a8a8 0%,
+    #008c93 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #00a8a8 0%,
+    #008c93 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #00a8a8 0%,
+    #008c93 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00a8a8', endColorstr='#008c93', GradientType=0); /* IE6-9 */
+}
+
+@mixin light-gradient {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00a8a8+0,008c93+100 */
+  background: #00a8a8; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #00a8a8 0%,
+    #008c93 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #00a8a8 0%,
+    #008c93 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #00a8a8 0%,
+    #008c93 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00a8a8', endColorstr='#008c93', GradientType=0); /* IE6-9 */
+}
+
+@mixin shadow {
+  -webkit-box-shadow: 0px 0px 81px -15px rgba(0, 0, 0, 0.31);
+  -moz-box-shadow: 0px 0px 81px -15px rgba(0, 0, 0, 0.31);
+  box-shadow: 0px 0px 81px -15px rgba(0, 0, 0, 0.31);
+}
+
+.shadow {
+  @include shadow;
+}

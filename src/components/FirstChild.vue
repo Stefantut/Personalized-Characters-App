@@ -49,7 +49,7 @@
           </div>
           <!-- using direct svg file -->
           <div class="gender flex justify-center mb-4">
-            <h5 class="py-2 flex text-center">Select Gender</h5>
+            <h5 class="py-2 flex text-center">Select Child's Gender</h5>
             <p-input
               type="radio"
               class="p-icon p-jelly p-round p-bigger ml-5 mr-1"
@@ -326,7 +326,11 @@
             @click.prevent="nextStep"
             class="next btn btn-success"
           >Continue</button>
-          <button v-if="step == 4" @click.prevent="send" class="send btn btn-warning">Preview Book</button>
+          <button
+            v-if="step == 4"
+            @click.prevent="send"
+            class="send btn btn-warning"
+          >Continue to Parent</button>
         </section>
         <!-- Display Selected items -->
         <!-- <div id="selected">

@@ -2,7 +2,7 @@
   <div class="wrapper" v-if="isHiddenChild">
     <form id="form">
       <!-- Component Title -->
-      <h3 class="component-title text-success">Let's create the parent now:</h3>
+      <h3 class="component-title text-danger">Let's create the parent now:</h3>
       <!-- Display images -->
       <div id="view">
         <!-- Display images - Preview Skin-->
@@ -39,7 +39,7 @@
       <div class="form-container">
         <!-- Step 1 -->
         <section class="step gender name" v-if="step == 1">
-          <div class="step-number-wrap text-success">
+          <div class="step-number-wrap text-danger">
             <p class="step-number">
               {{step}}
               <sup>st</sup>
@@ -48,7 +48,7 @@
           </div>
           <!-- using direct svg file -->
           <div class="gender flex justify-center mb-4">
-            <h4 class="py-2 flex text-center">Select Gender</h4>
+            <h4 class="py-2 flex text-center">Select Parent's Gender</h4>
             <p-input
               type="radio"
               class="p-icon p-jelly p-round p-bigger ml-5 mr-1"

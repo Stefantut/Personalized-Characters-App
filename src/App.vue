@@ -356,6 +356,9 @@ export default {
           grid-template-rows: auto;
           grid-template-areas: "left-btn right-btn";
           grid-column-gap: 15%;
+          .btn {
+            font-size: 14px;
+          }
           .prev {
             grid-area: left-btn;
           }

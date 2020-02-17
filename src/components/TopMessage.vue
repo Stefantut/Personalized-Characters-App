@@ -2,6 +2,7 @@
   <div class="top-section">
     <div class="logo">logo</div>
     <div class="message">
+      <img src="../assets/star.svg" class="star" />
       <p class="message-text">Sale Now: Use Code VICTOR15</p>
     </div>
   </div>
@@ -23,7 +24,30 @@ export default {};
     padding-left: 20px;
   }
   .message {
-    margin-right: 20px;
+    font-family: $secondFont;
+    padding: 20px;
+    background-color: darken($color: $four, $amount: 30%);
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid $five;
+    border-bottom-left-radius: 20px;
+    @include default-transition;
+    cursor: default;
+    &:hover {
+      .star {
+        transform: translateX(-10px) rotate(160deg);
+        margin-left: 15px;
+      }
+    }
+    .star {
+      height: 25px;
+      width: 25px;
+      margin-right: 15px;
+      transform: rotate(45deg);
+      @include default-transition;
+    }
     .message-text {
       margin: 0 auto;
     }
