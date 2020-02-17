@@ -150,6 +150,27 @@
               </ul>
             </div>
           </div>
+
+          <!-- Beard Male -->
+          <div class="male-beard all-boxes-wrap flex-col py-1" v-if="form.gender == 'Male'">
+            <h4 class="py-2 flex text-center">Does have beard?</h4>
+            <div class="male-beard-boxes">
+              <ul class="all-boxes">
+                <li v-for="(beardMale, index) in form.beardMale" :key="index.id">
+                  <p-input
+                    class="p-icon p-jelly p-round p-bigger"
+                    type="radio"
+                    :id="beardMale.name"
+                    :name="beardMale.name"
+                    v-model="form.beard"
+                    :value="beardMale"
+                  >
+                    <img :src="beardMale.iconSource" class="svg-2" />
+                  </p-input>
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <!-- Step 3 -->
@@ -406,6 +427,34 @@ export default {
         gender: "",
         firstName: null,
         skin: "",
+        beard: "",
+        beardMale: [
+          {
+            name: "Beard Male 1",
+            image: "./img/man-1.png",
+            iconSource: "/img/black-icon.svg"
+          },
+          {
+            name: "Beard Male 2",
+            image: "./img/man-1.png",
+            iconSource: "/img/black-icon.svg"
+          },
+          {
+            name: "Beard Male 3",
+            image: "./img/man-1.png",
+            iconSource: "/img/black-icon.svg"
+          },
+          {
+            name: "Beard Male 4",
+            image: "./img/man-1.png",
+            iconSource: "/img/black-icon.svg"
+          },
+          {
+            name: "Beard Male 4",
+            image: "./img/man-1.png",
+            iconSource: "/img/black-icon.svg"
+          }
+        ],
         //Skin Tone Male
         skinToneMale: [
           {
@@ -1187,6 +1236,7 @@ export default {
       this.$emit("parentNamePassed", this.form.firstName);
       this.$emit("parentSkinPassed", this.form.skin.name);
       this.$emit("parentGlassesPassed", this.form.glasses.name);
+      this.$emit("parentMaleBeardPassed", this.form.beard.name);
       this.$emit("parentHairTypePassed", this.form.hairType.name);
       this.$emit("parentHairColorPassed", this.form.hairColor.name);
       this.$emit("parentEyeShapePassed", this.form.eyeShape.name);
@@ -1228,6 +1278,10 @@ export default {
         }
         if (!this.form.glasses) {
           this.errors = "Do you wear glasses? Please select an option";
+          return false;
+        }
+        if (!this.form.beard) {
+          this.errors = "Does have beard? Please select an option";
           return false;
         }
       }

@@ -22,6 +22,7 @@
       v-on:parentHairColorPassed="updateParentHairColor"
       v-on:parentEyeShapePassed="updateParentEyeShape"
       v-on:parentEyeColorPassed="updateParentEyeColor"
+      v-on:parentMaleBeardPassed="updateParentMaleBeard"
       :isHiddenChild="firstChild.isHidden"
     />
     <!-- Display Selected items for child -->
@@ -58,11 +59,12 @@
             </p>
           </transition>
           <transition name="fade">
-            <p class="eyecolor-selected font-weight-bold option mb-0" v-if="firstChild.glasses">
+            <p class="glasses-selected font-weight-bold option mb-0" v-if="firstChild.glasses">
               Glasses:
               <span class="font-weight-normal">{{ firstChild.glasses }}</span>
             </p>
           </transition>
+
           <transition name="fade">
             <p class="hairtype-selected font-weight-bold option mb-0" v-if="firstChild.hairType">
               Hair type:
@@ -117,6 +119,15 @@
             <p class="eyecolor-selected font-weight-bold option mb-0" v-if="firstParent.glasses">
               Glasses:
               <span class="font-weight-normal">{{ firstParent.glasses }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p
+              class="beard-selected font-weight-bold option mb-0"
+              v-if="firstParent.maleBeard && firstParent.gender =='Male'"
+            >
+              Beard:
+              <span class="font-weight-normal">{{ firstParent.maleBeard }}</span>
             </p>
           </transition>
           <transition name="fade">
@@ -175,6 +186,7 @@ export default {
         gender: "",
         skin: "",
         glasses: "",
+        maleBeard: "",
         hairType: "",
         hairColor: "",
         eyeShape: "",
@@ -223,6 +235,9 @@ export default {
     updateParentGlasses(data) {
       this.firstParent.glasses = data;
     },
+    updateParentMaleBeard(data) {
+      this.firstParent.maleBeard = data;
+    },
     updateParentHairType(data) {
       this.firstParent.hairType = data;
     },
@@ -270,7 +285,7 @@ export default {
       flex-wrap: wrap;
       margin: 0 auto;
       #view {
-        height: 350px;
+        height: 400px;
         width: 350px;
         background-color: #ffefe2;
         margin-right: 50px;
@@ -310,7 +325,7 @@ export default {
           color: red;
         }
         .step {
-          height: 250px;
+          height: 350px;
           display: flex;
           flex-direction: column;
           align-items: center;
