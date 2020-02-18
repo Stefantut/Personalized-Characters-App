@@ -1280,7 +1280,7 @@ export default {
           this.errors = "Do you wear glasses? Please select an option";
           return false;
         }
-        if (!this.form.beard) {
+        if (!this.form.beard && this.form.gender == "Male") {
           this.errors = "Does have beard? Please select an option";
           return false;
         }
@@ -1312,8 +1312,6 @@ export default {
           return false;
         }
       }
-      alert("was sent");
-      console.log("was sent");
     }
   },
   watch: {

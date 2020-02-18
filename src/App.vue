@@ -2,29 +2,33 @@
   <div id="app">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <TopMessage />
-    <FirstChild
-      v-on:genderPassed="updateGender"
-      v-on:namePassed="updateName"
-      v-on:skinPassed="updateSkin"
-      v-on:glassesPassed="updateGlasses"
-      v-on:hairTypePassed="updateHairType"
-      v-on:hairColorPassed="updateHairColor"
-      v-on:eyeShapePassed="updateEyeShape"
-      v-on:eyeColorPassed="updateEyeColor"
-      v-on:childHidden="updateHiddenChild"
-    />
-    <FirstParent
-      v-on:parentGenderPassed="updateParentGender"
-      v-on:parentNamePassed="updateParentName"
-      v-on:parentSkinPassed="updateParentSkin"
-      v-on:parentGlassesPassed="updateParentGlasses"
-      v-on:parentHairTypePassed="updateParentHairType"
-      v-on:parentHairColorPassed="updateParentHairColor"
-      v-on:parentEyeShapePassed="updateParentEyeShape"
-      v-on:parentEyeColorPassed="updateParentEyeColor"
-      v-on:parentMaleBeardPassed="updateParentMaleBeard"
-      :isHiddenChild="firstChild.isHidden"
-    />
+    <transition name="fade" appear>
+      <FirstChild
+        v-on:genderPassed="updateGender"
+        v-on:namePassed="updateName"
+        v-on:skinPassed="updateSkin"
+        v-on:glassesPassed="updateGlasses"
+        v-on:hairTypePassed="updateHairType"
+        v-on:hairColorPassed="updateHairColor"
+        v-on:eyeShapePassed="updateEyeShape"
+        v-on:eyeColorPassed="updateEyeColor"
+        v-on:childHidden="updateHiddenChild"
+      />
+    </transition>
+    <transition name="fade" appear>
+      <FirstParent
+        v-on:parentGenderPassed="updateParentGender"
+        v-on:parentNamePassed="updateParentName"
+        v-on:parentSkinPassed="updateParentSkin"
+        v-on:parentGlassesPassed="updateParentGlasses"
+        v-on:parentHairTypePassed="updateParentHairType"
+        v-on:parentHairColorPassed="updateParentHairColor"
+        v-on:parentEyeShapePassed="updateParentEyeShape"
+        v-on:parentEyeColorPassed="updateParentEyeColor"
+        v-on:parentMaleBeardPassed="updateParentMaleBeard"
+        :isHiddenChild="firstChild.isHidden"
+      />
+    </transition>
     <!-- Display Selected items for child -->
     <div class="selected-items">
       <!-- Component Title -->
