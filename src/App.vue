@@ -15,7 +15,7 @@
         v-on:childHidden="updateHiddenChild"
       />
     </transition>
-    <transition name="fade" appear>
+    <transition name="fade" appear mode="out-in">
       <FirstParent
         v-on:parentGenderPassed="updateParentGender"
         v-on:parentNamePassed="updateParentName"
@@ -425,7 +425,6 @@ export default {
 }
 
 // Transitions
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -434,6 +433,13 @@ export default {
   opacity: 0;
 }
 
+.fade-less-enter-active,
+.fade-less-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-less-enter, .fade-less-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 // Fixes
 .block {
   display: block !important;
@@ -449,7 +455,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    transform: translateX(20px);
+    transform: translateX(15px);
     li {
       list-style-type: none;
     }

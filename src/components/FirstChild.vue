@@ -39,284 +39,293 @@
 
       <div class="form-container">
         <!-- Step 1 -->
-        <section class="step gender name" v-if="step == 1">
-          <div class="step-number-wrap text-success">
-            <p class="step-number">
-              {{step}}
-              <sup>st</sup>
-            </p>
-            <p class="step-text">Step</p>
-          </div>
-          <!-- using direct svg file -->
-          <div class="gender flex justify-center mb-5">
-            <h5 class="py-2 flex">Select Child's Gender</h5>
-
-            <p-input
-              type="radio"
-              class="p-icon p-jelly p-round p-bigger ml-5 mr-1"
-              id="male"
-              value="Male"
-              v-model="form.gender"
-              name="male"
-            >
-              <label class="d-flex align-items-center">
-                Boy
-                <img src="/img/man.svg" class="svg ml-2" />
-              </label>
-            </p-input>
-
-            <p-input
-              class="p-icon p-jelly p-round p-bigger ml-5"
-              type="radio"
-              id="female"
-              value="Female"
-              v-model="form.gender"
-              name="female"
-            >
-              <label class="d-flex flex-row-reverse align-items-center">
-                Girl
-                <img src="/img/woman.svg" class="svg mr-2" />
-              </label>
-            </p-input>
-          </div>
-          <!-- First Name -->
-          <input
-            v-model="form.firstName"
-            type="text"
-            placeholder="Type in first name?"
-            class="first-name form-control form-control-md"
-          />
-        </section>
-        <!-- Step 2 -->
-        <section class="step" v-if="step == 2">
-          <!-- using direct svg file -->
-          <div class="step-number-wrap text-success">
-            <p class="step-number">
-              {{step}}
-              <sup>nd</sup>
-            </p>
-            <p class="step-text">Step</p>
-          </div>
-          <div class="skin-tone all-boxes-wrap flex-col py-1">
-            <h5 class="py-2 flex text-center">Select your Skin Tone</h5>
-            <div class="skin-tone-boxes">
-              <ul class="all-boxes" v-if="form.gender === 'Male'">
-                <li v-for="(skinInfo, index) in form.skinToneMale" :key="index.id">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="skinInfo.name"
-                    :name="skinInfo.name"
-                    v-model="form.skin"
-                    :value="skinInfo"
-                  >
-                    <img :src="skinInfo.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
-
-              <ul class="all-boxes" v-else>
-                <li v-for="(skinInfo, index) in form.skinToneFemale" :key="index.id">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="skinInfo.name"
-                    :name="skinInfo.name"
-                    v-model="form.skin"
-                    :value="skinInfo"
-                  >
-                    <img :src="skinInfo.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
+        <transition name="fade-less" mode="out-in">
+          <section class="step gender name" v-if="step == 1" key="1">
+            <div class="step-number-wrap text-success">
+              <p class="step-number">
+                {{step}}
+                <sup>st</sup>
+              </p>
+              <p class="step-text">Step</p>
             </div>
-          </div>
+            <!-- using direct svg file -->
+            <div class="gender flex justify-center mb-5">
+              <h5 class="py-2 flex">Select Child's Gender</h5>
 
-          <!-- Glasses -->
-          <div class="glasses all-boxes-wrap flex-col py-1">
-            <h5 class="py-2 flex text-center">Glasses?</h5>
-            <div class="glasses-boxes">
-              <ul class="all-boxes">
-                <li v-for="(glasses, index) in form.glassesType" :key="index.id">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="glasses.name"
-                    :name="glasses.name"
-                    v-model="form.glasses"
-                    :value="glasses"
-                  >
-                    <img :src="glasses.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
+              <p-input
+                type="radio"
+                class="p-icon p-jelly p-round p-bigger ml-5 mr-1"
+                id="male"
+                value="Male"
+                v-model="form.gender"
+                name="male"
+              >
+                <label class="d-flex align-items-center">
+                  Boy
+                  <img src="/img/man.svg" class="svg ml-2" />
+                </label>
+              </p-input>
+
+              <p-input
+                class="p-icon p-jelly p-round p-bigger ml-5"
+                type="radio"
+                id="female"
+                value="Female"
+                v-model="form.gender"
+                name="female"
+              >
+                <label class="d-flex flex-row-reverse align-items-center">
+                  Girl
+                  <img src="/img/woman.svg" class="svg mr-2" />
+                </label>
+              </p-input>
             </div>
-          </div>
-        </section>
+            <!-- First Name -->
+            <input
+              v-model="form.firstName"
+              type="text"
+              placeholder="Type in first name?"
+              class="first-name form-control form-control-md"
+            />
+          </section>
 
-        <!-- Step 3 -->
-        <section class="step hair" v-if="step == 3">
-          <div class="step-number-wrap text-success">
-            <p class="step-number">
-              {{step}}
-              <sup>rd</sup>
-            </p>
-
-            <p class="step-text">Step</p>
-          </div>
-          <div class="hair-type all-boxes-wrap flex-col py-1">
-            <h5 class="py-2 flex text-center">Select your Hair Type</h5>
-            <div class="hair-type-boxes">
-              <ul class="all-boxes" v-if="form.gender === 'Male'">
-                <li v-for="(hairType, index) in form.hairTypeMale" :key="index.hair">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="hairType.name"
-                    :name="hairType.name"
-                    v-model="form.hairType"
-                    :value="hairType"
-                  >
-                    <img :src="hairType.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
-
-              <ul class="all-boxes" v-else>
-                <li v-for="(hairType, index) in form.hairTypeFemale" :key="index">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="hairType.name"
-                    :name="hairType.name"
-                    v-model="form.hairType"
-                    :value="hairType"
-                  >
-                    <img :src="hairType.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
+          <!-- Step 2 -->
+          <section class="step skin-glasses" v-if="step == 2" :key="2">
+            <!-- using direct svg file -->
+            <div class="step-number-wrap text-success">
+              <p class="step-number">
+                {{step}}
+                <sup>nd</sup>
+              </p>
+              <p class="step-text">Step</p>
             </div>
-          </div>
-          <div class="hair-color all-boxes-wrap flex-col py-1">
-            <h5 class="py-2 flex text-center">Select your Hair Color</h5>
-            <div class="hair-color-boxes">
-              <ul class="all-boxes" v-if="form.gender === 'Male'">
-                <li v-for="(hairColor, index) in form.hairColorMale" :key="index.id">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="hairColor.name"
-                    :name="hairColor.name"
-                    v-model="form.hairColor"
-                    :value="hairColor"
-                  >
-                    <img :src="hairColor.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
+            <div class="skin-tone all-boxes-wrap flex-col py-1">
+              <h5 class="py-2 flex text-center">Select your Skin Tone</h5>
+              <div class="skin-tone-boxes">
+                <ul class="all-boxes" v-if="form.gender === 'Male'">
+                  <li v-for="(skinInfo, index) in form.skinToneMale" :key="index.id">
+                    <p-input
+                      class="p-icon p-jelly p-round p-bigger"
+                      type="radio"
+                      :id="skinInfo.name"
+                      :name="skinInfo.name"
+                      v-model="form.skin"
+                      :value="skinInfo"
+                    >
+                      <img :src="skinInfo.iconSource" class="svg-2" />
+                    </p-input>
+                  </li>
+                </ul>
 
-              <ul class="all-boxes" v-else>
-                <li v-for="(hairColor, index) in form.hairColorFemale" :key="index.id">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="hairColor.name"
-                    :name="hairColor.name"
-                    v-model="form.hairColor"
-                    :value="hairColor"
-                  >
-                    <img :src="hairColor.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
+                <ul class="all-boxes" v-else>
+                  <li v-for="(skinInfo, index) in form.skinToneFemale" :key="index.id">
+                    <p-input
+                      class="p-icon p-jelly p-round p-bigger"
+                      type="radio"
+                      :id="skinInfo.name"
+                      :name="skinInfo.name"
+                      v-model="form.skin"
+                      :value="skinInfo"
+                    >
+                      <img :src="skinInfo.iconSource" class="svg-2" />
+                    </p-input>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </section>
 
-        <!-- Step 4 -->
-        <section class="step eye" v-if="step == 4">
-          <div class="step-number-wrap text-success">
-            <p class="step-number">
-              {{step}}
-              <sup>th</sup>
-            </p>
-
-            <p class="step-text">Step</p>
-          </div>
-          <div class="eye-shape all-boxes-wrap flex-col py-1">
-            <h5 class="py-2 flex text-center">Select your Eye Shape</h5>
-            <div class="eye-shape-boxes">
-              <ul class="all-boxes" v-if="form.gender === 'Male'">
-                <li v-for="(eyeShape, index) in form.eyeShapeMale" :key="index.id">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="eyeShape.name"
-                    :name="eyeShape.name"
-                    v-model="form.eyeShape"
-                    :value="eyeShape"
-                  >
-                    <img :src="eyeShape.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
-
-              <ul class="all-boxes" v-else>
-                <li v-for="(eyeShape, index) in form.eyeShapeFemale" :key="index.id">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="eyeShape.name"
-                    :name="eyeShape.name"
-                    v-model="form.eyeShape"
-                    :value="eyeShape"
-                  >
-                    <img :src="eyeShape.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
+            <!-- Glasses -->
+            <div class="glasses all-boxes-wrap flex-col py-1">
+              <h5 class="py-2 flex text-center">Glasses?</h5>
+              <div class="glasses-boxes">
+                <ul class="all-boxes">
+                  <li v-for="(glasses, index) in form.glassesType" :key="index.id">
+                    <p-input
+                      class="p-icon p-jelly p-round p-bigger"
+                      type="radio"
+                      :id="glasses.name"
+                      :name="glasses.name"
+                      v-model="form.glasses"
+                      :value="glasses"
+                    >
+                      <img :src="glasses.iconSource" class="svg-2" />
+                    </p-input>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="eye-color all-boxes-wrap flex-col py-1">
-            <h5 class="py-2 flex text-center">Select your Eye Color</h5>
-            <div class="eye-color-boxes">
-              <ul class="all-boxes" v-if="form.gender === 'Male'">
-                <li v-for="(eyeColor, index) in form.eyeColorMale" :key="index.id">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="eyeColor.name"
-                    :name="eyeColor.name"
-                    v-model="form.eyeColor"
-                    :value="eyeColor"
-                  >
-                    <img :src="eyeColor.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
+          </section>
 
-              <ul class="all-boxes" v-else>
-                <li v-for="(eyeColor, index) in form.eyeColorFemale" :key="index.id">
-                  <p-input
-                    class="p-icon p-jelly p-round p-bigger"
-                    type="radio"
-                    :id="eyeColor.name"
-                    :name="eyeColor.name"
-                    v-model="form.eyeColor"
-                    :value="eyeColor"
-                  >
-                    <img :src="eyeColor.iconSource" class="svg-2" />
-                  </p-input>
-                </li>
-              </ul>
+          <!-- Step 3 -->
+          <section class="step hair" v-if="step == 3" :key="3">
+            <div class="step-number-wrap text-success">
+              <p class="step-number">
+                {{step}}
+                <sup>rd</sup>
+              </p>
+
+              <p class="step-text">Step</p>
             </div>
-          </div>
-        </section>
+            <div class="hair-type all-boxes-wrap flex-col py-1">
+              <h5 class="py-2 flex text-center">Select your Hair Type</h5>
+              <div class="hair-type-boxes">
+                <ul class="all-boxes" v-if="form.gender === 'Male'">
+                  <li v-for="(hairType, index) in form.hairTypeMale" :key="index.hair">
+                    <p-input
+                      class="p-icon p-jelly p-round p-bigger"
+                      type="radio"
+                      :id="hairType.name"
+                      :name="hairType.name"
+                      v-model="form.hairType"
+                      :value="hairType"
+                    >
+                      <img :src="hairType.iconSource" class="svg-2" />
+                    </p-input>
+                  </li>
+                </ul>
 
+                <ul class="all-boxes" v-else>
+                  <li v-for="(hairType, index) in form.hairTypeFemale" :key="index">
+                    <p-input
+                      class="p-icon p-jelly p-round p-bigger"
+                      type="radio"
+                      :id="hairType.name"
+                      :name="hairType.name"
+                      v-model="form.hairType"
+                      :value="hairType"
+                    >
+                      <img :src="hairType.iconSource" class="svg-2" />
+                    </p-input>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="hair-color all-boxes-wrap flex-col py-1">
+              <h5 class="py-2 flex text-center">Select your Hair Color</h5>
+              <div class="hair-color-boxes">
+                <ul class="all-boxes" v-if="form.gender === 'Male'">
+                  <li v-for="(hairColor, index) in form.hairColorMale" :key="index.id">
+                    <p-input
+                      class="p-icon p-jelly p-round p-bigger"
+                      type="radio"
+                      :id="hairColor.name"
+                      :name="hairColor.name"
+                      v-model="form.hairColor"
+                      :value="hairColor"
+                    >
+                      <img :src="hairColor.iconSource" class="svg-2" />
+                    </p-input>
+                  </li>
+                </ul>
+
+                <ul class="all-boxes" v-else>
+                  <li v-for="(hairColor, index) in form.hairColorFemale" :key="index.id">
+                    <p-input
+                      class="p-icon p-jelly p-round p-bigger"
+                      type="radio"
+                      :id="hairColor.name"
+                      :name="hairColor.name"
+                      v-model="form.hairColor"
+                      :value="hairColor"
+                    >
+                      <img :src="hairColor.iconSource" class="svg-2" />
+                    </p-input>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Step 4 -->
+          <section class="step eye" v-if="step == 4" :key="4">
+            <div class="step-number-wrap text-success">
+              <p class="step-number">
+                {{step}}
+                <sup>th</sup>
+              </p>
+
+              <p class="step-text">Step</p>
+            </div>
+            <div class="eye-shape all-boxes-wrap flex-col py-1">
+              <h5 class="py-2 flex text-center">Select your Eye Shape</h5>
+              <div class="eye-shape-boxes">
+                <ul class="all-boxes" v-if="form.gender === 'Male'">
+                  <li v-for="(eyeShape, index) in form.eyeShapeMale" :key="index.id">
+                    <p-input
+                      class="p-icon p-jelly p-round p-bigger"
+                      type="radio"
+                      :id="eyeShape.name"
+                      :name="eyeShape.name"
+                      v-model="form.eyeShape"
+                      :value="eyeShape"
+                    >
+                      <img :src="eyeShape.iconSource" class="svg-2" />
+                    </p-input>
+                  </li>
+                </ul>
+
+                <ul class="all-boxes" v-else>
+                  <li v-for="(eyeShape, index) in form.eyeShapeFemale" :key="index.id">
+                    <p-input
+                      class="p-icon p-jelly p-round p-bigger"
+                      type="radio"
+                      :id="eyeShape.name"
+                      :name="eyeShape.name"
+                      v-model="form.eyeShape"
+                      :value="eyeShape"
+                    >
+                      <img :src="eyeShape.iconSource" class="svg-2" />
+                    </p-input>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="eye-color all-boxes-wrap flex-col py-1">
+              <h5 class="py-2 flex text-center">Select your Eye Color</h5>
+              <div class="eye-color-boxes">
+                <ul class="all-boxes" v-if="form.gender === 'Male'">
+                  <li v-for="(eyeColor, index) in form.eyeColorMale" :key="index.id">
+                    <p-input
+                      class="p-icon p-jelly p-round p-bigger"
+                      type="radio"
+                      :id="eyeColor.name"
+                      :name="eyeColor.name"
+                      v-model="form.eyeColor"
+                      :value="eyeColor"
+                    >
+                      <img :src="eyeColor.iconSource" class="svg-2" />
+                    </p-input>
+                  </li>
+                </ul>
+
+                <ul class="all-boxes" v-else>
+                  <li v-for="(eyeColor, index) in form.eyeColorFemale" :key="index.id">
+                    <p-input
+                      class="p-icon p-jelly p-round p-bigger"
+                      type="radio"
+                      :id="eyeColor.name"
+                      :name="eyeColor.name"
+                      v-model="form.eyeColor"
+                      :value="eyeColor"
+                    >
+                      <img :src="eyeColor.iconSource" class="svg-2" />
+                    </p-input>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </transition>
         <!-- Display error Message -->
         <div class="error text-center my-3">
-          <span v-for="e in errors" class="font-italic font-weight-normal" :key="e.errors">{{ e }}</span>
+          <transition-group name="fade" tag="span">
+            <span
+              v-for="(e, item) in errors"
+              :key="item+1"
+              class="font-italic font-weight-normal"
+            >{{ e }}</span>
+          </transition-group>
+          <!-- <span v-for="e in errors" class="font-italic font-weight-normal" :key="e.errors">{{ e }}</span> -->
         </div>
         <!-- Steps Buttons -->
         <section class="buttons">
