@@ -13,12 +13,12 @@
         v-on:eyeShapePassed="updateEyeShape"
         v-on:eyeColorPassed="updateEyeColor"
         v-on:childHidden="updateHiddenChild"
+        v-on:showSpinner="updateShowSpinner"
       />
     </transition>
-    <div v-if="loading">
-      <!-- here put a spinner or whatever you want to do when request is on proccess -->
-      <div class="spinner">spinnnnnnn</div>
-    </div>
+
+    <ShowSpinner v-if="showSpinner" />
+
     <!-- here is your application code -->
     <transition name="fade" appear mode="out-in">
       <FirstParent
@@ -174,12 +174,13 @@
 import TopMessage from "./components/TopMessage";
 import FirstChild from "./components/FirstChild";
 import FirstParent from "./components/FirstParent";
+import ShowSpinner from "./components/ShowSpinner";
 
 export default {
   name: "app",
   data: function() {
     return {
-      loading: true,
+      showSpinner: false,
       firstChild: {
         name: "",
         gender: "",
@@ -204,6 +205,7 @@ export default {
       }
     };
   },
+  mounted() {},
   created() {},
   methods: {
     updateName(data) {
@@ -231,7 +233,9 @@ export default {
       this.firstChild.eyeColor = data;
     },
     updateHiddenChild(data) {
-      this.firstChild.isHidden = data;
+      setTimeout(() => {
+        this.firstChild.isHidden = data;
+      }, 500);
     },
 
     updateParentName(data) {
@@ -260,13 +264,20 @@ export default {
     },
     updateParentEyeColor(data) {
       this.firstParent.eyeColor = data;
+    },
+    updateShowSpinner(data) {
+      this.showSpinner = data;
+      setTimeout(() => {
+        this.showSpinner = false;
+      }, 500);
     }
   },
   components: {
     // HelloWorld,
     TopMessage,
     FirstChild,
-    FirstParent
+    FirstParent,
+    ShowSpinner
   }
 };
 </script>
@@ -288,6 +299,7 @@ export default {
     flex-wrap: nowrap;
     margin-top: 50px;
     #form {
+      height: 470px;
       max-width: 800px;
       width: 100%;
       padding: 0 30px;
@@ -400,6 +412,12 @@ export default {
         }
       }
     }
+  }
+  .spinner {
+    height: 470px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .selected-items {

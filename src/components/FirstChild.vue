@@ -1273,6 +1273,8 @@ export default {
           return false;
         }
       }
+      this.showSpinner = true;
+      this.$emit("showSpinner", this.showSpinner);
       this.isHidden = true;
       this.$emit("childHidden", this.isHidden);
     }
