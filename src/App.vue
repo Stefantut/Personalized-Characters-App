@@ -15,6 +15,11 @@
         v-on:childHidden="updateHiddenChild"
       />
     </transition>
+    <div v-if="loading">
+      <!-- here put a spinner or whatever you want to do when request is on proccess -->
+      <div class="spinner">spinnnnnnn</div>
+    </div>
+    <!-- here is your application code -->
     <transition name="fade" appear mode="out-in">
       <FirstParent
         v-on:parentGenderPassed="updateParentGender"
@@ -174,6 +179,7 @@ export default {
   name: "app",
   data: function() {
     return {
+      loading: true,
       firstChild: {
         name: "",
         gender: "",
@@ -198,6 +204,7 @@ export default {
       }
     };
   },
+  created() {},
   methods: {
     updateName(data) {
       this.firstChild.name = data;
