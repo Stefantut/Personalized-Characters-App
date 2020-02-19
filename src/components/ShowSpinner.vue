@@ -60,7 +60,7 @@ export default {
   align-items: center;
   flex-wrap: wrap;
   &__text {
-    color: $one;
+    color: $five;
     flex-basis: 100%;
     text-align: center;
     font-family: $secondFont;

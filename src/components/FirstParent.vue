@@ -1238,10 +1238,13 @@ export default {
     isHiddenChild: Boolean
   },
   methods: {
-    // getVar() {
-    //   var asd = document.getElementById("selectedParent");
-    //   console.log(asd);
-    // },
+    getValueAll() {
+      var childValue = document.getElementById("selectedChild");
+      var parentValue = document.getElementById("selectedParent");
+      // var all = childValue + parentValue;
+      console.log(childValue);
+      console.log(parentValue);
+    },
     emitToParent() {
       this.$emit("parentGenderPassed", this.form.gender);
       this.$emit("parentNamePassed", this.form.firstName);
@@ -1323,7 +1326,7 @@ export default {
           return false;
         }
       }
-      // this.getVar();
+      this.getValueAll();
     }
   },
   watch: {
