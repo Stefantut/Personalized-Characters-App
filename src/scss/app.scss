@@ -1,0 +1,269 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_fonts.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: $small;
+}
+#app {
+  .wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 50px;
+    #form {
+      height: 470px;
+      max-width: 800px;
+      width: 100%;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      #view {
+        height: 400px;
+        width: 350px;
+        background-color: #ffefe2;
+        margin-right: 50px;
+        border-radius: 10px;
+        border: 1px solid #8ba68f;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        .img-view {
+          height: 300px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+        }
+        .img-skin-tone {
+          z-index: 1;
+        }
+        .img-hair-type {
+          z-index: 2;
+        }
+        .img-hair-color {
+          z-index: 3;
+        }
+        .img-eye-color {
+          z-index: 4;
+        }
+        .img-glasses {
+          z-index: 5;
+        }
+      }
+      .form-container {
+        width: 300px;
+        .error {
+          color: red;
+        }
+        .step {
+          height: 300px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          padding-top: 30px;
+          .gender {
+            justify-content: center;
+            h5 {
+            }
+          }
+          .step-number-wrap {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            font-weight: 600;
+            display: flex;
+            .step-number {
+              font-size: 18px;
+              border-radius: 10px;
+              border: 1px solid #8ba68f;
+              padding: 0 5px;
+              background-color: #ffefe2;
+              font-family: $thirdFont;
+              sup {
+                font-size: 12px;
+                margin-left: -4px;
+                font-family: $thirdFont;
+              }
+            }
+            .step-text {
+              font-size: 20px;
+              margin-left: 5px;
+              font-family: $thirdFont;
+              font-weight: $medium;
+            }
+          }
+          .svg {
+            height: 30px;
+          }
+          .svg-2 {
+            height: 20px;
+          }
+        }
+        .buttons {
+          display: grid;
+          grid-template-columns: 0.5fr 1fr;
+          grid-template-rows: auto;
+          grid-template-areas: "left-btn right-btn";
+          grid-column-gap: 15%;
+          .btn {
+            font-size: 14px;
+          }
+          .prev {
+            grid-area: left-btn;
+          }
+          .next,
+          .send {
+            grid-area: right-btn;
+          }
+        }
+      }
+    }
+  }
+  .spinner {
+    height: 470px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .selected-items {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    .component-title {
+      width: 100%;
+      text-align: center;
+      margin: 0 0 20px 0;
+      font-family: $thirdFont;
+    }
+    .display-selected {
+      display: flex;
+      justify-content: space-between;
+      #selectedChild,
+      #selectedParent {
+        .name-selected {
+          text-transform: capitalize;
+        }
+        .selected-title {
+          font-family: $thirdFont;
+        }
+        .option {
+          font-family: "Courgette", cursive;
+        }
+      }
+    }
+  }
+}
+
+// Transitions
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.fade-less-enter-active,
+.fade-less-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-less-enter, .fade-less-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+// Fixes
+.block {
+  display: block !important;
+}
+
+.b-wrap {
+  padding: 0 !important;
+}
+.all-boxes-wrap {
+  width: 90%;
+  .all-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    transform: translateX(15px);
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+// Others
+.active {
+  background: #f00;
+  color: #fff;
+  font-size: 30px;
+}
+
+.pulse {
+  background: transparent;
+  border-radius: 50%;
+  margin: 20px;
+  height: 40px;
+  width: 40px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+// KeyFrames
+@keyframes rotateee {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* Pretty fix  */
+.pretty.p-round .state label:before,
+label:after {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pretty {
+  margin-right: 0 !important;
+  transform: translateX(-15px);
+}
+
+.pretty .state label {
+  margin: 0;
+  display: flex;
+}
