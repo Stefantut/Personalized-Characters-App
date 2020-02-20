@@ -235,7 +235,7 @@ export default {
     updateHiddenChild(data) {
       setTimeout(() => {
         this.firstChild.isHidden = data;
-      }, 1000);
+      }, 900);
     },
 
     updateParentName(data) {
@@ -269,7 +269,7 @@ export default {
       this.showSpinner = data;
       setTimeout(() => {
         this.showSpinner = false;
-      }, 1000);
+      }, 900);
     }
   },
   components: {

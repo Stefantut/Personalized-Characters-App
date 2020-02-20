@@ -50,11 +50,11 @@
             </div>
             <!-- using direct svg file -->
             <div class="gender flex justify-center mb-5">
-              <h5 class="pt-2 pb-1 flex">Select Child's Gender</h5>
+              <h5 class="pt-2 pb-3 flex">Select Child's Gender</h5>
 
               <p-input
                 type="radio"
-                class="p-icon p-jelly p-round p-bigger ml-5 mr-1"
+                class="p-icon p-jelly p-round p-bigger ml-4 mr-1"
                 id="male"
                 value="Male"
                 v-model="form.gender"
@@ -330,7 +330,7 @@
         <!-- Steps Buttons -->
         <section class="buttons">
           <!-- <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button> -->
-          <!-- <p class="no-return text-primary" v-if="step == 2">Can't return to first step</p> -->
+          <p class="no-return text-primary" v-if="step == 2">Can't return to first step</p>
           <button
             v-if="step != 1 && step != 2"
             @click.prevent="prevStep"
@@ -1298,10 +1298,4 @@ export default {
 
 <style lang="scss" scoped>
 @import ".././scss/app.scss";
-.component-title {
-  width: 100%;
-  text-align: center;
-  margin: 0 0 30px 0;
-  font-family: $thirdFont;
-}
 </style>
