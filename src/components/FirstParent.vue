@@ -49,7 +49,7 @@
             </div>
             <!-- using direct svg file -->
             <div class="gender flex justify-center mb-5">
-              <h5 class="pt-2 flex text-center">Select Parent's Gender</h5>
+              <h5 class="pt-2 pb-1 flex text-center">Select Parent's Gender</h5>
               <p-input
                 type="radio"
                 class="p-icon p-jelly p-round p-bigger ml-5 mr-1"
@@ -97,7 +97,7 @@
               <p class="step-text">Step</p>
             </div>
             <div class="skin-tone all-boxes-wrap flex-col py-1">
-              <h5 class="pt-2 flex text-center">Select Skin Tone</h5>
+              <h5 class="pt-2 pb-1 flex text-center">Select Skin Tone</h5>
               <div class="skin-tone-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
                   <li v-for="(skinInfo, index) in form.skinToneMale" :key="index.id">
@@ -133,7 +133,7 @@
 
             <!-- Glasses -->
             <div class="glasses all-boxes-wrap flex-col py-1">
-              <h5 class="pt-2 flex text-center">Glasses?</h5>
+              <h5 class="pt-2 pb-1 flex text-center">Glasses?</h5>
               <div class="glasses-boxes">
                 <ul class="all-boxes">
                   <li v-for="(glasses, index) in form.glassesType" :key="index.id">
@@ -154,7 +154,7 @@
 
             <!-- Beard Male -->
             <div class="male-beard all-boxes-wrap flex-col py-1" v-if="form.gender == 'Male'">
-              <h5 class="pt-2 flex text-center">Does have beard?</h5>
+              <h5 class="pt-2 pb-1 flex text-center">Does have beard?</h5>
               <div class="male-beard-boxes">
                 <ul class="all-boxes">
                   <li v-for="(beardMale, index) in form.beardMale" :key="index.id">
@@ -185,7 +185,7 @@
               <p class="step-text">Step</p>
             </div>
             <div class="hair-type all-boxes-wrap flex-col py-1">
-              <h5 class="pt-2 flex text-center">Select Hair Type</h5>
+              <h5 class="pt-2 pb-1 flex text-center">Select Hair Type</h5>
               <div class="hair-type-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
                   <li v-for="(hairType, index) in form.hairTypeMale" :key="index.hair">
@@ -219,7 +219,7 @@
               </div>
             </div>
             <div class="hair-color all-boxes-wrap flex-col py-1">
-              <h5 class="pt-2 flex text-center">Select Hair Color</h5>
+              <h5 class="pt-2 pb-1 flex text-center">Select Hair Color</h5>
               <div class="hair-color-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
                   <li v-for="(hairColor, index) in form.hairColorMale" :key="index.id">
@@ -265,7 +265,7 @@
               <p class="step-text">Step</p>
             </div>
             <div class="eye-shape all-boxes-wrap flex-col py-1">
-              <h5 class="pt-2 flex text-center">Select Eye Shape</h5>
+              <h5 class="pt-2 pb-1 flex text-center">Select Eye Shape</h5>
               <div class="eye-shape-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
                   <li v-for="(eyeShape, index) in form.eyeShapeMale" :key="index.id">
@@ -299,7 +299,7 @@
               </div>
             </div>
             <div class="eye-color all-boxes-wrap flex-col py-1">
-              <h5 class="pt-2 flex text-center">Select Eye Color</h5>
+              <h5 class="pt-2 pb-1 flex text-center">Select Eye Color</h5>
               <div class="eye-color-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
                   <li v-for="(eyeColor, index) in form.eyeColorMale" :key="index.id">
