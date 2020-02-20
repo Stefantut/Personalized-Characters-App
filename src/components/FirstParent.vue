@@ -346,13 +346,13 @@
         </div>
         <!-- Steps Buttons -->
         <section class="buttons">
-          <p class="no-return text-primary" v-if="step == 2">Can't return to first step</p>
-          <!-- <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button> -->
+          <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button>
+          <!-- <p class="no-return text-primary" v-if="step == 2">Can't return to first step</p>
           <button
             v-if="step != 1 && step != 2"
             @click.prevent="prevStep"
             class="prev btn btn-primary"
-          >Previous</button>
+          >Previous</button>-->
           <button
             v-if="step != totalsteps"
             @click.prevent="nextStep"

@@ -9,6 +9,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: $small;
 }
+
 #app {
   .wrapper {
     display: flex;
@@ -157,21 +158,42 @@
       margin: 0 0 20px 0;
       font-family: $firstFont;
       font-weight: 400;
+      color: darken($color: $four, $amount: 20%);
     }
     .display-selected {
-      display: flex;
-      justify-content: space-between;
-      #selectedChild,
-      #selectedParent {
-        .name-selected {
-          text-transform: capitalize;
-        }
-        .selected-title {
+      .selected {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        justify-content: center;
+        &__title {
+          display: flex;
+          align-items: center;
           font-family: $firstFont;
-          font-weight: 400;
+          font-weight: 500;
+          font-size: 16px;
+          margin-right: 10px;
+          margin-bottom: 0;
+          text-decoration: underline;
+          color: $four;
         }
-        .option {
+        &__item {
           font-family: "Courgette", cursive;
+          font-size: 16px;
+          margin-bottom: 0;
+          color: $one;
+          &--name {
+            text-transform: capitalize;
+          }
+          &__divider {
+            margin: 0 5px;
+            color: red;
+          }
+          &__text {
+            color: #000;
+            font-size: 14px;
+          }
         }
       }
     }
