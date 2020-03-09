@@ -26,7 +26,7 @@
         />
       </svg>
 
-      <p class="message-text">Sale Now: Use Code VICTOR15</p>
+      <p class="message-text">Sale Now: Use Code SALE15</p>
     </div>
   </div>
 </template>
