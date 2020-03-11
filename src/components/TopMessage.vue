@@ -1,6 +1,9 @@
 <template>
   <div class="top-section">
-    <div class="logo">logo</div>
+    <div class="logo">
+      <img src="../img/logo-new.svg" alt="logo" class="item item--image" />
+      <p class="item item--text">Company Name</p>
+    </div>
     <div class="message">
       <!-- <img src="../assets/star.svg" class="star" /> -->
       <svg
@@ -45,6 +48,18 @@ export default {};
   align-items: center;
   .logo {
     padding-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    .item {
+      &--image {
+        width: 60px;
+      }
+      &--text {
+        margin-left: 10px;
+        margin-bottom: 0;
+      }
+    }
   }
   .message {
     font-family: $secondFont;
