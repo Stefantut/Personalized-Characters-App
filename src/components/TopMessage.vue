@@ -41,14 +41,13 @@ export default {};
 @import ".././scss/_mixins.scss";
 @import ".././scss/_fonts.scss";
 .top-section {
-  height: 40px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   .logo {
     padding-left: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     .item {
@@ -62,8 +61,10 @@ export default {};
     }
   }
   .message {
+    height: 40px;
     font-family: $secondFont;
-    padding: 20px;
+    padding: 10px 20px;
+    margin-top: -10px;
     background-color: darken($color: $four, $amount: 30%);
     color: white;
     height: 100%;
