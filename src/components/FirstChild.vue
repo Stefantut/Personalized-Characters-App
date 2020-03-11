@@ -274,7 +274,7 @@
                       v-model="form.eyeShape"
                       :value="eyeShape"
                     >
-                      <img :src="eyeShape.iconSource" class="svg-2" />
+                      <img :src="eyeShape.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>
@@ -329,13 +329,13 @@
         </div>
         <!-- Steps Buttons -->
         <section class="buttons">
-          <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button>
-          <!-- <p class="no-return text-primary" v-if="step == 2">Can't return to first step</p>
+          <!-- <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button> -->
+          <!-- <p class="no-return text-primary" v-if="step == 2">Can't return to first step</p> -->
           <button
             v-if="step != 1 && step != 2"
             @click.prevent="prevStep"
             class="prev btn btn-primary"
-          >Previous</button>-->
+          >Previous</button>
           <button
             v-if="step != totalsteps"
             @click.prevent="nextStep"
@@ -562,22 +562,22 @@ export default {
           },
           {
             name: "2-fem",
-            iconSource: require("@/img/icons/girl/ico-hair-girl-1.svg"),
+            iconSource: require("@/img/icons/girl/ico-hair-girl-2.svg"),
             number: 2
           },
           {
             name: "3-fem",
-            iconSource: require("@/img/icons/girl/ico-hair-girl-1.svg"),
+            iconSource: require("@/img/icons/girl/ico-hair-girl-3.svg"),
             number: 3
           },
           {
             name: "4-fem",
-            iconSource: require("@/img/icons/girl/ico-hair-girl-1.svg"),
+            iconSource: require("@/img/icons/girl/ico-hair-girl-4.svg"),
             number: 4
           },
           {
             name: "5-fem",
-            iconSource: require("@/img/icons/girl/ico-hair-girl-1.svg"),
+            iconSource: require("@/img/icons/girl/ico-hair-girl-5.svg"),
             number: 5
           }
         ],
