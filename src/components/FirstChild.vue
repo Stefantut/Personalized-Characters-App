@@ -259,7 +259,7 @@
                       v-model="form.eyeShape"
                       :value="eyeShape"
                     >
-                      <img :src="eyeShape.iconSource" class="svg-2" />
+                      <img :src="eyeShape.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>

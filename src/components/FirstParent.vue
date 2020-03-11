@@ -299,7 +299,7 @@
                       v-model="form.eyeShape"
                       :value="eyeShape"
                     >
-                      <img :src="eyeShape.iconSource" class="svg-2" />
+                      <img :src="eyeShape.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>
@@ -793,7 +793,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-1.png")
               }
             ],
-            iconSource: "/img/black-icon.svg"
+            iconSource: require("@/img/icons/ico-hair-color-1.svg")
           },
           {
             name: "2 Female Color",
@@ -820,7 +820,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-2.png")
               }
             ],
-            iconSource: "/img/red-icon.svg"
+            iconSource: require("@/img/icons/ico-hair-color-2.svg")
           },
           {
             name: "3 Female Color",
@@ -847,7 +847,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-3.png")
               }
             ],
-            iconSource: "/img/green-icon.svg"
+            iconSource: require("@/img/icons/ico-hair-color-3.svg")
           },
           {
             name: "4 Female Color",
@@ -874,7 +874,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-4.png")
               }
             ],
-            iconSource: "/img/yellow-icon.svg"
+            iconSource: require("@/img/icons/ico-hair-color-4.svg")
           },
           {
             name: "5 Female Color",
@@ -901,7 +901,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-5.png")
               }
             ],
-            iconSource: "/img/blue-icon.svg"
+            iconSource: require("@/img/icons/ico-hair-color-5.svg")
           }
         ],
         eyeShape: "",
@@ -937,27 +937,27 @@ export default {
         eyeShapeFemale: [
           {
             name: "1-fem",
-            iconSource: "/img/black-icon.svg",
+            iconSource: require("@/img/icons/ico-eye-shape-1.svg"),
             eyeNumber: 11
           },
           {
             name: "2-fem",
-            iconSource: "/img/red-icon.svg",
+            iconSource: require("@/img/icons/ico-eye-shape-2.svg"),
             eyeNumber: 21
           },
           {
             name: "3-fem",
-            iconSource: "/img/green-icon.svg",
+            iconSource: require("@/img/icons/ico-eye-shape-3.svg"),
             eyeNumber: 31
           },
           {
             name: "4-fem",
-            iconSource: "/img/yellow-icon.svg",
+            iconSource: require("@/img/icons/ico-eye-shape-4.svg"),
             eyeNumber: 41
           },
           {
             name: "5-fem",
-            iconSource: "/img/blue-icon.svg",
+            iconSource: require("@/img/icons/ico-eye-shape-5.svg"),
             eyeNumber: 51
           }
         ],
@@ -1128,7 +1128,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-1.png")
               }
             ],
-            iconSource: "/img/black-icon.svg"
+            iconSource: require("@/img/icons/ico-eye-color-1.svg")
           },
           {
             name: "2 Female Color",
@@ -1155,7 +1155,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-2.png")
               }
             ],
-            iconSource: "/img/red-icon.svg"
+            iconSource: require("@/img/icons/ico-eye-color-2.svg")
           },
           {
             name: "3 Female Color",
@@ -1182,7 +1182,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-3.png")
               }
             ],
-            iconSource: "/img/green-icon.svg"
+            iconSource: require("@/img/icons/ico-eye-color-3.svg")
           },
           {
             name: "4 Female Color",
@@ -1209,7 +1209,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-4.png")
               }
             ],
-            iconSource: "/img/yellow-icon.svg"
+            iconSource: require("@/img/icons/ico-eye-color-4.svg")
           },
           {
             name: "5 Female Color",
@@ -1236,7 +1236,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-5.png")
               }
             ],
-            iconSource: "/img/blue-icon.svg"
+            iconSource: require("@/img/icons/ico-eye-color-5.svg")
           }
         ]
       }
