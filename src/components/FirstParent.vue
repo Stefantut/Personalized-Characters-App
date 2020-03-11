@@ -34,6 +34,13 @@
         </div>
         <!-- Display glasses -->
         <img :src="form.glasses.image" :alt="form.glasses.name" class="img-view img-glasses" />
+        <!-- Display beard if it's a men -->
+        <img
+          :src="form.beard.image"
+          :alt="form.beard.name"
+          class="img-view img-beard"
+          v-if="form.gender == 'Male'"
+        />
       </div>
 
       <div class="form-container">
@@ -145,7 +152,7 @@
                       v-model="form.glasses"
                       :value="glasses"
                     >
-                      <img :src="glasses.iconSource" class="svg-2" />
+                      <img :src="glasses.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>
@@ -442,28 +449,28 @@ export default {
         beard: "",
         beardMale: [
           {
+            name: "No Beard",
+            image: "",
+            iconSource: "/img/black-icon.svg"
+          },
+          {
             name: "Beard Male 1",
-            image: "./img/man-1.png",
+            image: require("@/img/father/beard-1.png"),
             iconSource: "/img/black-icon.svg"
           },
           {
             name: "Beard Male 2",
-            image: "./img/man-1.png",
+            image: require("@/img/father/beard-2.png"),
             iconSource: "/img/black-icon.svg"
           },
           {
             name: "Beard Male 3",
-            image: "./img/man-1.png",
+            image: require("@/img/father/beard-3.png"),
             iconSource: "/img/black-icon.svg"
           },
           {
             name: "Beard Male 4",
-            image: "./img/man-1.png",
-            iconSource: "/img/black-icon.svg"
-          },
-          {
-            name: "Beard Male 4",
-            image: "./img/man-1.png",
+            image: require("@/img/father/beard-4.png"),
             iconSource: "/img/black-icon.svg"
           }
         ],
@@ -471,32 +478,31 @@ export default {
         skinToneMale: [
           {
             name: "Black-male",
-            image: "./img/man-1.png",
+            image: require("@/img/father/body-father-1.png"),
             iconSource: "/img/black-icon.svg",
-            preview: 1,
             gender: "Male"
           },
           {
             name: "Red-male",
-            image: "/img/man-2.png",
+            image: require("@/img/father/body-father-2.png"),
             iconSource: "/img/red-icon.svg",
             gender: "Male"
           },
           {
             name: "Green-male",
-            image: "/img/man-3.png",
+            image: require("@/img/father/body-father-3.png"),
             iconSource: "/img/green-icon.svg",
             gender: "Male"
           },
           {
             name: "Yellow-male",
-            image: "/img/man-4.png",
+            image: require("@/img/father/body-father-4.png"),
             iconSource: "/img/yellow-icon.svg",
             gender: "Male"
           },
           {
             name: "Blue-male",
-            image: "/img/man-5.png",
+            image: require("@/img/father/body-father-5.png"),
             iconSource: "/img/blue-icon.svg",
             gender: "Male"
           }
@@ -506,31 +512,31 @@ export default {
           {
             name: "Black-female",
             image: require("@/img/mother/body-mother-1.png"),
-            iconSource: "/img/black-icon.svg",
+            iconSource: require("@/img/icons/ico-skin-1.svg"),
             gender: "Female"
           },
           {
             name: "Red-female",
             image: require("@/img/mother/body-mother-2.png"),
-            iconSource: "/img/red-icon.svg",
+            iconSource: require("@/img/icons/ico-skin-2.svg"),
             gender: "Female"
           },
           {
             name: "Green-female",
             image: require("@/img/mother/body-mother-3.png"),
-            iconSource: "/img/green-icon.svg",
+            iconSource: require("@/img/icons/ico-skin-3.svg"),
             gender: "Female"
           },
           {
             name: "Yellow-female",
             image: require("@/img/mother/body-mother-4.png"),
-            iconSource: "/img/yellow-icon.svg",
+            iconSource: require("@/img/icons/ico-skin-4.svg"),
             gender: "Female"
           },
           {
             name: "Blue-female",
             image: require("@/img/mother/body-mother-5.png"),
-            iconSource: "/img/blue-icon.svg",
+            iconSource: require("@/img/icons/ico-skin-5.svg"),
             gender: "Female"
           }
         ],
@@ -539,28 +545,28 @@ export default {
         glassesType: [
           {
             name: "No Glasses",
-            image: "",
-            iconSource: "/img/black-icon.svg"
+            image: require("@/img/adult/glasses/glasses-no.png"),
+            iconSource: require("@/img/icons/ico-glasses-1.svg")
           },
           {
             name: "1-glasses",
             image: require("@/img/adult/glasses/glasses-1.png"),
-            iconSource: "/img/red-icon.svg"
+            iconSource: require("@/img/icons/ico-glasses-2.svg")
           },
           {
             name: "2-glasses",
             image: require("@/img/adult/glasses/glasses-2.png"),
-            iconSource: "/img/green-icon.svg"
+            iconSource: require("@/img/icons/ico-glasses-3.svg")
           },
           {
             name: "3-glasses",
             image: require("@/img/adult/glasses/glasses-3.png"),
-            iconSource: "/img/yellow-icon.svg"
+            iconSource: require("@/img/icons/ico-glasses-4.svg")
           },
           {
             name: "4-glasses",
             image: require("@/img/adult/glasses/glasses-4.png"),
-            iconSource: "/img/blue-icon.svg"
+            iconSource: require("@/img/icons/ico-glasses-5.svg")
           }
         ],
         hairType: "",
@@ -596,27 +602,27 @@ export default {
         hairTypeFemale: [
           {
             name: "1-fem",
-            iconSource: "/img/black-icon.svg",
+            iconSource: require("@/img/icons/mother/ico-hair-type-1.svg"),
             number: 1
           },
           {
             name: "2-fem",
-            iconSource: "/img/red-icon.svg",
+            iconSource: require("@/img/icons/mother/ico-hair-type-2.svg"),
             number: 2
           },
           {
             name: "3-fem",
-            iconSource: "/img/green-icon.svg",
+            iconSource: require("@/img/icons/mother/ico-hair-type-3.svg"),
             number: 3
           },
           {
             name: "4-fem",
-            iconSource: "/img/yellow-icon.svg",
+            iconSource: require("@/img/icons/mother/ico-hair-type-4.svg"),
             number: 4
           },
           {
             name: "5-fem",
-            iconSource: "/img/blue-icon.svg",
+            iconSource: require("@/img/icons/mother/ico-hair-type-5.svg"),
             number: 5
           }
         ],
@@ -629,23 +635,23 @@ export default {
             image: [
               {
                 number: 1,
-                imageSource: "/img/1male-id-1.png"
+                imageSource: require("@/img/father/hair-1-1.png")
               },
               {
                 number: 2,
-                imageSource: "/img/1male-id-2.png"
+                imageSource: require("@/img/father/hair-2-1.png")
               },
               {
                 number: 3,
-                imageSource: "/img/1male-id-3.png"
+                imageSource: require("@/img/father/hair-3-1.png")
               },
               {
                 number: 4,
-                imageSource: "/img/1male-id-4.png"
+                imageSource: require("@/img/father/hair-4-1.png")
               },
               {
                 number: 5,
-                imageSource: "/img/1male-id-5.png"
+                imageSource: require("@/img/father/hair-5-1.png")
               }
             ],
 
@@ -657,23 +663,23 @@ export default {
             image: [
               {
                 number: 1,
-                imageSource: "/img/2male-id-1.png"
+                imageSource: require("@/img/father/hair-1-2.png")
               },
               {
                 number: 2,
-                imageSource: "/img/2male-id-2.png"
+                imageSource: require("@/img/father/hair-2-2.png")
               },
               {
                 number: 3,
-                imageSource: "/img/2male-id-3.png"
+                imageSource: require("@/img/father/hair-3-2.png")
               },
               {
                 number: 4,
-                imageSource: "/img/2male-id-4.png"
+                imageSource: require("@/img/father/hair-4-2.png")
               },
               {
                 number: 5,
-                imageSource: "/img/2male-id-5.png"
+                imageSource: require("@/img/father/hair-5-2.png")
               }
             ],
             iconSource: "/img/red-icon.svg"
@@ -684,23 +690,23 @@ export default {
             image: [
               {
                 number: 1,
-                imageSource: "/img/3male-id-1.png"
+                imageSource: require("@/img/father/hair-1-3.png")
               },
               {
                 number: 2,
-                imageSource: "/img/3male-id-2.png"
+                imageSource: require("@/img/father/hair-2-3.png")
               },
               {
                 number: 3,
-                imageSource: "/img/3male-id-3.png"
+                imageSource: require("@/img/father/hair-3-3.png")
               },
               {
                 number: 4,
-                imageSource: "/img/3male-id-4.png"
+                imageSource: require("@/img/father/hair-4-3.png")
               },
               {
                 number: 5,
-                imageSource: "/img/3male-id-5.png"
+                imageSource: require("@/img/father/hair-5-3.png")
               }
             ],
             iconSource: "/img/green-icon.svg"
@@ -711,23 +717,23 @@ export default {
             image: [
               {
                 number: 1,
-                imageSource: "/img/4male-id-1.png"
+                imageSource: require("@/img/father/hair-1-4.png")
               },
               {
                 number: 2,
-                imageSource: "/img/4male-id-2.png"
+                imageSource: require("@/img/father/hair-2-4.png")
               },
               {
                 number: 3,
-                imageSource: "/img/4male-id-3.png"
+                imageSource: require("@/img/father/hair-3-4.png")
               },
               {
                 number: 4,
-                imageSource: "/img/4male-id-4.png"
+                imageSource: require("@/img/father/hair-4-4.png")
               },
               {
                 number: 5,
-                imageSource: "/img/4male-id-5.png"
+                imageSource: require("@/img/father/hair-5-4.png")
               }
             ],
             iconSource: "/img/yellow-icon.svg"
@@ -738,23 +744,23 @@ export default {
             image: [
               {
                 number: 1,
-                imageSource: "/img/5male-id-1.png"
+                imageSource: require("@/img/father/hair-1-5.png")
               },
               {
                 number: 2,
-                imageSource: "/img/5male-id-2.png"
+                imageSource: require("@/img/father/hair-2-5.png")
               },
               {
                 number: 3,
-                imageSource: "/img/5male-id-3.png"
+                imageSource: require("@/img/father/hair-3-5.png")
               },
               {
                 number: 4,
-                imageSource: "/img/5male-id-4.png"
+                imageSource: require("@/img/father/hair-4-5.png")
               },
               {
                 number: 5,
-                imageSource: "/img/5male-id-5.png"
+                imageSource: require("@/img/father/hair-5-5.png")
               }
             ],
             iconSource: "/img/blue-icon.svg"
@@ -964,23 +970,23 @@ export default {
             image: [
               {
                 eyeNumber: 11,
-                imageSource: "/img/1male-id-1.png"
+                imageSource: require("@/img/adult/eyes/eyes-1-1.png")
               },
               {
                 eyeNumber: 21,
-                imageSource: "/img/1male-id-2.png"
+                imageSource: require("@/img/adult/eyes/eyes-2-1.png")
               },
               {
                 eyeNumber: 31,
-                imageSource: "/img/1male-id-3.png"
+                imageSource: require("@/img/adult/eyes/eyes-3-1.png")
               },
               {
                 eyeNumber: 41,
-                imageSource: "/img/1male-id-4.png"
+                imageSource: require("@/img/adult/eyes/eyes-4-1.png")
               },
               {
                 eyeNumber: 51,
-                imageSource: "/img/1male-id-5.png"
+                imageSource: require("@/img/adult/eyes/eyes-5-1.png")
               }
             ],
 
@@ -992,23 +998,23 @@ export default {
             image: [
               {
                 eyeNumber: 11,
-                imageSource: "/img/2male-id-1.png"
+                imageSource: require("@/img/adult/eyes/eyes-1-2.png")
               },
               {
                 eyeNumber: 21,
-                imageSource: "/img/2male-id-2.png"
+                imageSource: require("@/img/adult/eyes/eyes-2-2.png")
               },
               {
                 eyeNumber: 31,
-                imageSource: "/img/2male-id-3.png"
+                imageSource: require("@/img/adult/eyes/eyes-3-2.png")
               },
               {
                 eyeNumber: 41,
-                imageSource: "/img/2male-id-4.png"
+                imageSource: require("@/img/adult/eyes/eyes-4-2.png")
               },
               {
                 eyeNumber: 51,
-                imageSource: "/img/2male-id-5.png"
+                imageSource: require("@/img/adult/eyes/eyes-5-2.png")
               }
             ],
             iconSource: "/img/red-icon.svg"
@@ -1019,23 +1025,23 @@ export default {
             image: [
               {
                 eyeNumber: 11,
-                imageSource: "/img/3male-id-1.png"
+                imageSource: require("@/img/adult/eyes/eyes-1-3.png")
               },
               {
                 eyeNumber: 21,
-                imageSource: "/img/3male-id-2.png"
+                imageSource: require("@/img/adult/eyes/eyes-2-3.png")
               },
               {
                 eyeNumber: 31,
-                imageSource: "/img/3male-id-3.png"
+                imageSource: require("@/img/adult/eyes/eyes-3-3.png")
               },
               {
                 eyeNumber: 41,
-                imageSource: "/img/3male-id-4.png"
+                imageSource: require("@/img/adult/eyes/eyes-4-3.png")
               },
               {
                 eyeNumber: 51,
-                imageSource: "/img/3male-id-5.png"
+                imageSource: require("@/img/adult/eyes/eyes-5-3.png")
               }
             ],
             iconSource: "/img/green-icon.svg"
@@ -1046,23 +1052,23 @@ export default {
             image: [
               {
                 eyeNumber: 11,
-                imageSource: "/img/4male-id-1.png"
+                imageSource: require("@/img/adult/eyes/eyes-1-4.png")
               },
               {
                 eyeNumber: 21,
-                imageSource: "/img/4male-id-2.png"
+                imageSource: require("@/img/adult/eyes/eyes-2-4.png")
               },
               {
                 eyeNumber: 31,
-                imageSource: "/img/4male-id-3.png"
+                imageSource: require("@/img/adult/eyes/eyes-3-4.png")
               },
               {
                 eyeNumber: 41,
-                imageSource: "/img/4male-id-4.png"
+                imageSource: require("@/img/adult/eyes/eyes-4-4.png")
               },
               {
                 eyeNumber: 51,
-                imageSource: "/img/4male-id-5.png"
+                imageSource: require("@/img/adult/eyes/eyes-5-4.png")
               }
             ],
             iconSource: "/img/yellow-icon.svg"
@@ -1073,23 +1079,23 @@ export default {
             image: [
               {
                 eyeNumber: 11,
-                imageSource: "/img/5male-id-1.png"
+                imageSource: require("@/img/adult/eyes/eyes-1-5.png")
               },
               {
                 eyeNumber: 21,
-                imageSource: "/img/5male-id-2.png"
+                imageSource: require("@/img/adult/eyes/eyes-2-5.png")
               },
               {
                 eyeNumber: 31,
-                imageSource: "/img/5male-id-3.png"
+                imageSource: require("@/img/adult/eyes/eyes-3-5.png")
               },
               {
                 eyeNumber: 41,
-                imageSource: "/img/5male-id-4.png"
+                imageSource: require("@/img/adult/eyes/eyes-4-5.png")
               },
               {
                 eyeNumber: 51,
-                imageSource: "/img/5male-id-5.png"
+                imageSource: require("@/img/adult/eyes/eyes-5-5.png")
               }
             ],
             iconSource: "/img/blue-icon.svg"
@@ -1280,6 +1286,7 @@ export default {
           this.form.hairColor = "";
           this.form.eyeShape = "";
           this.form.eyeColor = "";
+          this.form.beard = "";
         }
         if (!this.form.firstName || this.form.firstName.length < 2) {
           this.errors = "Please type in parent's name, at least 2 characters";

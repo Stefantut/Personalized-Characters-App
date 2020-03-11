@@ -148,7 +148,7 @@
                       v-model="form.glasses"
                       :value="glasses"
                     >
-                      <img :src="glasses.iconSource" class="svg-2" />
+                      <img :src="glasses.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>
@@ -500,7 +500,7 @@ export default {
         glassesType: [
           {
             name: "No Glasses",
-            image: "",
+            image: require("@/img/child/glasses/glasses-no.png"),
             iconSource: "/img/black-icon.svg"
           },
           {

@@ -65,6 +65,9 @@
         .img-glasses {
           z-index: 5;
         }
+        .img-beard {
+          z-index: 6;
+        }
       }
       .form-container {
         width: 300px;
@@ -81,8 +84,6 @@
           padding-top: 30px;
           .gender {
             justify-content: center;
-            h5 {
-            }
           }
           .step-number-wrap {
             position: absolute;
@@ -114,7 +115,10 @@
             height: 30px;
           }
           .svg-2 {
-            height: 20px;
+            height: 25px;
+          }
+          .svg-2-bigger {
+            height: 40px;
           }
         }
         .buttons {
