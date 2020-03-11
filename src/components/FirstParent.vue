@@ -173,7 +173,7 @@
                       v-model="form.beard"
                       :value="beardMale"
                     >
-                      <img :src="beardMale.iconSource" class="svg-2" />
+                      <img :src="beardMale.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>
@@ -204,7 +204,7 @@
                       v-model="form.hairType"
                       :value="hairType"
                     >
-                      <img :src="hairType.iconSource" class="svg-2" />
+                      <img :src="hairType.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>
@@ -219,7 +219,7 @@
                       v-model="form.hairType"
                       :value="hairType"
                     >
-                      <img :src="hairType.iconSource" class="svg-2" />
+                      <img :src="hairType.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>
@@ -546,7 +546,7 @@ export default {
           {
             name: "No Glasses",
             image: require("@/img/adult/glasses/glasses-no.png"),
-            iconSource: require("@/img/icons/ico-glasses-1.svg")
+            iconSource: require("@/img/icons/father/ico-beard-1.svg")
           },
           {
             name: "1-glasses",

@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="80px"
-	 height="80px" viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="80px" height="80px" viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
 <g id="ico-beard-1">
 	<g>
 		<g>
-			<defs>
-				<rect id="SVGID_1_" width="80" height="80"/>
-			</defs>
-			<clipPath id="SVGID_2_">
-				<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-			</clipPath>
-			<g style="clip-path:url(#SVGID_2_);">
-				<path style="fill:none;" d="M59.746,0H20.253C9.068,0,0,9.066,0,20.253v39.493C0,70.932,9.068,80,20.253,80h39.493
-					C70.932,80,80,70.932,80,59.746V20.253C80,9.066,70.932,0,59.746,0z"/>
+			<g>
+				<g>
+					<defs>
+						<rect id="SVGID_1_" width="80" height="80"/>
+					</defs>
+					<clipPath id="SVGID_2_">
+						<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+					</clipPath>
+					<g style="clip-path:url(#SVGID_2_);">
+						<path style="fill:none;" d="M59.746,0H20.253C9.068,0,0,9.066,0,20.253v39.493C0,70.932,9.068,80,20.253,80h39.493
+							C70.932,80,80,70.932,80,59.746V20.253C80,9.066,70.932,0,59.746,0z"/>
+					</g>
+				</g>
 			</g>
 		</g>
-		
-			<rect x="-3.004" y="37.411" transform="matrix(0.6857 0.7279 -0.7279 0.6857 41.3329 -16.6957)" style="fill:#A7A9AC;" width="86.008" height="4.211"/>
-		
-			<rect x="-5.113" y="36.905" transform="matrix(0.7373 -0.6755 0.6755 0.7373 -16.3998 35.8448)" style="fill:#A7A9AC;" width="86.008" height="4.211"/>
+		<polygon style="fill:#A7A9AC;" points="23.896,19.355 58.813,56.419 55.79,59.353 20.918,22.334 		"/>
+		<polygon style="fill:#A7A9AC;" points="17.214,55.097 55.776,19.768 58.813,22.698 20.015,58.243 		"/>
 	</g>
 </g>
-<g id="Layer_1">
+<g id="Layer_1_1_">
 </g>
 </svg>
