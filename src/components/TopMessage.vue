@@ -1,9 +1,9 @@
 <template>
   <div class="top-section">
-    <div class="logo">
+    <a class="logo" href="/">
       <img src="../img/logo-new.svg" alt="logo" class="item item--image" />
       <p class="item item--text">Company Name</p>
-    </div>
+    </a>
     <div class="message">
       <!-- <img src="../assets/star.svg" class="star" /> -->
       <svg
@@ -50,14 +50,27 @@ export default {};
     margin-top: 10px;
     display: flex;
     align-items: center;
+    color: $five;
     .item {
       &--image {
         width: 60px;
+        transition: 2s ease-in;
+        animation: rotate 4s infinite;
+        &:hover {
+          -webkit-animation-play-state: paused;
+          -moz-animation-play-state: paused;
+          -o-animation-play-state: paused;
+          animation-play-state: paused;
+          cursor: pointer;
+        }
       }
       &--text {
         margin-left: 10px;
         margin-bottom: 0;
       }
+    }
+    &:hover {
+      text-decoration: none;
     }
   }
   .message {
@@ -93,6 +106,18 @@ export default {};
     .message-text {
       margin: 0 auto;
     }
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate3d(1, 1, 1, 30deg);
+  }
+  50% {
+    transform: rotate3d(1, 1, 1, -30deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate3d(1, 1, 1, 30deg);
   }
 }
 </style>
