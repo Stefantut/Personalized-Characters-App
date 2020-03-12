@@ -454,22 +454,22 @@ export default {
             iconSource: require("@/img/icons/father/ico-beard-1.svg")
           },
           {
-            name: "Beard Male 1",
+            name: "Option 1",
             image: require("@/img/father/beard-1.png"),
             iconSource: require("@/img/icons/father/ico-beard-2.svg")
           },
           {
-            name: "Beard Male 2",
+            name: "Option 2",
             image: require("@/img/father/beard-2.png"),
             iconSource: require("@/img/icons/father/ico-beard-3.svg")
           },
           {
-            name: "Beard Male 3",
+            name: "Option 3",
             image: require("@/img/father/beard-3.png"),
             iconSource: require("@/img/icons/father/ico-beard-4.svg")
           },
           {
-            name: "Beard Male 4",
+            name: "option 4",
             image: require("@/img/father/beard-4.png"),
             iconSource: require("@/img/icons/father/ico-beard-5.svg")
           }
@@ -477,31 +477,31 @@ export default {
         //Skin Tone Male
         skinToneMale: [
           {
-            name: "Black-male",
+            name: "Warm Light",
             image: require("@/img/father/body-father-1.png"),
             iconSource: require("@/img/icons/ico-skin-1.svg"),
             gender: "Male"
           },
           {
-            name: "Red-male",
+            name: "Light",
             image: require("@/img/father/body-father-2.png"),
             iconSource: require("@/img/icons/ico-skin-2.svg"),
             gender: "Male"
           },
           {
-            name: "Green-male",
+            name: "Medium",
             image: require("@/img/father/body-father-3.png"),
             iconSource: require("@/img/icons/ico-skin-3.svg"),
             gender: "Male"
           },
           {
-            name: "Yellow-male",
+            name: "Warm Dark",
             image: require("@/img/father/body-father-4.png"),
             iconSource: require("@/img/icons/ico-skin-4.svg"),
             gender: "Male"
           },
           {
-            name: "Blue-male",
+            name: "Dark",
             image: require("@/img/father/body-father-5.png"),
             iconSource: require("@/img/icons/ico-skin-5.svg"),
             gender: "Male"
@@ -510,31 +510,31 @@ export default {
         // Skin Tone Female
         skinToneFemale: [
           {
-            name: "Black-female",
+            name: "Warm Light",
             image: require("@/img/mother/body-mother-1.png"),
             iconSource: require("@/img/icons/ico-skin-1.svg"),
             gender: "Female"
           },
           {
-            name: "Red-female",
+            name: "Light",
             image: require("@/img/mother/body-mother-2.png"),
             iconSource: require("@/img/icons/ico-skin-2.svg"),
             gender: "Female"
           },
           {
-            name: "Green-female",
+            name: "Medium",
             image: require("@/img/mother/body-mother-3.png"),
             iconSource: require("@/img/icons/ico-skin-3.svg"),
             gender: "Female"
           },
           {
-            name: "Yellow-female",
+            name: "Warm Dark",
             image: require("@/img/mother/body-mother-4.png"),
             iconSource: require("@/img/icons/ico-skin-4.svg"),
             gender: "Female"
           },
           {
-            name: "Blue-female",
+            name: "Dark",
             image: require("@/img/mother/body-mother-5.png"),
             iconSource: require("@/img/icons/ico-skin-5.svg"),
             gender: "Female"
@@ -549,22 +549,22 @@ export default {
             iconSource: require("@/img/icons/father/ico-beard-1.svg")
           },
           {
-            name: "1-glasses",
+            name: "Squares",
             image: require("@/img/adult/glasses/glasses-1.png"),
             iconSource: require("@/img/icons/ico-glasses-2.svg")
           },
           {
-            name: "2-glasses",
+            name: "Wayfarer",
             image: require("@/img/adult/glasses/glasses-2.png"),
             iconSource: require("@/img/icons/ico-glasses-3.svg")
           },
           {
-            name: "3-glasses",
+            name: "Rectangle",
             image: require("@/img/adult/glasses/glasses-3.png"),
             iconSource: require("@/img/icons/ico-glasses-4.svg")
           },
           {
-            name: "4-glasses",
+            name: "Rounds",
             image: require("@/img/adult/glasses/glasses-4.png"),
             iconSource: require("@/img/icons/ico-glasses-5.svg")
           }
@@ -573,27 +573,27 @@ export default {
         // Hair Type Male
         hairTypeMale: [
           {
-            name: "1-male",
+            name: "Option 1",
             iconSource: require("@/img/icons/father/ico-hair-1.svg"),
             number: 1
           },
           {
-            name: "2-male",
+            name: "Option 2",
             iconSource: require("@/img/icons/father/ico-hair-2.svg"),
             number: 2
           },
           {
-            name: "3-male",
+            name: "Option 3",
             iconSource: require("@/img/icons/father/ico-hair-3.svg"),
             number: 3
           },
           {
-            name: "4-male",
+            name: "Option 4",
             iconSource: require("@/img/icons/father/ico-hair-4.svg"),
             number: 4
           },
           {
-            name: "5-male",
+            name: "Option 5",
             iconSource: require("@/img/icons/father/ico-hair-5.svg"),
             number: 5
           }
@@ -601,27 +601,27 @@ export default {
         // Hair Type Female
         hairTypeFemale: [
           {
-            name: "1-fem",
+            name: "Option 1",
             iconSource: require("@/img/icons/mother/ico-hair-type-1.svg"),
             number: 1
           },
           {
-            name: "2-fem",
+            name: "Option 2",
             iconSource: require("@/img/icons/mother/ico-hair-type-2.svg"),
             number: 2
           },
           {
-            name: "3-fem",
+            name: "Option 3",
             iconSource: require("@/img/icons/mother/ico-hair-type-3.svg"),
             number: 3
           },
           {
-            name: "4-fem",
+            name: "Option 4",
             iconSource: require("@/img/icons/mother/ico-hair-type-4.svg"),
             number: 4
           },
           {
-            name: "5-fem",
+            name: "Option 5",
             iconSource: require("@/img/icons/mother/ico-hair-type-5.svg"),
             number: 5
           }
@@ -630,7 +630,7 @@ export default {
         // Hair Color Male
         hairColorMale: [
           {
-            name: "Male Color 1",
+            name: "Blonde",
             imageSource: "",
             image: [
               {
@@ -658,7 +658,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-1.svg")
           },
           {
-            name: "Male Color 2",
+            name: "Light Red",
             imageSource: "",
             image: [
               {
@@ -685,7 +685,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-2.svg")
           },
           {
-            name: "Male Color 3",
+            name: "Dark Red",
             imageSource: "",
             image: [
               {
@@ -712,7 +712,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-3.svg")
           },
           {
-            name: "Male Color 4",
+            name: "Brown",
             imageSource: "",
             image: [
               {
@@ -739,7 +739,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-4.svg")
           },
           {
-            name: "Male Color 5",
+            name: "Black",
             imageSource: "",
             image: [
               {
@@ -769,7 +769,7 @@ export default {
         // Hair Color Female
         hairColorFemale: [
           {
-            name: "1 Female Color",
+            name: "Blonde",
             imageSource: "",
             image: [
               {
@@ -796,7 +796,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-1.svg")
           },
           {
-            name: "2 Female Color",
+            name: "Light Red",
             imageSource: "",
             image: [
               {
@@ -823,7 +823,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-2.svg")
           },
           {
-            name: "3 Female Color",
+            name: "Dark Red",
             imageSource: "",
             image: [
               {
@@ -850,7 +850,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-3.svg")
           },
           {
-            name: "4 Female Color",
+            name: "Brown",
             imageSource: "",
             image: [
               {
@@ -877,7 +877,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-4.svg")
           },
           {
-            name: "5 Female Color",
+            name: "Black",
             imageSource: "",
             image: [
               {
@@ -908,27 +908,27 @@ export default {
         // Eye Shape Male
         eyeShapeMale: [
           {
-            name: "1-male",
+            name: "Round Full",
             iconSource: require("@/img/icons/ico-eye-shape-1.svg"),
             eyeNumber: 11
           },
           {
-            name: "2-male",
+            name: "Monolid",
             iconSource: require("@/img/icons/ico-eye-shape-2.svg"),
             eyeNumber: 21
           },
           {
-            name: "3-male",
+            name: "Downturned",
             iconSource: require("@/img/icons/ico-eye-shape-3.svg"),
             eyeNumber: 31
           },
           {
-            name: "4-male",
+            name: "Round",
             iconSource: require("@/img/icons/ico-eye-shape-4.svg"),
             eyeNumber: 41
           },
           {
-            name: "5-male",
+            name: "Hooded",
             iconSource: require("@/img/icons/ico-eye-shape-5.svg"),
             eyeNumber: 51
           }
@@ -936,27 +936,27 @@ export default {
         // Eye Shape Female
         eyeShapeFemale: [
           {
-            name: "1-fem",
+            name: "Round",
             iconSource: require("@/img/icons/ico-eye-shape-1.svg"),
             eyeNumber: 11
           },
           {
-            name: "2-fem",
+            name: "Monolid",
             iconSource: require("@/img/icons/ico-eye-shape-2.svg"),
             eyeNumber: 21
           },
           {
-            name: "3-fem",
+            name: "Downturned",
             iconSource: require("@/img/icons/ico-eye-shape-3.svg"),
             eyeNumber: 31
           },
           {
-            name: "4-fem",
+            name: "Round",
             iconSource: require("@/img/icons/ico-eye-shape-4.svg"),
             eyeNumber: 41
           },
           {
-            name: "5-fem",
+            name: "Hooded",
             iconSource: require("@/img/icons/ico-eye-shape-5.svg"),
             eyeNumber: 51
           }
@@ -965,7 +965,7 @@ export default {
         // Eye Color Male
         eyeColorMale: [
           {
-            name: "Male Color 1",
+            name: "Blue",
             imageSource: "",
             image: [
               {
@@ -993,7 +993,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-1.svg")
           },
           {
-            name: "Male Color 2",
+            name: "Green",
             imageSource: "",
             image: [
               {
@@ -1020,7 +1020,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-2.svg")
           },
           {
-            name: "Male Color 3",
+            name: "Amber",
             imageSource: "",
             image: [
               {
@@ -1047,7 +1047,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-3.svg")
           },
           {
-            name: "Male Color 4",
+            name: "Brown",
             imageSource: "",
             image: [
               {
@@ -1074,7 +1074,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-4.svg")
           },
           {
-            name: "Male Color 5",
+            name: "Gray",
             imageSource: "",
             image: [
               {
@@ -1104,7 +1104,7 @@ export default {
         // Eye Color Female
         eyeColorFemale: [
           {
-            name: "1 Female Color",
+            name: "Blue",
             imageSource: "",
             image: [
               {
@@ -1131,7 +1131,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-1.svg")
           },
           {
-            name: "2 Female Color",
+            name: "Green",
             imageSource: "",
             image: [
               {
@@ -1158,7 +1158,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-2.svg")
           },
           {
-            name: "3 Female Color",
+            name: "Amber",
             imageSource: "",
             image: [
               {
@@ -1185,7 +1185,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-3.svg")
           },
           {
-            name: "4 Female Color",
+            name: "Brown",
             imageSource: "",
             image: [
               {
@@ -1212,7 +1212,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-4.svg")
           },
           {
-            name: "5 Female Color",
+            name: "Gray",
             imageSource: "",
             image: [
               {

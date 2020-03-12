@@ -2,9 +2,7 @@
   <div class="wrapper" v-if="!isHidden">
     <form id="form">
       <!-- Component Title -->
-      <h3 class="component-title text-success">
-        Let's create the child first:
-      </h3>
+      <h3 class="component-title text-success">Let's create the child first:</h3>
       <!-- Display images -->
       <div id="view">
         <!-- Display images - Preview Skin-->
@@ -17,11 +15,7 @@
           />
         </div>-->
         <!-- Display skin -->
-        <img
-          :src="form.skin.image"
-          :alt="form.skin.name"
-          class="img-view img-skin-tone"
-        />
+        <img :src="form.skin.image" :alt="form.skin.name" class="img-view img-skin-tone" />
         <!-- Display hair -->
         <div v-for="image in form.hairColor.image" :key="image.number">
           <img
@@ -39,11 +33,7 @@
           />
         </div>
         <!-- Display glasses -->
-        <img
-          :src="form.glasses.image"
-          :alt="form.glasses.name"
-          class="img-view img-glasses"
-        />
+        <img :src="form.glasses.image" :alt="form.glasses.name" class="img-view img-glasses" />
       </div>
       <div class="form-container">
         <!-- Step 1 -->
@@ -111,10 +101,7 @@
               <h5 class="pt-2 pb-1 flex text-center">Select your Skin Tone</h5>
               <div class="skin-tone-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li
-                    v-for="(skinInfo, index) in form.skinToneMale"
-                    :key="index.id"
-                  >
+                  <li v-for="(skinInfo, index) in form.skinToneMale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -129,10 +116,7 @@
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li
-                    v-for="(skinInfo, index) in form.skinToneFemale"
-                    :key="index.id"
-                  >
+                  <li v-for="(skinInfo, index) in form.skinToneFemale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -153,10 +137,7 @@
               <h5 class="pt-2 pb-1 flex text-center">Glasses?</h5>
               <div class="glasses-boxes">
                 <ul class="all-boxes">
-                  <li
-                    v-for="(glasses, index) in form.glassesType"
-                    :key="index.id"
-                  >
+                  <li v-for="(glasses, index) in form.glassesType" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -187,10 +168,7 @@
               <h5 class="pt-2 pb-1 flex text-center">Select your Hair Type</h5>
               <div class="hair-type-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li
-                    v-for="(hairType, index) in form.hairTypeMale"
-                    :key="index.hair"
-                  >
+                  <li v-for="(hairType, index) in form.hairTypeMale" :key="index.hair">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -205,10 +183,7 @@
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li
-                    v-for="(hairType, index) in form.hairTypeFemale"
-                    :key="index"
-                  >
+                  <li v-for="(hairType, index) in form.hairTypeFemale" :key="index">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -227,10 +202,7 @@
               <h5 class="pt-2 pb-1 flex text-center">Select your Hair Color</h5>
               <div class="hair-color-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li
-                    v-for="(hairColor, index) in form.hairColorMale"
-                    :key="index.id"
-                  >
+                  <li v-for="(hairColor, index) in form.hairColorMale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -245,10 +217,7 @@
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li
-                    v-for="(hairColor, index) in form.hairColorFemale"
-                    :key="index.id"
-                  >
+                  <li v-for="(hairColor, index) in form.hairColorFemale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -279,10 +248,7 @@
               <h5 class="pt-2 pb-1 flex text-center">Select your Eye Shape</h5>
               <div class="eye-shape-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li
-                    v-for="(eyeShape, index) in form.eyeShapeMale"
-                    :key="index.id"
-                  >
+                  <li v-for="(eyeShape, index) in form.eyeShapeMale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -297,10 +263,7 @@
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li
-                    v-for="(eyeShape, index) in form.eyeShapeFemale"
-                    :key="index.id"
-                  >
+                  <li v-for="(eyeShape, index) in form.eyeShapeFemale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -319,10 +282,7 @@
               <h5 class="pt-2 pb-1 flex text-center">Select your Eye Color</h5>
               <div class="eye-color-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li
-                    v-for="(eyeColor, index) in form.eyeColorMale"
-                    :key="index.id"
-                  >
+                  <li v-for="(eyeColor, index) in form.eyeColorMale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -337,10 +297,7 @@
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li
-                    v-for="(eyeColor, index) in form.eyeColorFemale"
-                    :key="index.id"
-                  >
+                  <li v-for="(eyeColor, index) in form.eyeColorFemale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -364,8 +321,7 @@
               v-for="(e, item) in errors"
               :key="item + 1"
               class="font-italic font-weight-normal"
-              >{{ e }}</span
-            >
+            >{{ e }}</span>
           </transition-group>
           <!-- <span v-for="e in errors" class="font-italic font-weight-normal" :key="e.errors">{{ e }}</span> -->
         </div>
@@ -377,23 +333,17 @@
             v-if="step != 1 && step != 2"
             @click.prevent="prevStep"
             class="prev btn btn-primary"
-          >
-            Previous
-          </button>
+          >Previous</button>
           <button
             v-if="step != totalsteps"
             @click.prevent="nextStep"
             class="next btn btn-success"
-          >
-            Continue
-          </button>
+          >Continue</button>
           <button
             v-if="step == 4"
             @click.prevent="send"
             class="send btn btn-warning"
-          >
-            Continue to Parent
-          </button>
+          >Continue to Parent</button>
         </section>
         <!-- Display Selected items -->
         <!-- <div id="selected">
@@ -480,31 +430,31 @@ export default {
         //Skin Tone Male
         skinToneMale: [
           {
-            name: "Black-male",
+            name: "Warm Light",
             image: require("@/img/boy/body-boy-1.png"),
             iconSource: require("@/img/icons/ico-skin-1.svg"),
             gender: "Male"
           },
           {
-            name: "Red-male",
+            name: "Light",
             image: require("@/img/boy/body-boy-2.png"),
             iconSource: require("@/img/icons/ico-skin-2.svg"),
             gender: "Male"
           },
           {
-            name: "Green-male",
+            name: "Medium",
             image: require("@/img/boy/body-boy-3.png"),
             iconSource: require("@/img/icons/ico-skin-3.svg"),
             gender: "Male"
           },
           {
-            name: "Yellow-male",
+            name: "Warm Dark",
             image: require("@/img/boy/body-boy-4.png"),
             iconSource: require("@/img/icons/ico-skin-4.svg"),
             gender: "Male"
           },
           {
-            name: "Blue-male",
+            name: "Dark",
             image: require("@/img/boy/body-boy-5.png"),
             iconSource: require("@/img/icons/ico-skin-5.svg"),
             gender: "Male"
@@ -513,31 +463,31 @@ export default {
         // Skin Tone Female
         skinToneFemale: [
           {
-            name: "Black-female",
+            name: "Warm Light",
             image: require("@/img/girl/body-girl-1.png"),
             iconSource: require("@/img/icons/ico-skin-1.svg"),
             gender: "Female"
           },
           {
-            name: "Red-female",
+            name: "Light",
             image: require("@/img/girl/body-girl-2.png"),
             iconSource: require("@/img/icons/ico-skin-2.svg"),
             gender: "Female"
           },
           {
-            name: "Green-female",
+            name: "Medium",
             image: require("@/img/girl/body-girl-3.png"),
             iconSource: require("@/img/icons/ico-skin-3.svg"),
             gender: "Female"
           },
           {
-            name: "Yellow-female",
+            name: "Warm Dark",
             image: require("@/img/girl/body-girl-4.png"),
             iconSource: require("@/img/icons/ico-skin-4.svg"),
             gender: "Female"
           },
           {
-            name: "Blue-female",
+            name: "Dark",
             image: require("@/img/girl/body-girl-5.png"),
             iconSource: require("@/img/icons/ico-skin-5.svg"),
             gender: "Female"
@@ -552,22 +502,22 @@ export default {
             iconSource: require("@/img/icons/father/ico-beard-1.svg")
           },
           {
-            name: "1-glasses",
+            name: "Squares",
             image: require("@/img/child/glasses/glasses-1.png"),
             iconSource: require("@/img/icons/ico-glasses-2.svg")
           },
           {
-            name: "2-glasses",
+            name: "Wayfarer",
             image: require("@/img/child/glasses/glasses-2.png"),
             iconSource: require("@/img/icons/ico-glasses-3.svg")
           },
           {
-            name: "3-glasses",
+            name: "Rectangle",
             image: require("@/img/child/glasses/glasses-3.png"),
             iconSource: require("@/img/icons/ico-glasses-4.svg")
           },
           {
-            name: "4-glasses",
+            name: "Rounds",
             image: require("@/img/child/glasses/glasses-4.png"),
             iconSource: require("@/img/icons/ico-glasses-5.svg")
           }
@@ -576,27 +526,27 @@ export default {
         // Hair Type Male
         hairTypeMale: [
           {
-            name: "1-male",
+            name: "Option 1",
             iconSource: require("@/img/icons/boy/ico-hair-boy-1.svg"),
             number: 1
           },
           {
-            name: "2-male",
+            name: "Option 2",
             iconSource: require("@/img/icons/boy/ico-hair-boy-2.svg"),
             number: 2
           },
           {
-            name: "3-male",
+            name: "Option 3",
             iconSource: require("@/img/icons/boy/ico-hair-boy-3.svg"),
             number: 3
           },
           {
-            name: "4-male",
+            name: "Option 4",
             iconSource: require("@/img/icons/boy/ico-hair-boy-4.svg"),
             number: 4
           },
           {
-            name: "5-male",
+            name: "Option 5",
             iconSource: require("@/img/icons/boy/ico-hair-boy-5.svg"),
             number: 5
           }
@@ -604,27 +554,27 @@ export default {
         // Hair Type Female
         hairTypeFemale: [
           {
-            name: "1-fem",
+            name: "Option 1",
             iconSource: require("@/img/icons/girl/ico-hair-girl-1.svg"),
             number: 1
           },
           {
-            name: "2-fem",
+            name: "Option 2",
             iconSource: require("@/img/icons/girl/ico-hair-girl-2.svg"),
             number: 2
           },
           {
-            name: "3-fem",
+            name: "Option 3",
             iconSource: require("@/img/icons/girl/ico-hair-girl-3.svg"),
             number: 3
           },
           {
-            name: "4-fem",
+            name: "Option 4",
             iconSource: require("@/img/icons/girl/ico-hair-girl-4.svg"),
             number: 4
           },
           {
-            name: "5-fem",
+            name: "Option 5",
             iconSource: require("@/img/icons/girl/ico-hair-girl-5.svg"),
             number: 5
           }
@@ -633,7 +583,7 @@ export default {
         // Hair Color Male
         hairColorMale: [
           {
-            name: "Male Color 1",
+            name: "Blonde",
             imageSource: "",
             image: [
               {
@@ -661,7 +611,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-1.svg")
           },
           {
-            name: "Male Color 2",
+            name: "Light Red",
             imageSource: "",
             image: [
               {
@@ -688,7 +638,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-2.svg")
           },
           {
-            name: "Male Color 3",
+            name: "Dark Red",
             imageSource: "",
             image: [
               {
@@ -715,7 +665,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-3.svg")
           },
           {
-            name: "Male Color 4",
+            name: "Brown",
             imageSource: "",
             image: [
               {
@@ -742,7 +692,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-4.svg")
           },
           {
-            name: "Male Color 5",
+            name: "Black",
             imageSource: "",
             image: [
               {
@@ -772,7 +722,7 @@ export default {
         // Hair Color Female
         hairColorFemale: [
           {
-            name: "1 Female Color",
+            name: "Blonde",
             imageSource: "",
             image: [
               {
@@ -799,7 +749,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-1.svg")
           },
           {
-            name: "2 Female Color",
+            name: "Light Red",
             imageSource: "",
             image: [
               {
@@ -826,7 +776,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-2.svg")
           },
           {
-            name: "3 Female Color",
+            name: "Dark Red",
             imageSource: "",
             image: [
               {
@@ -853,7 +803,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-3.svg")
           },
           {
-            name: "4 Female Color",
+            name: "Brown",
             imageSource: "",
             image: [
               {
@@ -880,7 +830,7 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-4.svg")
           },
           {
-            name: "5 Female Color",
+            name: "Black",
             imageSource: "",
             image: [
               {
@@ -911,27 +861,27 @@ export default {
         // Eye Shape Male
         eyeShapeMale: [
           {
-            name: "1-male",
+            name: "Round Full",
             iconSource: require("@/img/icons/ico-eye-shape-1.svg"),
             eyeNumber: 11
           },
           {
-            name: "2-male",
+            name: "Monolid",
             iconSource: require("@/img/icons/ico-eye-shape-2.svg"),
             eyeNumber: 21
           },
           {
-            name: "3-male",
+            name: "Downturned",
             iconSource: require("@/img/icons/ico-eye-shape-3.svg"),
             eyeNumber: 31
           },
           {
-            name: "4-male",
+            name: "Round",
             iconSource: require("@/img/icons/ico-eye-shape-4.svg"),
             eyeNumber: 41
           },
           {
-            name: "5-male",
+            name: "Hooded",
             iconSource: require("@/img/icons/ico-eye-shape-5.svg"),
             eyeNumber: 51
           }
@@ -939,27 +889,27 @@ export default {
         // Eye Shape Female
         eyeShapeFemale: [
           {
-            name: "1-fem",
+            name: "Round Full",
             iconSource: require("@/img/icons/ico-eye-shape-1.svg"),
             eyeNumber: 11
           },
           {
-            name: "2-fem",
+            name: "Monolid",
             iconSource: require("@/img/icons/ico-eye-shape-2.svg"),
             eyeNumber: 21
           },
           {
-            name: "3-fem",
+            name: "Downturned",
             iconSource: require("@/img/icons/ico-eye-shape-3.svg"),
             eyeNumber: 31
           },
           {
-            name: "4-fem",
+            name: "Round",
             iconSource: require("@/img/icons/ico-eye-shape-4.svg"),
             eyeNumber: 41
           },
           {
-            name: "5-fem",
+            name: "Hooded",
             iconSource: require("@/img/icons/ico-eye-shape-5.svg"),
             eyeNumber: 51
           }
@@ -968,7 +918,7 @@ export default {
         // Eye Color Male
         eyeColorMale: [
           {
-            name: "Male Color 1",
+            name: "Blue",
             imageSource: "",
             image: [
               {
@@ -995,7 +945,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-1.svg")
           },
           {
-            name: "Male Color 2",
+            name: "Green",
             imageSource: "",
             image: [
               {
@@ -1022,7 +972,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-2.svg")
           },
           {
-            name: "Male Color 3",
+            name: "Amber",
             imageSource: "",
             image: [
               {
@@ -1049,7 +999,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-3.svg")
           },
           {
-            name: "Male Color 4",
+            name: "Brown",
             imageSource: "",
             image: [
               {
@@ -1076,7 +1026,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-4.svg")
           },
           {
-            name: "Male Color 5",
+            name: "Gray",
             imageSource: "",
             image: [
               {
@@ -1106,7 +1056,7 @@ export default {
         // Eye Color Female
         eyeColorFemale: [
           {
-            name: "1 Female Color",
+            name: "Blue",
             imageSource: "",
             image: [
               {
@@ -1133,7 +1083,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-1.svg")
           },
           {
-            name: "2 Female Color",
+            name: "Green",
             imageSource: "",
             image: [
               {
@@ -1160,7 +1110,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-2.svg")
           },
           {
-            name: "3 Female Color",
+            name: "Amber",
             imageSource: "",
             image: [
               {
@@ -1187,7 +1137,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-3.svg")
           },
           {
-            name: "4 Female Color",
+            name: "Brown",
             imageSource: "",
             image: [
               {
@@ -1214,7 +1164,7 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-4.svg")
           },
           {
-            name: "5 Female Color",
+            name: "Gray",
             imageSource: "",
             image: [
               {
