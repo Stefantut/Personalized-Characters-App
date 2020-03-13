@@ -12,3 +12,17 @@ $thirdFont: "Courgette", cursive;
 $small: 400;
 $medium: 500;
 $large: 600;
+
+// Css variables
+:root {
+  --header-height: 50px;
+  --footer-height: 40px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: $small;
+}

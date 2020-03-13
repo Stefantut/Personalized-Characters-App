@@ -35,12 +35,9 @@
       />
     </transition>
     <!-- Display Selected items for child -->
-    <div class="selected-items">
+    <div class="selected-items" v-if="firstChild.gender || firstChild.name">
       <!-- Component Title -->
-      <h3
-        class="component-title"
-        v-if="firstChild.gender || firstChild.name"
-      >What you have selected:</h3>
+      <h3 class="component-title">What you have selected:</h3>
       <div class="display-selected">
         <div id="selectedChild" class="selected">
           <transition name="fade">
@@ -163,6 +160,7 @@
         </div>
       </div>
     </div>
+    <FooterComponent />
   </div>
 </template>
 
@@ -172,6 +170,7 @@ import TopMessage from "./components/TopMessage";
 import FirstChild from "./components/FirstChild";
 import FirstParent from "./components/FirstParent";
 import ShowSpinner from "./components/ShowSpinner";
+import FooterComponent from "./components/FooterComponent";
 
 export default {
   name: "app",
@@ -274,7 +273,8 @@ export default {
     TopMessage,
     FirstChild,
     FirstParent,
-    ShowSpinner
+    ShowSpinner,
+    FooterComponent
   }
 };
 </script>

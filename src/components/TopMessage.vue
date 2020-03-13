@@ -42,6 +42,7 @@ export default {};
 @import ".././scss/_fonts.scss";
 .top-section {
   width: 100%;
+  height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
