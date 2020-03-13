@@ -56,7 +56,7 @@ export default {};
       &--image {
         width: 60px;
         transition: 2s ease-in;
-        animation: rotate 4s infinite;
+        animation: rotate 5s infinite;
         &:hover {
           -webkit-animation-play-state: paused;
           -moz-animation-play-state: paused;
@@ -111,14 +111,14 @@ export default {};
 }
 @keyframes rotate {
   0% {
-    transform: rotate3d(1, 1, 1, 30deg);
+    transform: rotate3d(1, 1, 1, 20deg);
   }
   50% {
-    transform: rotate3d(1, 1, 1, -30deg);
+    transform: rotate3d(1, 1, 1, -20deg);
     opacity: 1;
   }
   100% {
-    transform: rotate3d(1, 1, 1, 30deg);
+    transform: rotate3d(1, 1, 1, 20deg);
   }
 }
 </style>
