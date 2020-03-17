@@ -51,44 +51,44 @@
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--name" v-if="firstChild.name">
-              <span class="selected__item__divider">+</span>Name:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Name:
               <span class="selected__item__text">{{ firstChild.name }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--skin" v-if="firstChild.skin">
-              <span class="selected__item__divider">+</span>Skin tone:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Skin tone:
               <span class="selected__item__text">{{ firstChild.skin }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--glasses" v-if="firstChild.glasses">
-              <span class="selected__item__divider">+</span>Glasses:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Glasses:
               <span class="selected__item__text">{{ firstChild.glasses }}</span>
             </p>
           </transition>
 
           <transition name="fade">
             <p class="selected__item selected__item--hairtype" v-if="firstChild.hairType">
-              <span class="selected__item__divider">+</span>Hair type:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Hair type:
               <span class="selected__item__text">{{ firstChild.hairType }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--haircolor" v-if="firstChild.hairColor">
-              <span class="selected__item__divider">+</span>Hair color:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Hair color:
               <span class="selected__item__text">{{ firstChild.hairColor }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--eyeshape" v-if="firstChild.eyeShape">
-              <span class="selected__item__divider">+</span>Eye shape:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Eye shape:
               <span class="selected__item__text">{{ firstChild.eyeShape }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--eyecolor" v-if="firstChild.eyeColor">
-              <span class="selected__item__divider">+</span>Eye color:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Eye color:
               <span class="selected__item__text">{{ firstChild.eyeColor }}</span>
             </p>
           </transition>
@@ -108,19 +108,19 @@
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--name" v-if="firstParent.name">
-              <span class="selected__item__divider">+</span>Name:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Name:
               <span class="selected__item__text">{{ firstParent.name }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--skin" v-if="firstParent.skin">
-              <span class="selected__item__divider">+</span>Skin tone:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Skin tone:
               <span class="selected__item__text">{{ firstParent.skin }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--glasses" v-if="firstParent.glasses">
-              <span class="selected__item__divider">+</span>Glasses:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Glasses:
               <span class="selected__item__text">{{ firstParent.glasses }}</span>
             </p>
           </transition>
@@ -129,41 +129,54 @@
               class="selected__item selected__item--beard"
               v-if="firstParent.maleBeard && firstParent.gender =='Male'"
             >
-              <span class="selected__item__divider">+</span>Beard:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Beard:
               <span class="selected__item__text">{{ firstParent.maleBeard }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--hairtype" v-if="firstParent.hairType">
-              <span class="selected__item__divider">+</span>Hair type:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Hair type:
               <span class="selected__item__text">{{ firstParent.hairType }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--haircolor" v-if="firstParent.hairColor">
-              <span class="selected__item__divider">+</span>Hair color:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Hair color:
               <span class="selected__item__text">{{ firstParent.hairColor }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--eyeshape" v-if="firstParent.eyeShape">
-              <span class="selected__item__divider">+</span>Eye shape:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Eye shape:
               <span class="selected__item__text">{{ firstParent.eyeShape }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--eyecolor" v-if="firstParent.eyeColor">
-              <span class="selected__item__divider">+</span>Eye color:
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Eye color:
               <span class="selected__item__text">{{ firstParent.eyeColor }}</span>
             </p>
           </transition>
         </div>
       </div>
     </div>
+    <button
+      class="snipcart-add-item"
+      id="my-button"
+      data-item-id="1"
+      data-item-name="The book"
+      data-item-description="first line"
+      data-item-price="30.00"
+      data-item-quantity="1"
+      data-item-url="http://67acde2b.ngrok.io/"
+    >Buy now</button>
+    <!-- Use ngrok to test the cart locally -->
+    <!-- <button class="snipcart-checkout">Click here to checkout</button> -->
+    <span class="snipcart-total-price"></span>
     <FooterComponent />
   </div>
 </template>
-
+    
 <script>
 // import HelloWorld from "./components/HelloWorld.vue";
 import TopMessage from "./components/TopMessage";
@@ -278,7 +291,6 @@ export default {
   }
 };
 </script>
-
 <style lang="scss">
 @import "./scss/app.scss";
 </style>

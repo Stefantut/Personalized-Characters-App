@@ -47,7 +47,7 @@
         <!-- Step 1 -->
         <transition name="fade-less" mode="out-in">
           <section class="step gender name" v-if="step == 1" :key="1">
-            <div class="step-number-wrap text-danger">
+            <div class="step-number-wrap text-success">
               <p class="step-number">
                 {{step}}
                 <sup>st</sup>
@@ -365,7 +365,7 @@
             @click.prevent="nextStep"
             class="next btn btn-success"
           >Continue</button>
-          <button v-if="step == 4" @click.prevent="send" class="send btn btn-warning">Preview Book</button>
+          <button v-if="step == 4" @click.prevent="send" class="send btn btn-warning">Save</button>
         </section>
         <!-- Display Selected items -->
         <!-- <div id="selected">
@@ -432,6 +432,7 @@
 <script>
 import PrettyCheckbox from "pretty-checkbox-vue";
 import Vue from "vue";
+import $ from "jquery";
 
 Vue.use(PrettyCheckbox);
 
@@ -1250,11 +1251,19 @@ export default {
   },
   methods: {
     getValueAll() {
-      var childValue = document.getElementById("selectedChild");
-      var parentValue = document.getElementById("selectedParent");
-      // var all = childValue + parentValue;
-      console.log(childValue);
-      console.log(parentValue);
+      var childValues = $("#selectedChild").text();
+      var parentValues = $("#selectedParent").text();
+      var childName = $(
+        "#selectedChild .selected__item--name .selected__item__text"
+      ).text();
+      var parentName = $(
+        "#selectedParent .selected__item--name .selected__item__text"
+      ).text();
+      $("#my-button").attr("data-item-description", childValues + parentValues);
+      $("#my-button").attr(
+        "data-item-name",
+        "The book of " + parentName + " & " + childName
+      );
     },
     emitToParent() {
       this.$emit("parentGenderPassed", this.form.gender);

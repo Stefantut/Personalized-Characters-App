@@ -47,7 +47,7 @@ export default {};
       }
       &__image {
         margin: 0 5px;
-        width: 20px;
+        width: 15px;
         height: auto;
         animation: pulse 3s infinite;
         transition: 0.2s ease-in;
@@ -66,13 +66,13 @@ export default {};
 
 @keyframes pulse {
   0% {
-    transform: scale(0.7);
+    transform: scale(0.8);
   }
   50% {
-    transform: scale(0.9);
+    transform: scale(1);
   }
   100% {
-    transform: scale(0.7);
+    transform: scale(0.8);
   }
 }
 </style>
