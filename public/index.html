@@ -26,42 +26,6 @@
       >
     </noscript>
     <div id="app"></div>
-    <button class="cart">carttttt</button>
     <!-- built files will be auto injected -->
-    <script>
-      $(".cart").on("click", function() {
-        mee();
-      });
-      async function mee() {
-        var title = $(".first-parent").text() + " ";
-        var result =
-          title +
-          $(".gender-selected").text() +
-          ", " +
-          $(".name-selected").text() +
-          ", " +
-          $(".skin-selected").text() +
-          ", " +
-          $(".hairtype-selected").text() +
-          ", " +
-          $(".haircolor-selected").text() +
-          ", " +
-          $(".eyeshape-selected").text() +
-          ", " +
-          $(".eyecolor-selected").text();
-        try {
-          await Snipcart.api.cart.items.add({
-            id: "1",
-            name: "Product 1",
-            description: result,
-            price: 30.0,
-            url: "/",
-            quantity: 1
-          });
-        } catch (error) {
-          console.log(error);
-        }
-      }
-    </script>
   </body>
 </html>

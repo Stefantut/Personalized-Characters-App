@@ -4,6 +4,12 @@
       <img src="../img/logo-new.svg" alt="logo" class="item item--image" />
       <p class="item item--text">Company Name</p>
     </a>
+    <div class="cart">
+      <span class="snipcart-total-price"></span>
+      <div class="snipcart-checkout">
+        <img src="../assets/cart.svg" alt />
+      </div>
+    </div>
     <div class="message">
       <!-- <img src="../assets/star.svg" class="star" /> -->
       <svg
@@ -28,7 +34,6 @@
 	l138-100l138,100l-54-160L480,208z"
         />
       </svg>
-
       <p class="message-text">Sale Now: Use Code SALE15</p>
     </div>
   </div>
@@ -74,8 +79,21 @@ export default {};
       text-decoration: none;
     }
   }
+  .cart {
+    display: flex;
+    .snipcart-total-price {
+      padding-right: 7px;
+    }
+    .snipcart-checkout {
+      img {
+        width: 24px;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
   .message {
-    height: 40px;
     font-family: $secondFont;
     padding: 10px 20px;
     margin-top: -10px;
@@ -89,9 +107,10 @@ export default {};
     @include default-transition;
     cursor: default;
     &:hover {
+      background-color: $two;
+      color: black;
       .star {
         transform: translateX(-10px) rotate(160deg);
-        margin-left: 15px;
         path {
           fill: $one;
         }

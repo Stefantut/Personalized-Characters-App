@@ -1259,7 +1259,10 @@ export default {
       var parentName = $(
         "#selectedParent .selected__item--name .selected__item__text"
       ).text();
-      $("#my-button").attr("data-item-description", childValues + parentValues);
+      $("#my-button").attr(
+        "data-item-description",
+        childValues + " & " + parentValues
+      );
       $("#my-button").attr(
         "data-item-name",
         "The book of " + parentName + " & " + childName

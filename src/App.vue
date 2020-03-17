@@ -171,8 +171,6 @@
       data-item-url="http://67acde2b.ngrok.io/"
     >Buy now</button>
     <!-- Use ngrok to test the cart locally -->
-    <!-- <button class="snipcart-checkout">Click here to checkout</button> -->
-    <span class="snipcart-total-price"></span>
     <FooterComponent />
   </div>
 </template>
