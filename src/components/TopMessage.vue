@@ -4,12 +4,6 @@
       <img src="../img/logo-new.svg" alt="logo" class="item item--image" />
       <p class="item item--text">Company Name</p>
     </a>
-    <div class="cart">
-      <span class="snipcart-total-price"></span>
-      <div class="snipcart-checkout">
-        <img src="../assets/cart.svg" alt />
-      </div>
-    </div>
     <div class="message">
       <!-- <img src="../assets/star.svg" class="star" /> -->
       <svg
@@ -79,20 +73,6 @@ export default {};
       text-decoration: none;
     }
   }
-  .cart {
-    display: flex;
-    .snipcart-total-price {
-      padding-right: 7px;
-    }
-    .snipcart-checkout {
-      img {
-        width: 24px;
-      }
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
   .message {
     font-family: $secondFont;
     padding: 10px 20px;
@@ -107,10 +87,9 @@ export default {};
     @include default-transition;
     cursor: default;
     &:hover {
-      background-color: $two;
-      color: black;
       .star {
         transform: translateX(-10px) rotate(160deg);
+        margin-right: 25px;
         path {
           fill: $one;
         }

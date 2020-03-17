@@ -2,6 +2,12 @@
   <div id="app">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <TopMessage />
+    <div class="cart">
+      <span class="snipcart-total-price"></span>
+      <div class="snipcart-checkout">
+        <img src="./assets/cart.svg" alt />
+      </div>
+    </div>
     <transition name="fade" appear>
       <FirstChild
         v-on:genderPassed="updateGender"
@@ -160,17 +166,19 @@
         </div>
       </div>
     </div>
-    <button
-      class="snipcart-add-item"
-      id="my-button"
-      data-item-id="1"
-      data-item-name="The book"
-      data-item-description="first line"
-      data-item-price="30.00"
-      data-item-quantity="1"
-      data-item-url="http://67acde2b.ngrok.io/"
-    >Buy now</button>
-    <!-- Use ngrok to test the cart locally -->
+    <div class="buy-button">
+      <!-- Use ngrok to test the cart locally -->
+      <div
+        class="snipcart-add-item"
+        id="my-button"
+        data-item-id="1"
+        data-item-name="The book"
+        data-item-description="All details"
+        data-item-price="30.00"
+        data-item-quantity="1"
+        data-item-url="http://67acde2b.ngrok.io/"
+      >Buy now</div>
+    </div>
     <FooterComponent />
   </div>
 </template>
@@ -291,4 +299,28 @@ export default {
 </script>
 <style lang="scss">
 @import "./scss/app.scss";
+.cart {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+  .snipcart-total-price {
+    padding-right: 7px;
+  }
+  .snipcart-checkout {
+    img {
+      width: 24px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.buy-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .snipcart-add-item {
+    font-family: $secondFont;
+  }
+}
 </style>

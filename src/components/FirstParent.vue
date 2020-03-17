@@ -47,7 +47,7 @@
         <!-- Step 1 -->
         <transition name="fade-less" mode="out-in">
           <section class="step gender name" v-if="step == 1" :key="1">
-            <div class="step-number-wrap text-success">
+            <div class="step-number-wrap text-danger">
               <p class="step-number">
                 {{step}}
                 <sup>st</sup>
@@ -96,7 +96,7 @@
           <!-- Step 2 -->
           <section class="step" v-if="step == 2" :key="2">
             <!-- using direct svg file -->
-            <div class="step-number-wrap text-success">
+            <div class="step-number-wrap text-danger">
               <p class="step-number">
                 {{step}}
                 <sup>nd</sup>
@@ -183,7 +183,7 @@
 
           <!-- Step 3 -->
           <section class="step hair" v-if="step == 3" :key="3">
-            <div class="step-number-wrap text-success">
+            <div class="step-number-wrap text-danger">
               <p class="step-number">
                 {{step}}
                 <sup>rd</sup>
@@ -263,7 +263,7 @@
 
           <!-- Step 4 -->
           <section class="step eye" v-if="step == 4" :key="4">
-            <div class="step-number-wrap text-success">
+            <div class="step-number-wrap text-danger">
               <p class="step-number">
                 {{step}}
                 <sup>th</sup>
