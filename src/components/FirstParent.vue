@@ -365,7 +365,20 @@
             @click.prevent="nextStep"
             class="next btn btn-success"
           >Continue</button>
-          <button v-if="step == 4" @click.prevent="send" class="send btn btn-warning">Save</button>
+          <!-- <button v-if="step == 4" @click.prevent="send" class="send btn btn-warning">Save</button> -->
+          <div class="buy-button send btn btn-warning" v-if="step == 4" @click.prevent="send">
+            <!-- Use ngrok to test the cart locally -->
+            <div
+              class="snipcart-add-item"
+              id="my-button"
+              data-item-id="1"
+              data-item-name="The book"
+              data-item-description="All details"
+              data-item-price="30.00"
+              data-item-quantity="1"
+              data-item-url="http://67acde2b.ngrok.io/"
+            >Buy now</div>
+          </div>
         </section>
         <!-- Display Selected items -->
         <!-- <div id="selected">

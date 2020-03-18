@@ -421,8 +421,6 @@ export default {
       step: 1,
       totalsteps: 4,
       errors: [],
-      // selectedItem: {},
-      // selected: undefined,
       form: {
         gender: "",
         firstName: null,

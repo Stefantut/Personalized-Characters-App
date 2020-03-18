@@ -2,11 +2,14 @@
   <div id="app">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <TopMessage />
-    <div class="cart">
-      <span class="snipcart-total-price"></span>
-      <div class="snipcart-checkout">
-        <img src="./assets/cart.svg" alt />
+    <div class="cart snipcart-checkout">
+      <div class="cart__items">
+        <img src="./assets/shopping-bag.svg" alt="shopping-bag" />
+        <span class="snipcart-items-count"></span>
       </div>
+
+      <img src="./assets/cart.svg" alt="cart" class="cart-image" />
+      <span class="snipcart-total-price"></span>
     </div>
     <transition name="fade" appear>
       <FirstChild
@@ -166,25 +169,11 @@
         </div>
       </div>
     </div>
-    <div class="buy-button">
-      <!-- Use ngrok to test the cart locally -->
-      <div
-        class="snipcart-add-item"
-        id="my-button"
-        data-item-id="1"
-        data-item-name="The book"
-        data-item-description="All details"
-        data-item-price="30.00"
-        data-item-quantity="1"
-        data-item-url="http://67acde2b.ngrok.io/"
-      >Buy now</div>
-    </div>
     <FooterComponent />
   </div>
 </template>
     
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
 import TopMessage from "./components/TopMessage";
 import FirstChild from "./components/FirstChild";
 import FirstParent from "./components/FirstParent";
@@ -303,24 +292,20 @@ export default {
   display: flex;
   justify-content: flex-end;
   padding-right: 30px;
-  .snipcart-total-price {
-    padding-right: 7px;
-  }
-  .snipcart-checkout {
+  .cart__items {
+    display: flex;
+    align-items: flex-start;
     img {
-      width: 24px;
-    }
-    &:hover {
-      cursor: pointer;
+      width: 20px;
+      margin-right: 3px;
     }
   }
-}
-.buy-button {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  .snipcart-add-item {
-    font-family: $secondFont;
+  .cart-image {
+    margin: 0 10px;
+    width: 20px;
+  }
+  &:hover {
+    cursor: pointer;
   }
 }
 </style>
