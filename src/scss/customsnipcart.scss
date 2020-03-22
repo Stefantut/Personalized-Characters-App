@@ -1,0 +1,17 @@
+/* Snipcart Custom Style */
+.snipcart-item-description {
+  max-width: 100%;
+}
+
+#snipcart {
+  font-family: $firstFont;
+  .snipcart-cart-header__title {
+    color: $four;
+  }
+  .snipcart-item-line__title {
+    color: $four;
+  }
+  .snipcart-modal__close-title {
+    color: $one;
+  }
+}

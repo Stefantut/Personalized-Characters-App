@@ -6,6 +6,7 @@
   height: calc(100vh);
   display: flex;
   flex-direction: column;
+  // Main Components
   .wrapper {
     display: flex;
     flex-wrap: nowrap;
@@ -26,7 +27,7 @@
         font-weight: 400;
       }
       #view {
-        height: 380px;
+        height: 400px;
         width: 350px;
         background-color: #ffefe2;
         margin-right: 50px;
@@ -236,24 +237,6 @@
   }
 }
 
-// Others
-.active {
-  background: #f00;
-  color: #fff;
-  font-size: 30px;
-}
-
-.pulse {
-  background: transparent;
-  border-radius: 50%;
-  margin: 20px;
-  height: 40px;
-  width: 40px;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-  transform: scale(1);
-  animation: pulse 2s infinite;
-}
-
 // KeyFrames
 @keyframes rotateee {
   0% {
@@ -284,7 +267,7 @@
   }
 }
 
-/* Pretty fix  */
+/* Pretty checkboxes fix  */
 .pretty.p-round .state label:before,
 label:after {
   opacity: 0;

@@ -1,16 +1,11 @@
 <template>
   <div id="app">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+    <!-- Top Header Component -->
     <TopMessage />
-    <div class="cart snipcart-checkout">
-      <div class="cart__items">
-        <img src="./assets/shopping-bag.svg" alt="shopping-bag" />
-        <span class="snipcart-items-count"></span>
-      </div>
+    <!-- Cart Buttons Component -->
+    <CartButtons />
 
-      <img src="./assets/cart.svg" alt="cart" class="cart-image" />
-      <span class="snipcart-total-price"></span>
-    </div>
+    <!-- First Child Component -->
     <transition name="fade" appear>
       <FirstChild
         v-on:genderPassed="updateGender"
@@ -26,9 +21,9 @@
       />
     </transition>
 
+    <!-- Spinner Componet - Loading -->
     <ShowSpinner v-if="showSpinner" />
-
-    <!-- here is your application code -->
+    <!-- First Parent Component -->
     <transition name="fade" appear mode="out-in">
       <FirstParent
         v-on:parentGenderPassed="updateParentGender"
@@ -169,12 +164,14 @@
         </div>
       </div>
     </div>
+    <!-- Footer Component -->
     <FooterComponent />
   </div>
 </template>
     
 <script>
 import TopMessage from "./components/TopMessage";
+import CartButtons from "./components/CartButtons";
 import FirstChild from "./components/FirstChild";
 import FirstParent from "./components/FirstParent";
 import ShowSpinner from "./components/ShowSpinner";
@@ -269,6 +266,7 @@ export default {
     updateParentEyeColor(data) {
       this.firstParent.eyeColor = data;
     },
+    //Spinner component - loading
     updateShowSpinner(data) {
       this.showSpinner = data;
       setTimeout(() => {
@@ -277,8 +275,8 @@ export default {
     }
   },
   components: {
-    // HelloWorld,
     TopMessage,
+    CartButtons,
     FirstChild,
     FirstParent,
     ShowSpinner,
@@ -288,24 +286,5 @@ export default {
 </script>
 <style lang="scss">
 @import "./scss/app.scss";
-.cart {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 30px;
-  .cart__items {
-    display: flex;
-    align-items: flex-start;
-    img {
-      width: 20px;
-      margin-right: 3px;
-    }
-  }
-  .cart-image {
-    margin: 0 10px;
-    width: 20px;
-  }
-  &:hover {
-    cursor: pointer;
-  }
-}
+@import "./scss/customsnipcart.scss";
 </style>
