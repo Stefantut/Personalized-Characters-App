@@ -1,12 +1,12 @@
 <template>
-  <div class="cart snipcart-checkout">
-    <div class="cart__items">
+  <div class="cart">
+    <div class="cart__items snipcart-checkout">
       <img src="../assets/shopping-bag.svg" alt="shopping-bag" />
       <span class="snipcart-items-count"></span>
     </div>
 
-    <img src="../assets/cart.svg" alt="cart" class="cart-image" />
-    <span class="snipcart-total-price"></span>
+    <img src="../assets/cart.svg" alt="cart" class="cart-image snipcart-checkout" />
+    <span class="snipcart-total-price snipcart-checkout"></span>
   </div>
 </template>
 <script>
@@ -24,6 +24,9 @@ export default {};
   .cart__items {
     display: flex;
     align-items: flex-start;
+    &:hover {
+      cursor: pointer;
+    }
     img {
       width: 20px;
       margin-right: 3px;
@@ -32,9 +35,9 @@ export default {};
   .cart-image {
     margin: 0 10px;
     width: 20px;
-  }
-  &:hover {
-    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 </style>

@@ -3,7 +3,7 @@
 #snipcart {
   font-family: $firstFont;
   .snipcart-item-description {
-    max-width: 70%;
+    max-width: 60%;
     &:before {
       content: "--";
       color: $one;
@@ -12,6 +12,7 @@
   .snipcart-custom-field-wrapper__label {
     font-size: 14px;
     line-height: 20px;
+    width: 80%;
     &:before {
       content: "--";
       color: $one;
