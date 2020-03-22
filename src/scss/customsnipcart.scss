@@ -1,17 +1,45 @@
 /* Snipcart Custom Style */
-.snipcart-item-description {
-  max-width: 100%;
-}
 
 #snipcart {
   font-family: $firstFont;
+  .snipcart-item-description {
+    max-width: 70%;
+    &:before {
+      content: "--";
+      color: $one;
+    }
+  }
+  .snipcart-custom-field-wrapper__label {
+    font-size: 14px;
+    line-height: 20px;
+    &:before {
+      content: "--";
+      color: $one;
+    }
+  }
+  .snipcart-text-custom-field {
+    display: none;
+  }
   .snipcart-cart-header__title {
     color: $four;
+    text-transform: capitalize;
   }
   .snipcart-item-line__title {
     color: $four;
+    text-transform: capitalize;
   }
   .snipcart-modal__close-title {
     color: $one;
+  }
+  .snipcart-modal {
+    background-color: white;
+    .snipcart-cart-header,
+    .snipcart-cart__content,
+    .snipcart-cart__footer {
+      background-color: white;
+    }
+    .snipcart-featured-payment-methods__title {
+      background-color: white;
+    }
   }
 }

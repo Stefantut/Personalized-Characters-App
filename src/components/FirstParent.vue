@@ -373,70 +373,14 @@
               id="my-button"
               data-item-id="1"
               data-item-name="Default Title"
-              data-item-description="Default details"
+              data-item-description="Default details Child"
+              data-item-custom1-name="Default details Parent"
               data-item-price="30.00"
               data-item-quantity="1"
               data-item-url="http://67acde2b.ngrok.io/"
             >Buy now</div>
           </div>
         </section>
-        <!-- Display Selected items -->
-        <!-- <div id="selected">
-          <transition name="fade">
-            <h4
-              class="first-child font-bold text-success"
-              v-if="form.gender || form.firstName"
-            >Selected Child Details:</h4>
-          </transition>
-          <transition name="fade">
-            <p class="gender-selected font-weight-bold mb-0" v-if="form.gender">
-              Gender:
-              <span class="font-weight-normal">{{ form.gender }}</span>
-            </p>
-          </transition>
-          <transition name="fade">
-            <p class="name-selected font-weight-bold mb-0" v-if="form.firstName">
-              Name:
-              <span class="font-weight-normal">{{ form.firstName }}</span>
-            </p>
-          </transition>
-          <transition name="fade">
-            <p class="skin-selected font-weight-bold mb-0" v-if="form.skin">
-              Skin tone:
-              <span class="font-weight-normal">{{ form.skin.name }}</span>
-            </p>
-          </transition>
-          <transition name="fade">
-            <p class="eyecolor-selected font-weight-bold mb-0" v-if="form.glasses">
-              Glasses:
-              <span class="font-weight-normal">{{ form.glasses.name }}</span>
-            </p>
-          </transition>
-          <transition name="fade">
-            <p class="hairtype-selected font-weight-bold mb-0" v-if="form.hairType">
-              Hair type:
-              <span class="font-weight-normal">{{ form.hairType.name }}</span>
-            </p>
-          </transition>
-          <transition name="fade">
-            <p class="haircolor-selected font-weight-bold mb-0" v-if="form.hairColor">
-              Hair color:
-              <span class="font-weight-normal">{{ form.hairColor.name }}</span>
-            </p>
-          </transition>
-          <transition name="fade">
-            <p class="eyeshape-selected font-weight-bold mb-0" v-if="form.eyeShape">
-              Eye shape:
-              <span class="font-weight-normal">{{ form.eyeShape.name }}</span>
-            </p>
-          </transition>
-          <transition name="fade">
-            <p class="eyecolor-selected font-weight-bold mb-0" v-if="form.eyeColor">
-              Eye color:
-              <span class="font-weight-normal">{{ form.eyeColor.name }}</span>
-            </p>
-          </transition>
-        </div>-->
       </div>
     </form>
   </div>
@@ -445,6 +389,7 @@
 <script>
 import PrettyCheckbox from "pretty-checkbox-vue";
 import Vue from "vue";
+// jquery just for Snipcart
 import $ from "jquery";
 
 Vue.use(PrettyCheckbox);
@@ -1272,14 +1217,15 @@ export default {
       var parentName = $(
         "#selectedParent .selected__item--name .selected__item__text"
       ).text();
-      $("#my-button").attr(
-        "data-item-description",
-        childValues + " & " + parentValues
-      );
+      // Changes Title
       $("#my-button").attr(
         "data-item-name",
         "The book of " + parentName + " & " + childName
       );
+      // Adds Child Values
+      $("#my-button").attr("data-item-description", childValues);
+      // Adds Parent Values
+      $("#my-button").attr("data-item-custom1-name", parentValues);
     },
     emitToParent() {
       this.$emit("parentGenderPassed", this.form.gender);
