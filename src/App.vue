@@ -35,9 +35,12 @@
         v-on:parentEyeShapePassed="updateParentEyeShape"
         v-on:parentEyeColorPassed="updateParentEyeColor"
         v-on:parentMaleBeardPassed="updateParentMaleBeard"
+        v-on:parentHidden="updateHiddenParent"
+        v-on:showSpinner="updateShowSpinner"
         :isHiddenChild="firstChild.isHidden"
       />
     </transition>
+    <BuyComponent :isHiddenChild="firstChild.isHidden" :isHiddenParent="firstParent.isHidden" />
     <!-- Display Selected items for child -->
     <div class="selected-items" v-if="firstChild.gender || firstChild.name">
       <!-- Component Title -->
@@ -174,6 +177,7 @@ import TopMessage from "./components/TopMessage";
 import CartButtons from "./components/CartButtons";
 import FirstChild from "./components/FirstChild";
 import FirstParent from "./components/FirstParent";
+import BuyComponent from "./components/BuyComponent";
 import ShowSpinner from "./components/ShowSpinner";
 import FooterComponent from "./components/FooterComponent";
 
@@ -202,7 +206,8 @@ export default {
         hairType: "",
         hairColor: "",
         eyeShape: "",
-        eyeColor: ""
+        eyeColor: "",
+        isHidden: false
       }
     };
   },
@@ -272,6 +277,11 @@ export default {
       setTimeout(() => {
         this.showSpinner = false;
       }, 900);
+    },
+    updateHiddenParent(data) {
+      setTimeout(() => {
+        this.firstParent.isHidden = data;
+      }, 900);
     }
   },
   components: {
@@ -279,6 +289,7 @@ export default {
     CartButtons,
     FirstChild,
     FirstParent,
+    BuyComponent,
     ShowSpinner,
     FooterComponent
   }

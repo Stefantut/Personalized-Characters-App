@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" v-if="isHiddenChild">
+  <div class="wrapper" v-if="isHiddenChild && !isHidden">
     <form id="form">
       <!-- Component Title -->
       <h3 class="component-title text-danger">Let's create the parent now:</h3>
@@ -366,9 +366,8 @@
             class="next btn btn-success"
           >Continue</button>
           <!-- <button v-if="step == 4" @click.prevent="send" class="send btn btn-warning">Save</button> -->
-          <div class="buy-button send btn btn-warning" v-if="step == 4" @click.prevent="send">
-            <!-- Use ngrok to test the cart locally -->
-            <div
+          <!-- Use ngrok to test the cart locally -->
+          <!-- <div
               class="snipcart-add-item"
               id="my-button"
               data-item-id="1"
@@ -378,8 +377,13 @@
               data-item-price="30.00"
               data-item-quantity="1"
               data-item-url="http://67acde2b.ngrok.io/"
-            >Buy now</div>
-          </div>
+            >Buy now
+          </div>-->
+          <button
+            class="buy-button send btn btn-warning"
+            v-if="step == 4"
+            @click.prevent="send"
+          >Save</button>
         </section>
       </div>
     </form>
@@ -389,15 +393,13 @@
 <script>
 import PrettyCheckbox from "pretty-checkbox-vue";
 import Vue from "vue";
-// jquery just for Snipcart
-import $ from "jquery";
-
 Vue.use(PrettyCheckbox);
 
 export default {
   name: "Parent",
   data: function() {
     return {
+      isHidden: false,
       step: 1,
       totalsteps: 4,
       errors: [],
@@ -1208,25 +1210,25 @@ export default {
     isHiddenChild: Boolean
   },
   methods: {
-    getValueAll() {
-      var childValues = $("#selectedChild").text();
-      var parentValues = $("#selectedParent").text();
-      var childName = $(
-        "#selectedChild .selected__item--name .selected__item__text"
-      ).text();
-      var parentName = $(
-        "#selectedParent .selected__item--name .selected__item__text"
-      ).text();
-      // Changes Title
-      $("#my-button").attr(
-        "data-item-name",
-        "The book of " + parentName + " & " + childName
-      );
-      // Adds Child Values
-      $("#my-button").attr("data-item-description", childValues);
-      // Adds Parrent
-      $("#my-button").attr("data-item-custom1-name", parentValues);
-    },
+    // getValueAll() {
+    //   var childValues = $("#selectedChild").text();
+    //   var parentValues = $("#selectedParent").text();
+    //   var childName = $(
+    //     "#selectedChild .selected__item--name .selected__item__text"
+    //   ).text();
+    //   var parentName = $(
+    //     "#selectedParent .selected__item--name .selected__item__text"
+    //   ).text();
+    //   // Changes Title
+    //   $("#my-button").attr(
+    //     "data-item-name",
+    //     "The book of " + parentName + " & " + childName
+    //   );
+    //   // Adds Child Values
+    //   $("#my-button").attr("data-item-description", childValues);
+    //   // Adds Parrent
+    //   $("#my-button").attr("data-item-custom1-name", parentValues);
+    // },
     emitToParent() {
       this.$emit("parentGenderPassed", this.form.gender);
       this.$emit("parentNamePassed", this.form.firstName);
@@ -1309,7 +1311,11 @@ export default {
           return false;
         }
       }
-      this.getValueAll();
+      // this.getValueAll();
+      this.showSpinner = true;
+      this.$emit("showSpinner", this.showSpinner);
+      this.isHidden = true;
+      this.$emit("parentHidden", this.isHidden);
     }
   },
   watch: {

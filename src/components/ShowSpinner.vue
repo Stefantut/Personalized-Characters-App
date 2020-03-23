@@ -1,7 +1,7 @@
 <template>
   <div class="spinner">
     <div class="spinner-content">
-      <h3 class="spinner-content__text">Loading the parent... please wait</h3>
+      <h3 class="spinner-content__text">Loading... please wait</h3>
       <svg
         version="1.1"
         class="spinner-content__image"
