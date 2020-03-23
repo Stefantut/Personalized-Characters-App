@@ -1224,7 +1224,7 @@ export default {
       );
       // Adds Child Values
       $("#my-button").attr("data-item-description", childValues);
-      // Adds Parent Values
+      // Adds Parrent
       $("#my-button").attr("data-item-custom1-name", parentValues);
     },
     emitToParent() {

@@ -21,12 +21,14 @@ export default {};
   display: flex;
   justify-content: flex-end;
   padding-right: 30px;
-  .cart__items {
-    display: flex;
-    align-items: flex-start;
+  .snipcart-checkout {
     &:hover {
       cursor: pointer;
     }
+  }
+  .cart__items {
+    display: flex;
+    align-items: flex-start;
     img {
       width: 20px;
       margin-right: 3px;
@@ -35,9 +37,6 @@ export default {};
   .cart-image {
     margin: 0 10px;
     width: 20px;
-    &:hover {
-      cursor: pointer;
-    }
   }
 }
 </style>
