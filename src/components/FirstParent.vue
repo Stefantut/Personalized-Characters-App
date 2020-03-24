@@ -367,7 +367,7 @@
             class="buy-button send btn btn-warning"
             v-if="step == 4"
             @click.prevent="send"
-          >Save</button>
+          >Save Parent</button>
         </section>
       </div>
     </form>
