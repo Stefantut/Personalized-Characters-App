@@ -40,7 +40,10 @@
         :isHiddenChild="firstChild.isHidden"
       />
     </transition>
-    <BuyComponent :isHiddenChild="firstChild.isHidden" :isHiddenParent="firstParent.isHidden" />
+    <!-- Buy Component -->
+    <transition name="fade" appear>
+      <BuyComponent :isHiddenChild="firstChild.isHidden" :isHiddenParent="firstParent.isHidden" />
+    </transition>
     <!-- Display Selected items for child -->
     <div class="selected-items" v-if="firstChild.gender || firstChild.name">
       <!-- Component Title -->

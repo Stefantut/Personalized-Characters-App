@@ -353,8 +353,6 @@
         </div>
         <!-- Steps Buttons -->
         <section class="buttons">
-          <!-- <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button> -->
-          <!-- <p class="no-return text-primary" v-if="step == 2">Can't return to first step</p> -->
           <button
             v-if="step != 1 && step != 2"
             @click.prevent="prevStep"
@@ -365,20 +363,6 @@
             @click.prevent="nextStep"
             class="next btn btn-success"
           >Continue</button>
-          <!-- <button v-if="step == 4" @click.prevent="send" class="send btn btn-warning">Save</button> -->
-          <!-- Use ngrok to test the cart locally -->
-          <!-- <div
-              class="snipcart-add-item"
-              id="my-button"
-              data-item-id="1"
-              data-item-name="Default Title"
-              data-item-description="Default details Child"
-              data-item-custom1-name="Default details Parent"
-              data-item-price="30.00"
-              data-item-quantity="1"
-              data-item-url="http://67acde2b.ngrok.io/"
-            >Buy now
-          </div>-->
           <button
             class="buy-button send btn btn-warning"
             v-if="step == 4"
