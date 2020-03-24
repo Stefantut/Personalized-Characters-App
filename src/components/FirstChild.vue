@@ -5,15 +5,37 @@
       <h3 class="component-title text-success">Let's create the child first:</h3>
       <!-- Display images -->
       <div id="view">
-        <!-- Display images - Preview Skin-->
-        <!-- <div v-for="image in form.skinToneMale" :key="image.name" class="preview-image-skin-male">
-          <img
-            :src="image.image"
-            :alt="image.name"
-            class="img-view img-skin-tone"
-            v-if="form.skinToneMale.preview == 1"
-          />
-        </div>-->
+        <!-- Start Default Images -->
+        <!-- Default Skin -->
+        <img
+          :src="form.defaultFemaleSkin"
+          alt="default-skin"
+          class="img-view img-skin-tone"
+          v-if="form.gender === 'Female'"
+        />
+        <img :src="form.defaultMaleSkin" alt="default-skin" class="img-view img-skin-tone" v-else />
+        <!-- Default Hair -->
+        <img
+          :src="form.defaultFemaleHair"
+          alt="default-hair"
+          class="img-view img-hair-color"
+          v-if="form.gender === 'Female' && !defaultHairHidden"
+        />
+        <img
+          :src="form.defaultMaleHair"
+          alt="default-hair"
+          class="img-view img-hair-color"
+          v-else-if="!defaultHairHidden"
+        />
+        <!-- Default Eyes -->
+        <img
+          :src="form.defaultEyes"
+          alt="default-eyes"
+          class="img-view img-eye-color"
+          v-if="!defaultEyesHidden"
+        />
+        <!--End Default Images -->
+
         <!-- Display skin -->
         <img :src="form.skin.image" :alt="form.skin.name" class="img-view img-skin-tone" />
         <!-- Display hair -->
@@ -202,7 +224,11 @@
               <h5 class="pt-2 pb-1 flex text-center">Select your Hair Color</h5>
               <div class="hair-color-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li v-for="(hairColor, index) in form.hairColorMale" :key="index.id">
+                  <li
+                    v-for="(hairColor, index) in form.hairColorMale"
+                    :key="index.id"
+                    v-on:click="defaultHairHidden = true"
+                  >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -217,7 +243,11 @@
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li v-for="(hairColor, index) in form.hairColorFemale" :key="index.id">
+                  <li
+                    v-for="(hairColor, index) in form.hairColorFemale"
+                    :key="index.id"
+                    v-on:click="defaultHairHidden = true"
+                  >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -282,7 +312,11 @@
               <h5 class="pt-2 pb-1 flex text-center">Select your Eye Color</h5>
               <div class="eye-color-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li v-for="(eyeColor, index) in form.eyeColorMale" :key="index.id">
+                  <li
+                    v-for="(eyeColor, index) in form.eyeColorMale"
+                    :key="index.id"
+                    v-on:click="defaultEyesHidden = true"
+                  >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -297,7 +331,11 @@
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li v-for="(eyeColor, index) in form.eyeColorFemale" :key="index.id">
+                  <li
+                    v-for="(eyeColor, index) in form.eyeColorFemale"
+                    :key="index.id"
+                    v-on:click="defaultEyesHidden = true"
+                  >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -328,7 +366,6 @@
         <!-- Steps Buttons -->
         <section class="buttons">
           <!-- <button v-if="step != 1" @click.prevent="prevStep" class="prev btn btn-primary">Previous</button> -->
-          <!-- <p class="no-return text-primary" v-if="step == 2">Can't return to first step</p> -->
           <button
             v-if="step != 1 && step != 2"
             @click.prevent="prevStep"
@@ -421,9 +458,16 @@ export default {
       step: 1,
       totalsteps: 4,
       errors: [],
+      defaultEyesHidden: false,
+      defaultHairHidden: false,
       form: {
         gender: "",
         firstName: null,
+        defaultMaleSkin: require("@/img/boy/body-boy-3.png"),
+        defaultFemaleSkin: require("@/img/girl/body-girl-3.png"),
+        defaultMaleHair: require("@/img/boy/hair-3-1.png"),
+        defaultFemaleHair: require("@/img/girl/hair-3-1.png"),
+        defaultEyes: require("@/img/child/eyes/eyes-5-1.png"),
         skin: "",
         //Skin Tone Male
         skinToneMale: [
