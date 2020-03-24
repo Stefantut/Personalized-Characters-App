@@ -186,77 +186,79 @@
 
               <p class="step-text">Step</p>
             </div>
-            <div class="hair-type all-boxes-wrap flex-col py-1">
-              <h5 class="pt-2 pb-1 flex text-center">Select your Hair Type</h5>
-              <div class="hair-type-boxes">
+
+            <div class="hair-color all-boxes-wrap flex-col py-1">
+              <h5 class="pt-2 pb-1 flex text-center">Select your Hair Color</h5>
+              <div class="hair-color-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li v-for="(hairType, index) in form.hairTypeMale" :key="index.hair">
+                  <li v-for="(hairColor, index) in form.hairColorMale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
-                      :id="hairType.name"
-                      :name="hairType.name"
-                      v-model="form.hairType"
-                      :value="hairType"
+                      :id="hairColor.name"
+                      :name="hairColor.name"
+                      v-model="form.hairColor"
+                      :value="hairColor"
                     >
-                      <img :src="hairType.iconSource" class="svg-2-bigger" />
+                      <img :src="hairColor.iconSource" class="svg-2" />
                     </p-input>
                   </li>
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li v-for="(hairType, index) in form.hairTypeFemale" :key="index">
+                  <li v-for="(hairColor, index) in form.hairColorFemale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
-                      :id="hairType.name"
-                      :name="hairType.name"
-                      v-model="form.hairType"
-                      :value="hairType"
+                      :id="hairColor.name"
+                      :name="hairColor.name"
+                      v-model="form.hairColor"
+                      :value="hairColor"
                     >
-                      <img :src="hairType.iconSource" class="svg-2-bigger" />
+                      <img :src="hairColor.iconSource" class="svg-2" />
                     </p-input>
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="hair-color all-boxes-wrap flex-col py-1">
-              <h5 class="pt-2 pb-1 flex text-center">Select your Hair Color</h5>
-              <div class="hair-color-boxes">
+
+            <div class="hair-type all-boxes-wrap flex-col py-1">
+              <h5 class="pt-2 pb-1 flex text-center">Select your Hair Type</h5>
+              <div class="hair-type-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
                   <li
-                    v-for="(hairColor, index) in form.hairColorMale"
-                    :key="index.id"
+                    v-for="(hairType, index) in form.hairTypeMale"
+                    :key="index.hair"
                     v-on:click="defaultHairHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
-                      :id="hairColor.name"
-                      :name="hairColor.name"
-                      v-model="form.hairColor"
-                      :value="hairColor"
+                      :id="hairType.name"
+                      :name="hairType.name"
+                      v-model="form.hairType"
+                      :value="hairType"
                     >
-                      <img :src="hairColor.iconSource" class="svg-2" />
+                      <img :src="hairType.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>
 
                 <ul class="all-boxes" v-else>
                   <li
-                    v-for="(hairColor, index) in form.hairColorFemale"
-                    :key="index.id"
+                    v-for="(hairType, index) in form.hairTypeFemale"
+                    :key="index"
                     v-on:click="defaultHairHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
-                      :id="hairColor.name"
-                      :name="hairColor.name"
-                      v-model="form.hairColor"
-                      :value="hairColor"
+                      :id="hairType.name"
+                      :name="hairType.name"
+                      v-model="form.hairType"
+                      :value="hairType"
                     >
-                      <img :src="hairColor.iconSource" class="svg-2" />
+                      <img :src="hairType.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>
@@ -274,77 +276,79 @@
 
               <p class="step-text">Step</p>
             </div>
-            <div class="eye-shape all-boxes-wrap flex-col py-1">
-              <h5 class="pt-2 pb-1 flex text-center">Select your Eye Shape</h5>
-              <div class="eye-shape-boxes">
+
+            <div class="eye-color all-boxes-wrap flex-col py-1">
+              <h5 class="pt-2 pb-1 flex text-center">Select your Eye Color</h5>
+              <div class="eye-color-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li v-for="(eyeShape, index) in form.eyeShapeMale" :key="index.id">
+                  <li v-for="(eyeColor, index) in form.eyeColorMale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
-                      :id="eyeShape.name"
-                      :name="eyeShape.name"
-                      v-model="form.eyeShape"
-                      :value="eyeShape"
+                      :id="eyeColor.name"
+                      :name="eyeColor.name"
+                      v-model="form.eyeColor"
+                      :value="eyeColor"
                     >
-                      <img :src="eyeShape.iconSource" class="svg-2-bigger" />
+                      <img :src="eyeColor.iconSource" class="svg-2" />
                     </p-input>
                   </li>
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li v-for="(eyeShape, index) in form.eyeShapeFemale" :key="index.id">
+                  <li v-for="(eyeColor, index) in form.eyeColorFemale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
-                      :id="eyeShape.name"
-                      :name="eyeShape.name"
-                      v-model="form.eyeShape"
-                      :value="eyeShape"
+                      :id="eyeColor.name"
+                      :name="eyeColor.name"
+                      v-model="form.eyeColor"
+                      :value="eyeColor"
                     >
-                      <img :src="eyeShape.iconSource" class="svg-2-bigger" />
+                      <img :src="eyeColor.iconSource" class="svg-2" />
                     </p-input>
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="eye-color all-boxes-wrap flex-col py-1">
-              <h5 class="pt-2 pb-1 flex text-center">Select your Eye Color</h5>
-              <div class="eye-color-boxes">
+
+            <div class="eye-shape all-boxes-wrap flex-col py-1">
+              <h5 class="pt-2 pb-1 flex text-center">Select your Eye Shape</h5>
+              <div class="eye-shape-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
                   <li
-                    v-for="(eyeColor, index) in form.eyeColorMale"
+                    v-for="(eyeShape, index) in form.eyeShapeMale"
                     :key="index.id"
                     v-on:click="defaultEyesHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
-                      :id="eyeColor.name"
-                      :name="eyeColor.name"
-                      v-model="form.eyeColor"
-                      :value="eyeColor"
+                      :id="eyeShape.name"
+                      :name="eyeShape.name"
+                      v-model="form.eyeShape"
+                      :value="eyeShape"
                     >
-                      <img :src="eyeColor.iconSource" class="svg-2" />
+                      <img :src="eyeShape.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>
 
                 <ul class="all-boxes" v-else>
                   <li
-                    v-for="(eyeColor, index) in form.eyeColorFemale"
+                    v-for="(eyeShape, index) in form.eyeShapeFemale"
                     :key="index.id"
                     v-on:click="defaultEyesHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
-                      :id="eyeColor.name"
-                      :name="eyeColor.name"
-                      v-model="form.eyeColor"
-                      :value="eyeColor"
+                      :id="eyeShape.name"
+                      :name="eyeShape.name"
+                      v-model="form.eyeShape"
+                      :value="eyeShape"
                     >
-                      <img :src="eyeColor.iconSource" class="svg-2" />
+                      <img :src="eyeShape.iconSource" class="svg-2-bigger" />
                     </p-input>
                   </li>
                 </ul>
@@ -461,13 +465,13 @@ export default {
       defaultEyesHidden: false,
       defaultHairHidden: false,
       form: {
-        gender: "",
-        firstName: null,
         defaultMaleSkin: require("@/img/boy/body-boy-3.png"),
         defaultFemaleSkin: require("@/img/girl/body-girl-3.png"),
         defaultMaleHair: require("@/img/boy/hair-3-1.png"),
         defaultFemaleHair: require("@/img/girl/hair-3-1.png"),
         defaultEyes: require("@/img/child/eyes/eyes-5-1.png"),
+        gender: "",
+        firstName: null,
         skin: "",
         //Skin Tone Male
         skinToneMale: [
