@@ -78,7 +78,7 @@ export default {
   .buy__item {
     &--title {
       font-family: $secondFont;
-      color: $one;
+      color: $primary;
       font-size: 40px;
     }
     &--buttons {
@@ -88,26 +88,26 @@ export default {
       align-items: center;
       .add-cart {
         button {
-          background-color: $one;
+          background-color: $primary;
           border: none;
           padding: 5px 15px;
           color: white;
           transition: 0.2s ease;
           &:hover {
-            background-color: lighten($color: $one, $amount: 20%);
-            color: $five;
+            background-color: lighten($color: $primary, $amount: 20%);
+            color: $tertiary;
           }
         }
       }
       .reset {
         a {
           text-decoration: none;
-          background-color: darken($color: $four, $amount: 30%);
+          background-color: darken($color: $secondary, $amount: 30%);
           color: white;
           padding: 5px 15px;
           transition: 0.2 ease;
           &:hover {
-            background-color: darken($color: $four, $amount: 10%);
+            background-color: darken($color: $secondary, $amount: 10%);
           }
         }
       }

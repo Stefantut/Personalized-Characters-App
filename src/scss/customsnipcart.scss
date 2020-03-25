@@ -6,7 +6,7 @@
     max-width: 60%;
     &:before {
       content: "--";
-      color: $one;
+      color: $primary;
     }
   }
   .snipcart-custom-field-wrapper__label {
@@ -15,23 +15,23 @@
     width: 80%;
     &:before {
       content: "--";
-      color: $one;
+      color: $primary;
     }
   }
   .snipcart-text-custom-field {
     display: none;
   }
   .snipcart-cart-header__title {
-    color: $four;
+    color: $secondary;
     text-transform: capitalize;
     font-size: 16px;
   }
   .snipcart-item-line__title {
-    color: $four;
+    color: $secondary;
     text-transform: capitalize;
   }
   .snipcart-modal__close-title {
-    color: $one;
+    color: $primary;
   }
   .snipcart-modal {
     background-color: white;

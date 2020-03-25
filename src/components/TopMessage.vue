@@ -50,7 +50,7 @@ export default {};
     margin-top: 10px;
     display: flex;
     align-items: center;
-    color: $five;
+    color: $tertiary;
     .item {
       &--image {
         width: 60px;
@@ -77,12 +77,12 @@ export default {};
     font-family: $secondFont;
     padding: 10px 20px;
     margin-top: -10px;
-    background-color: darken($color: $four, $amount: 30%);
+    background-color: darken($color: $secondary, $amount: 30%);
     color: white;
     height: 100%;
     display: flex;
     align-items: center;
-    border: 1px solid $five;
+    border: 1px solid $tertiary;
     border-bottom-left-radius: 20px;
     @include default-transition;
     cursor: default;
@@ -91,7 +91,7 @@ export default {};
         transform: translateX(-10px) rotate(160deg);
         margin-right: 25px;
         path {
-          fill: $one;
+          fill: $primary;
         }
       }
     }

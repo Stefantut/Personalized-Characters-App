@@ -157,7 +157,7 @@
       margin: 0 0 20px 0;
       font-family: $firstFont;
       font-weight: 400;
-      color: darken($color: $four, $amount: 20%);
+      color: darken($color: $secondary, $amount: 20%);
     }
     .display-selected {
       .selected {
@@ -175,13 +175,13 @@
           margin-right: 10px;
           margin-bottom: 0;
           text-decoration: underline;
-          color: $four;
+          color: $secondary;
         }
         &__item {
           font-family: $thirdFont;
           font-size: 16px;
           margin-bottom: 0;
-          color: $one;
+          color: $primary;
           &--name {
             text-transform: capitalize;
           }
