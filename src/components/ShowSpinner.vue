@@ -63,7 +63,7 @@ export default {
     color: $tertiary;
     flex-basis: 100%;
     text-align: center;
-    font-family: $secondFont;
+    font-family: $secondaryFont;
   }
   &__image {
     fill: red;

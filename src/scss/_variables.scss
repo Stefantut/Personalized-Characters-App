@@ -1,17 +1,21 @@
 // Variables
+
+// Colors
 $primary: #32a852;
 $secondary: #f18c8e;
 $tertiary: #305f72;
 
-$firstFont: "Poppins", sans-serif;
-$secondFont: "Permanent Marker", cursive;
-$thirdFont: "Courgette", cursive;
+//Fonts
+$primaryFont: "Poppins", sans-serif;
+$secondaryFont: "Permanent Marker", cursive;
+$tertiaryFont: "Courgette", cursive;
 
+// Font weight
 $small: 400;
 $medium: 500;
 $large: 600;
 
-// Css variables
+// CSS variables
 :root {
   --header-height: 50px;
   --footer-height: 40px;

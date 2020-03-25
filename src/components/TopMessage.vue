@@ -74,7 +74,7 @@ export default {};
     }
   }
   .message {
-    font-family: $secondFont;
+    font-family: $secondaryFont;
     padding: 10px 20px;
     margin-top: -10px;
     background-color: darken($color: $secondary, $amount: 30%);

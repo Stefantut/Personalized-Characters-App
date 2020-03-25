@@ -77,7 +77,7 @@ export default {
   margin-bottom: 100px;
   .buy__item {
     &--title {
-      font-family: $secondFont;
+      font-family: $secondaryFont;
       color: $primary;
       font-size: 40px;
     }

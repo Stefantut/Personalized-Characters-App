@@ -23,7 +23,7 @@
         width: 100%;
         text-align: center;
         margin: 0;
-        font-family: $firstFont;
+        font-family: $primaryFont;
         font-weight: 400;
       }
       #view {
@@ -92,17 +92,17 @@
               border: 1px solid #8ba68f;
               padding: 0 5px;
               background-color: #ffefe2;
-              font-family: $thirdFont;
+              font-family: $tertiaryFont;
               sup {
                 font-size: 12px;
                 margin-left: -4px;
-                font-family: $thirdFont;
+                font-family: $tertiaryFont;
               }
             }
             .step-text {
               font-size: 20px;
               margin-left: 5px;
-              font-family: $thirdFont;
+              font-family: $tertiaryFont;
               font-weight: $medium;
             }
           }
@@ -155,7 +155,7 @@
       width: 100%;
       text-align: center;
       margin: 0 0 20px 0;
-      font-family: $firstFont;
+      font-family: $primaryFont;
       font-weight: 400;
       color: darken($color: $secondary, $amount: 20%);
     }
@@ -169,7 +169,7 @@
         &__title {
           display: flex;
           align-items: center;
-          font-family: $firstFont;
+          font-family: $primaryFont;
           font-weight: 500;
           font-size: 16px;
           margin-right: 10px;
@@ -178,7 +178,7 @@
           color: $secondary;
         }
         &__item {
-          font-family: $thirdFont;
+          font-family: $tertiaryFont;
           font-size: 16px;
           margin-bottom: 0;
           color: $primary;
