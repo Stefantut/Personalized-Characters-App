@@ -50,19 +50,19 @@
           class="img-view img-skin-tone"
         />
         <!-- Display hair -->
-        <div v-for="image in form.hairColor.image" :key="image.number">
+        <div v-for="image in form.hairColor.image" :key="image.id">
           <img
             :src="image.imageSource"
             class="img-view img-hair-color"
-            v-if="form.hairType.number == image.number"
+            v-if="form.hairType.id == image.id"
           />
         </div>
         <!-- Display eyes -->
-        <div v-for="image in form.eyeColor.image" :key="image.eyeNumber">
+        <div v-for="image in form.eyeColor.image" :key="image.eyeid">
           <img
             :src="image.imageSource"
             class="img-view img-eye-color"
-            v-if="form.eyeShape.eyeNumber == image.eyeNumber"
+            v-if="form.eyeShape.eyeid == image.eyeid"
           />
         </div>
         <!-- Display glasses -->
@@ -579,27 +579,27 @@ export default {
           {
             name: "Option 1",
             iconSource: require("@/img/icons/boy/ico-hair-boy-1.svg"),
-            number: 1
+            id: 1
           },
           {
             name: "Option 2",
             iconSource: require("@/img/icons/boy/ico-hair-boy-2.svg"),
-            number: 2
+            id: 2
           },
           {
             name: "Option 3",
             iconSource: require("@/img/icons/boy/ico-hair-boy-3.svg"),
-            number: 3
+            id: 3
           },
           {
             name: "Option 4",
             iconSource: require("@/img/icons/boy/ico-hair-boy-4.svg"),
-            number: 4
+            id: 4
           },
           {
             name: "Option 5",
             iconSource: require("@/img/icons/boy/ico-hair-boy-5.svg"),
-            number: 5
+            id: 5
           }
         ],
         // Hair Type Female
@@ -607,27 +607,27 @@ export default {
           {
             name: "Option 1",
             iconSource: require("@/img/icons/girl/ico-hair-girl-1.svg"),
-            number: 1
+            id: 1
           },
           {
             name: "Option 2",
             iconSource: require("@/img/icons/girl/ico-hair-girl-2.svg"),
-            number: 2
+            id: 2
           },
           {
             name: "Option 3",
             iconSource: require("@/img/icons/girl/ico-hair-girl-3.svg"),
-            number: 3
+            id: 3
           },
           {
             name: "Option 4",
             iconSource: require("@/img/icons/girl/ico-hair-girl-4.svg"),
-            number: 4
+            id: 4
           },
           {
             name: "Option 5",
             iconSource: require("@/img/icons/girl/ico-hair-girl-5.svg"),
-            number: 5
+            id: 5
           }
         ],
         hairColor: "",
@@ -638,23 +638,23 @@ export default {
             imageSource: "",
             image: [
               {
-                number: 1,
+                id: 1,
                 imageSource: require("@/img/boy/hair-1-1.png")
               },
               {
-                number: 2,
+                id: 2,
                 imageSource: require("@/img/boy/hair-2-1.png")
               },
               {
-                number: 3,
+                id: 3,
                 imageSource: require("@/img/boy/hair-3-1.png")
               },
               {
-                number: 4,
+                id: 4,
                 imageSource: require("@/img/boy/hair-4-1.png")
               },
               {
-                number: 5,
+                id: 5,
                 imageSource: require("@/img/boy/hair-5-1.png")
               }
             ],
@@ -666,23 +666,23 @@ export default {
             imageSource: "",
             image: [
               {
-                number: 1,
+                id: 1,
                 imageSource: require("@/img/boy/hair-1-2.png")
               },
               {
-                number: 2,
+                id: 2,
                 imageSource: require("@/img/boy/hair-2-2.png")
               },
               {
-                number: 3,
+                id: 3,
                 imageSource: require("@/img/boy/hair-3-2.png")
               },
               {
-                number: 4,
+                id: 4,
                 imageSource: require("@/img/boy/hair-4-2.png")
               },
               {
-                number: 5,
+                id: 5,
                 imageSource: require("@/img/boy/hair-5-2.png")
               }
             ],
@@ -693,23 +693,23 @@ export default {
             imageSource: "",
             image: [
               {
-                number: 1,
+                id: 1,
                 imageSource: require("@/img/boy/hair-1-3.png")
               },
               {
-                number: 2,
+                id: 2,
                 imageSource: require("@/img/boy/hair-2-3.png")
               },
               {
-                number: 3,
+                id: 3,
                 imageSource: require("@/img/boy/hair-3-3.png")
               },
               {
-                number: 4,
+                id: 4,
                 imageSource: require("@/img/boy/hair-4-3.png")
               },
               {
-                number: 5,
+                id: 5,
                 imageSource: require("@/img/boy/hair-5-3.png")
               }
             ],
@@ -720,23 +720,23 @@ export default {
             imageSource: "",
             image: [
               {
-                number: 1,
+                id: 1,
                 imageSource: require("@/img/boy/hair-1-4.png")
               },
               {
-                number: 2,
+                id: 2,
                 imageSource: require("@/img/boy/hair-2-4.png")
               },
               {
-                number: 3,
+                id: 3,
                 imageSource: require("@/img/boy/hair-3-4.png")
               },
               {
-                number: 4,
+                id: 4,
                 imageSource: require("@/img/boy/hair-4-4.png")
               },
               {
-                number: 5,
+                id: 5,
                 imageSource: require("@/img/boy/hair-5-4.png")
               }
             ],
@@ -747,23 +747,23 @@ export default {
             imageSource: "",
             image: [
               {
-                number: 1,
+                id: 1,
                 imageSource: require("@/img/boy/hair-1-5.png")
               },
               {
-                number: 2,
+                id: 2,
                 imageSource: require("@/img/boy/hair-2-5.png")
               },
               {
-                number: 3,
+                id: 3,
                 imageSource: require("@/img/boy/hair-3-5.png")
               },
               {
-                number: 4,
+                id: 4,
                 imageSource: require("@/img/boy/hair-4-5.png")
               },
               {
-                number: 5,
+                id: 5,
                 imageSource: require("@/img/boy/hair-5-5.png")
               }
             ],
@@ -777,23 +777,23 @@ export default {
             imageSource: "",
             image: [
               {
-                number: 1,
+                id: 1,
                 imageSource: require("@/img/girl/hair-1-1.png")
               },
               {
-                number: 2,
+                id: 2,
                 imageSource: require("@/img/girl/hair-2-1.png")
               },
               {
-                number: 3,
+                id: 3,
                 imageSource: require("@/img/girl/hair-3-1.png")
               },
               {
-                number: 4,
+                id: 4,
                 imageSource: require("@/img/girl/hair-4-1.png")
               },
               {
-                number: 5,
+                id: 5,
                 imageSource: require("@/img/girl/hair-5-1.png")
               }
             ],
@@ -804,23 +804,23 @@ export default {
             imageSource: "",
             image: [
               {
-                number: 1,
+                id: 1,
                 imageSource: require("@/img/girl/hair-1-2.png")
               },
               {
-                number: 2,
+                id: 2,
                 imageSource: require("@/img/girl/hair-2-2.png")
               },
               {
-                number: 3,
+                id: 3,
                 imageSource: require("@/img/girl/hair-3-2.png")
               },
               {
-                number: 4,
+                id: 4,
                 imageSource: require("@/img/girl/hair-4-2.png")
               },
               {
-                number: 5,
+                id: 5,
                 imageSource: require("@/img/girl/hair-5-2.png")
               }
             ],
@@ -831,23 +831,23 @@ export default {
             imageSource: "",
             image: [
               {
-                number: 1,
+                id: 1,
                 imageSource: require("@/img/girl/hair-1-3.png")
               },
               {
-                number: 2,
+                id: 2,
                 imageSource: require("@/img/girl/hair-2-3.png")
               },
               {
-                number: 3,
+                id: 3,
                 imageSource: require("@/img/girl/hair-3-3.png")
               },
               {
-                number: 4,
+                id: 4,
                 imageSource: require("@/img/girl/hair-4-3.png")
               },
               {
-                number: 5,
+                id: 5,
                 imageSource: require("@/img/girl/hair-5-3.png")
               }
             ],
@@ -858,23 +858,23 @@ export default {
             imageSource: "",
             image: [
               {
-                number: 1,
+                id: 1,
                 imageSource: require("@/img/girl/hair-1-4.png")
               },
               {
-                number: 2,
+                id: 2,
                 imageSource: require("@/img/girl/hair-2-4.png")
               },
               {
-                number: 3,
+                id: 3,
                 imageSource: require("@/img/girl/hair-3-4.png")
               },
               {
-                number: 4,
+                id: 4,
                 imageSource: require("@/img/girl/hair-4-4.png")
               },
               {
-                number: 5,
+                id: 5,
                 imageSource: require("@/img/girl/hair-5-4.png")
               }
             ],
@@ -885,23 +885,23 @@ export default {
             imageSource: "",
             image: [
               {
-                number: 1,
+                id: 1,
                 imageSource: require("@/img/girl/hair-1-5.png")
               },
               {
-                number: 2,
+                id: 2,
                 imageSource: require("@/img/girl/hair-2-5.png")
               },
               {
-                number: 3,
+                id: 3,
                 imageSource: require("@/img/girl/hair-3-5.png")
               },
               {
-                number: 4,
+                id: 4,
                 imageSource: require("@/img/girl/hair-4-5.png")
               },
               {
-                number: 5,
+                id: 5,
                 imageSource: require("@/img/girl/hair-5-5.png")
               }
             ],
@@ -914,27 +914,27 @@ export default {
           {
             name: "Round Full",
             iconSource: require("@/img/icons/ico-eye-shape-1.svg"),
-            eyeNumber: 11
+            eyeid: 11
           },
           {
             name: "Monolid",
             iconSource: require("@/img/icons/ico-eye-shape-2.svg"),
-            eyeNumber: 21
+            eyeid: 21
           },
           {
             name: "Downturned",
             iconSource: require("@/img/icons/ico-eye-shape-3.svg"),
-            eyeNumber: 31
+            eyeid: 31
           },
           {
             name: "Round",
             iconSource: require("@/img/icons/ico-eye-shape-4.svg"),
-            eyeNumber: 41
+            eyeid: 41
           },
           {
             name: "Hooded",
             iconSource: require("@/img/icons/ico-eye-shape-5.svg"),
-            eyeNumber: 51
+            eyeid: 51
           }
         ],
         // Eye Shape Female
@@ -942,27 +942,27 @@ export default {
           {
             name: "Round Full",
             iconSource: require("@/img/icons/ico-eye-shape-1.svg"),
-            eyeNumber: 11
+            eyeid: 11
           },
           {
             name: "Monolid",
             iconSource: require("@/img/icons/ico-eye-shape-2.svg"),
-            eyeNumber: 21
+            eyeid: 21
           },
           {
             name: "Downturned",
             iconSource: require("@/img/icons/ico-eye-shape-3.svg"),
-            eyeNumber: 31
+            eyeid: 31
           },
           {
             name: "Round",
             iconSource: require("@/img/icons/ico-eye-shape-4.svg"),
-            eyeNumber: 41
+            eyeid: 41
           },
           {
             name: "Hooded",
             iconSource: require("@/img/icons/ico-eye-shape-5.svg"),
-            eyeNumber: 51
+            eyeid: 51
           }
         ],
         eyeColor: "",
@@ -973,23 +973,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeNumber: 11,
+                eyeid: 11,
                 imageSource: require("@/img/child/eyes/eyes-1-1.png")
               },
               {
-                eyeNumber: 21,
+                eyeid: 21,
                 imageSource: require("@/img/child/eyes/eyes-2-1.png")
               },
               {
-                eyeNumber: 31,
+                eyeid: 31,
                 imageSource: require("@/img/child/eyes/eyes-3-1.png")
               },
               {
-                eyeNumber: 41,
+                eyeid: 41,
                 imageSource: require("@/img/child/eyes/eyes-4-1.png")
               },
               {
-                eyeNumber: 51,
+                eyeid: 51,
                 imageSource: require("@/img/child/eyes/eyes-5-1.png")
               }
             ],
@@ -1000,23 +1000,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeNumber: 11,
+                eyeid: 11,
                 imageSource: require("@/img/child/eyes/eyes-1-2.png")
               },
               {
-                eyeNumber: 21,
+                eyeid: 21,
                 imageSource: require("@/img/child/eyes/eyes-2-2.png")
               },
               {
-                eyeNumber: 31,
+                eyeid: 31,
                 imageSource: require("@/img/child/eyes/eyes-3-2.png")
               },
               {
-                eyeNumber: 41,
+                eyeid: 41,
                 imageSource: require("@/img/child/eyes/eyes-4-2.png")
               },
               {
-                eyeNumber: 51,
+                eyeid: 51,
                 imageSource: require("@/img/child/eyes/eyes-5-2.png")
               }
             ],
@@ -1027,23 +1027,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeNumber: 11,
+                eyeid: 11,
                 imageSource: require("@/img/child/eyes/eyes-1-3.png")
               },
               {
-                eyeNumber: 21,
+                eyeid: 21,
                 imageSource: require("@/img/child/eyes/eyes-2-3.png")
               },
               {
-                eyeNumber: 31,
+                eyeid: 31,
                 imageSource: require("@/img/child/eyes/eyes-3-3.png")
               },
               {
-                eyeNumber: 41,
+                eyeid: 41,
                 imageSource: require("@/img/child/eyes/eyes-4-3.png")
               },
               {
-                eyeNumber: 51,
+                eyeid: 51,
                 imageSource: require("@/img/child/eyes/eyes-5-3.png")
               }
             ],
@@ -1054,23 +1054,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeNumber: 11,
+                eyeid: 11,
                 imageSource: require("@/img/child/eyes/eyes-1-4.png")
               },
               {
-                eyeNumber: 21,
+                eyeid: 21,
                 imageSource: require("@/img/child/eyes/eyes-2-4.png")
               },
               {
-                eyeNumber: 31,
+                eyeid: 31,
                 imageSource: require("@/img/child/eyes/eyes-3-4.png")
               },
               {
-                eyeNumber: 41,
+                eyeid: 41,
                 imageSource: require("@/img/child/eyes/eyes-4-4.png")
               },
               {
-                eyeNumber: 51,
+                eyeid: 51,
                 imageSource: require("@/img/child/eyes/eyes-5-4.png")
               }
             ],
@@ -1081,23 +1081,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeNumber: 11,
+                eyeid: 11,
                 imageSource: require("@/img/child/eyes/eyes-1-5.png")
               },
               {
-                eyeNumber: 21,
+                eyeid: 21,
                 imageSource: require("@/img/child/eyes/eyes-2-5.png")
               },
               {
-                eyeNumber: 31,
+                eyeid: 31,
                 imageSource: require("@/img/child/eyes/eyes-3-5.png")
               },
               {
-                eyeNumber: 41,
+                eyeid: 41,
                 imageSource: require("@/img/child/eyes/eyes-4-5.png")
               },
               {
-                eyeNumber: 51,
+                eyeid: 51,
                 imageSource: require("@/img/child/eyes/eyes-5-5.png")
               }
             ],
@@ -1111,23 +1111,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeNumber: 11,
+                eyeid: 11,
                 imageSource: require("@/img/child/eyes/eyes-1-1.png")
               },
               {
-                eyeNumber: 21,
+                eyeid: 21,
                 imageSource: require("@/img/child/eyes/eyes-2-1.png")
               },
               {
-                eyeNumber: 31,
+                eyeid: 31,
                 imageSource: require("@/img/child/eyes/eyes-3-1.png")
               },
               {
-                eyeNumber: 41,
+                eyeid: 41,
                 imageSource: require("@/img/child/eyes/eyes-4-1.png")
               },
               {
-                eyeNumber: 51,
+                eyeid: 51,
                 imageSource: require("@/img/child/eyes/eyes-5-1.png")
               }
             ],
@@ -1138,23 +1138,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeNumber: 11,
+                eyeid: 11,
                 imageSource: require("@/img/child/eyes/eyes-1-2.png")
               },
               {
-                eyeNumber: 21,
+                eyeid: 21,
                 imageSource: require("@/img/child/eyes/eyes-2-2.png")
               },
               {
-                eyeNumber: 31,
+                eyeid: 31,
                 imageSource: require("@/img/child/eyes/eyes-3-2.png")
               },
               {
-                eyeNumber: 41,
+                eyeid: 41,
                 imageSource: require("@/img/child/eyes/eyes-4-2.png")
               },
               {
-                eyeNumber: 51,
+                eyeid: 51,
                 imageSource: require("@/img/child/eyes/eyes-5-2.png")
               }
             ],
@@ -1165,23 +1165,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeNumber: 11,
+                eyeid: 11,
                 imageSource: require("@/img/child/eyes/eyes-1-3.png")
               },
               {
-                eyeNumber: 21,
+                eyeid: 21,
                 imageSource: require("@/img/child/eyes/eyes-2-3.png")
               },
               {
-                eyeNumber: 31,
+                eyeid: 31,
                 imageSource: require("@/img/child/eyes/eyes-3-3.png")
               },
               {
-                eyeNumber: 41,
+                eyeid: 41,
                 imageSource: require("@/img/child/eyes/eyes-4-3.png")
               },
               {
-                eyeNumber: 51,
+                eyeid: 51,
                 imageSource: require("@/img/child/eyes/eyes-5-3.png")
               }
             ],
@@ -1192,23 +1192,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeNumber: 11,
+                eyeid: 11,
                 imageSource: require("@/img/child/eyes/eyes-1-4.png")
               },
               {
-                eyeNumber: 21,
+                eyeid: 21,
                 imageSource: require("@/img/child/eyes/eyes-2-4.png")
               },
               {
-                eyeNumber: 31,
+                eyeid: 31,
                 imageSource: require("@/img/child/eyes/eyes-3-4.png")
               },
               {
-                eyeNumber: 41,
+                eyeid: 41,
                 imageSource: require("@/img/child/eyes/eyes-4-4.png")
               },
               {
-                eyeNumber: 51,
+                eyeid: 51,
                 imageSource: require("@/img/child/eyes/eyes-5-4.png")
               }
             ],
@@ -1219,23 +1219,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeNumber: 11,
+                eyeid: 11,
                 imageSource: require("@/img/child/eyes/eyes-1-5.png")
               },
               {
-                eyeNumber: 21,
+                eyeid: 21,
                 imageSource: require("@/img/child/eyes/eyes-2-5.png")
               },
               {
-                eyeNumber: 31,
+                eyeid: 31,
                 imageSource: require("@/img/child/eyes/eyes-3-5.png")
               },
               {
-                eyeNumber: 41,
+                eyeid: 41,
                 imageSource: require("@/img/child/eyes/eyes-4-5.png")
               },
               {
-                eyeNumber: 51,
+                eyeid: 51,
                 imageSource: require("@/img/child/eyes/eyes-5-5.png")
               }
             ],
