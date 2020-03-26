@@ -1294,19 +1294,19 @@ export default {
           this.errors = null;
         }
         if (!this.form.glasses) {
-          this.errors = "Do you wear glasses? Please select an option";
+          this.errors = "Glasses? Please select one of the above options";
           return false;
         }
       }
       if (this.step == 3) {
-        if (!this.form.hairType) {
-          this.errors = "Please select the hair type";
+        if (!this.form.hairColor) {
+          this.errors = "Please select the hair color";
           return false;
         } else {
           this.errors = null;
         }
-        if (!this.form.hairColor) {
-          this.errors = "Please select the hair color";
+        if (!this.form.hairType) {
+          this.errors = "Please select the hair type";
           return false;
         } else {
           this.errors = null;
@@ -1316,12 +1316,12 @@ export default {
     },
     send: function() {
       if (this.step == 4) {
-        if (!this.form.eyeShape) {
-          this.errors = "Please select your eye shape";
-          return false;
-        }
         if (!this.form.eyeColor) {
           this.errors = "Please select your eye color";
+          return false;
+        }
+        if (!this.form.eyeShape) {
+          this.errors = "Please select your eye shape";
           return false;
         }
       }
