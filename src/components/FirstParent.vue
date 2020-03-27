@@ -13,12 +13,7 @@
           class="img-view img-skin-tone"
           v-if="form.gender === 'Female'"
         />
-        <img
-          :src="form.defaultMaleSkin"
-          alt="default-skin"
-          class="img-view img-skin-tone"
-          v-else
-        />
+        <img :src="form.defaultMaleSkin" alt="default-skin" class="img-view img-skin-tone" v-else />
         <!-- Default Hair -->
         <img
           :src="form.defaultFemaleHair"
@@ -41,11 +36,7 @@
         />
         <!--End Default Images -->
         <!-- Display skin -->
-        <img
-          :src="form.skin.image"
-          :alt="form.skin.name"
-          class="img-view img-skin-tone"
-        />
+        <img :src="form.skin.image" :alt="form.skin.name" class="img-view img-skin-tone" />
         <!-- Display hair -->
         <div v-for="image in form.hairColor.image" :key="image.id">
           <img
@@ -55,19 +46,15 @@
           />
         </div>
         <!-- Display eyes -->
-        <div v-for="image in form.eyeColor.image" :key="image.eyeid">
+        <div v-for="image in form.eyeColor.image" :key="image.id">
           <img
             :src="image.imageSource"
             class="img-view img-eye-color"
-            v-if="form.eyeShape.eyeid == image.eyeid"
+            v-if="form.eyeShape.id == image.id"
           />
         </div>
         <!-- Display glasses -->
-        <img
-          :src="form.glasses.image"
-          :alt="form.glasses.name"
-          class="img-view img-glasses"
-        />
+        <img :src="form.glasses.image" :alt="form.glasses.name" class="img-view img-glasses" />
         <!-- Display beard if it's a men -->
         <img
           :src="form.beard.image"
@@ -141,10 +128,7 @@
               <h5 class="pt-2 pb-1 flex text-center">Select Skin Tone</h5>
               <div class="skin-tone-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li
-                    v-for="(skinInfo, index) in form.skinToneMale"
-                    :key="index.id"
-                  >
+                  <li v-for="(skinInfo, index) in form.skinToneMale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -159,10 +143,7 @@
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li
-                    v-for="(skinInfo, index) in form.skinToneFemale"
-                    :key="index.id"
-                  >
+                  <li v-for="(skinInfo, index) in form.skinToneFemale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -183,10 +164,7 @@
               <h5 class="pt-2 pb-1 flex text-center">Glasses?</h5>
               <div class="glasses-boxes">
                 <ul class="all-boxes">
-                  <li
-                    v-for="(glasses, index) in form.glassesType"
-                    :key="index.id"
-                  >
+                  <li v-for="(glasses, index) in form.glassesType" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -203,17 +181,11 @@
             </div>
 
             <!-- Beard Male -->
-            <div
-              class="male-beard all-boxes-wrap flex-col py-1"
-              v-if="form.gender == 'Male'"
-            >
+            <div class="male-beard all-boxes-wrap flex-col py-1" v-if="form.gender == 'Male'">
               <h5 class="pt-2 pb-1 flex text-center">Does have beard?</h5>
               <div class="male-beard-boxes">
                 <ul class="all-boxes">
-                  <li
-                    v-for="(beardMale, index) in form.beardMale"
-                    :key="index.id"
-                  >
+                  <li v-for="(beardMale, index) in form.beardMale" :key="index.id">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -283,10 +255,7 @@
               </div>
             </div>
             <transition name="fade" mode="out-in">
-              <div
-                class="hair-type all-boxes-wrap flex-col py-1"
-                v-if="hairTypeHidden"
-              >
+              <div class="hair-type all-boxes-wrap flex-col py-1" v-if="hairTypeHidden">
                 <h5 class="pt-2 pb-1 flex text-center">Select Hair Type</h5>
                 <div class="hair-type-boxes">
                   <ul class="all-boxes" v-if="form.gender === 'Male'">
@@ -385,10 +354,7 @@
               </div>
             </div>
             <transition name="fade" mode="out-in">
-              <div
-                class="eye-shape all-boxes-wrap flex-col py-1"
-                v-if="eyeShapeHidden"
-              >
+              <div class="eye-shape all-boxes-wrap flex-col py-1" v-if="eyeShapeHidden">
                 <h5 class="pt-2 pb-1 flex text-center">Select Eye Shape</h5>
                 <div class="eye-shape-boxes">
                   <ul class="all-boxes" v-if="form.gender === 'Male'">
@@ -440,8 +406,7 @@
               v-for="(e, item) in errors"
               :key="item + 1"
               class="font-italic font-weight-normal"
-              >{{ e }}</span
-            >
+            >{{ e }}</span>
           </transition-group>
         </div>
         <!-- Steps Buttons -->
@@ -450,23 +415,17 @@
             v-if="step != 1 && step != 2"
             @click.prevent="prevStep"
             class="prev btn btn-primary"
-          >
-            Previous
-          </button>
+          >Previous</button>
           <button
             v-if="step != totalsteps"
             @click.prevent="nextStep"
             class="next btn btn-success"
-          >
-            Continue
-          </button>
+          >Continue</button>
           <button
             class="buy-button send btn btn-warning"
             v-if="step == 4"
             @click.prevent="send"
-          >
-            Save Parent
-          </button>
+          >Save Parent</button>
         </section>
       </div>
     </form>
@@ -963,27 +922,27 @@ export default {
           {
             name: "Round Full",
             iconSource: require("@/img/icons/ico-eye-shape-1.svg"),
-            eyeid: 11
+            id: 11
           },
           {
             name: "Monolid",
             iconSource: require("@/img/icons/ico-eye-shape-2.svg"),
-            eyeid: 21
+            id: 21
           },
           {
             name: "Downturned",
             iconSource: require("@/img/icons/ico-eye-shape-3.svg"),
-            eyeid: 31
+            id: 31
           },
           {
             name: "Round",
             iconSource: require("@/img/icons/ico-eye-shape-4.svg"),
-            eyeid: 41
+            id: 41
           },
           {
             name: "Hooded",
             iconSource: require("@/img/icons/ico-eye-shape-5.svg"),
-            eyeid: 51
+            id: 51
           }
         ],
         // Eye Shape Female
@@ -991,27 +950,27 @@ export default {
           {
             name: "Round",
             iconSource: require("@/img/icons/ico-eye-shape-1.svg"),
-            eyeid: 11
+            id: 11
           },
           {
             name: "Monolid",
             iconSource: require("@/img/icons/ico-eye-shape-2.svg"),
-            eyeid: 21
+            id: 21
           },
           {
             name: "Downturned",
             iconSource: require("@/img/icons/ico-eye-shape-3.svg"),
-            eyeid: 31
+            id: 31
           },
           {
             name: "Round",
             iconSource: require("@/img/icons/ico-eye-shape-4.svg"),
-            eyeid: 41
+            id: 41
           },
           {
             name: "Hooded",
             iconSource: require("@/img/icons/ico-eye-shape-5.svg"),
-            eyeid: 51
+            id: 51
           }
         ],
         eyeColor: "",
@@ -1022,23 +981,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeid: 11,
+                id: 11,
                 imageSource: require("@/img/adult/eyes/eyes-1-1.png")
               },
               {
-                eyeid: 21,
+                id: 21,
                 imageSource: require("@/img/adult/eyes/eyes-2-1.png")
               },
               {
-                eyeid: 31,
+                id: 31,
                 imageSource: require("@/img/adult/eyes/eyes-3-1.png")
               },
               {
-                eyeid: 41,
+                id: 41,
                 imageSource: require("@/img/adult/eyes/eyes-4-1.png")
               },
               {
-                eyeid: 51,
+                id: 51,
                 imageSource: require("@/img/adult/eyes/eyes-5-1.png")
               }
             ],
@@ -1050,23 +1009,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeid: 11,
+                id: 11,
                 imageSource: require("@/img/adult/eyes/eyes-1-2.png")
               },
               {
-                eyeid: 21,
+                id: 21,
                 imageSource: require("@/img/adult/eyes/eyes-2-2.png")
               },
               {
-                eyeid: 31,
+                id: 31,
                 imageSource: require("@/img/adult/eyes/eyes-3-2.png")
               },
               {
-                eyeid: 41,
+                id: 41,
                 imageSource: require("@/img/adult/eyes/eyes-4-2.png")
               },
               {
-                eyeid: 51,
+                id: 51,
                 imageSource: require("@/img/adult/eyes/eyes-5-2.png")
               }
             ],
@@ -1077,23 +1036,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeid: 11,
+                id: 11,
                 imageSource: require("@/img/adult/eyes/eyes-1-3.png")
               },
               {
-                eyeid: 21,
+                id: 21,
                 imageSource: require("@/img/adult/eyes/eyes-2-3.png")
               },
               {
-                eyeid: 31,
+                id: 31,
                 imageSource: require("@/img/adult/eyes/eyes-3-3.png")
               },
               {
-                eyeid: 41,
+                id: 41,
                 imageSource: require("@/img/adult/eyes/eyes-4-3.png")
               },
               {
-                eyeid: 51,
+                id: 51,
                 imageSource: require("@/img/adult/eyes/eyes-5-3.png")
               }
             ],
@@ -1104,23 +1063,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeid: 11,
+                id: 11,
                 imageSource: require("@/img/adult/eyes/eyes-1-4.png")
               },
               {
-                eyeid: 21,
+                id: 21,
                 imageSource: require("@/img/adult/eyes/eyes-2-4.png")
               },
               {
-                eyeid: 31,
+                id: 31,
                 imageSource: require("@/img/adult/eyes/eyes-3-4.png")
               },
               {
-                eyeid: 41,
+                id: 41,
                 imageSource: require("@/img/adult/eyes/eyes-4-4.png")
               },
               {
-                eyeid: 51,
+                id: 51,
                 imageSource: require("@/img/adult/eyes/eyes-5-4.png")
               }
             ],
@@ -1131,23 +1090,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeid: 11,
+                id: 11,
                 imageSource: require("@/img/adult/eyes/eyes-1-5.png")
               },
               {
-                eyeid: 21,
+                id: 21,
                 imageSource: require("@/img/adult/eyes/eyes-2-5.png")
               },
               {
-                eyeid: 31,
+                id: 31,
                 imageSource: require("@/img/adult/eyes/eyes-3-5.png")
               },
               {
-                eyeid: 41,
+                id: 41,
                 imageSource: require("@/img/adult/eyes/eyes-4-5.png")
               },
               {
-                eyeid: 51,
+                id: 51,
                 imageSource: require("@/img/adult/eyes/eyes-5-5.png")
               }
             ],
@@ -1161,23 +1120,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeid: 11,
+                id: 11,
                 imageSource: require("@/img/adult/eyes/eyes-1-1.png")
               },
               {
-                eyeid: 21,
+                id: 21,
                 imageSource: require("@/img/adult/eyes/eyes-2-1.png")
               },
               {
-                eyeid: 31,
+                id: 31,
                 imageSource: require("@/img/adult/eyes/eyes-3-1.png")
               },
               {
-                eyeid: 41,
+                id: 41,
                 imageSource: require("@/img/adult/eyes/eyes-4-1.png")
               },
               {
-                eyeid: 51,
+                id: 51,
                 imageSource: require("@/img/adult/eyes/eyes-5-1.png")
               }
             ],
@@ -1188,23 +1147,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeid: 11,
+                id: 11,
                 imageSource: require("@/img/adult/eyes/eyes-1-2.png")
               },
               {
-                eyeid: 21,
+                id: 21,
                 imageSource: require("@/img/adult/eyes/eyes-2-2.png")
               },
               {
-                eyeid: 31,
+                id: 31,
                 imageSource: require("@/img/adult/eyes/eyes-3-2.png")
               },
               {
-                eyeid: 41,
+                id: 41,
                 imageSource: require("@/img/adult/eyes/eyes-4-2.png")
               },
               {
-                eyeid: 51,
+                id: 51,
                 imageSource: require("@/img/adult/eyes/eyes-5-2.png")
               }
             ],
@@ -1215,23 +1174,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeid: 11,
+                id: 11,
                 imageSource: require("@/img/adult/eyes/eyes-1-3.png")
               },
               {
-                eyeid: 21,
+                id: 21,
                 imageSource: require("@/img/adult/eyes/eyes-2-3.png")
               },
               {
-                eyeid: 31,
+                id: 31,
                 imageSource: require("@/img/adult/eyes/eyes-3-3.png")
               },
               {
-                eyeid: 41,
+                id: 41,
                 imageSource: require("@/img/adult/eyes/eyes-4-3.png")
               },
               {
-                eyeid: 51,
+                id: 51,
                 imageSource: require("@/img/adult/eyes/eyes-5-3.png")
               }
             ],
@@ -1242,23 +1201,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeid: 11,
+                id: 11,
                 imageSource: require("@/img/adult/eyes/eyes-1-4.png")
               },
               {
-                eyeid: 21,
+                id: 21,
                 imageSource: require("@/img/adult/eyes/eyes-2-4.png")
               },
               {
-                eyeid: 31,
+                id: 31,
                 imageSource: require("@/img/adult/eyes/eyes-3-4.png")
               },
               {
-                eyeid: 41,
+                id: 41,
                 imageSource: require("@/img/adult/eyes/eyes-4-4.png")
               },
               {
-                eyeid: 51,
+                id: 51,
                 imageSource: require("@/img/adult/eyes/eyes-5-4.png")
               }
             ],
@@ -1269,23 +1228,23 @@ export default {
             imageSource: "",
             image: [
               {
-                eyeid: 11,
+                id: 11,
                 imageSource: require("@/img/adult/eyes/eyes-1-5.png")
               },
               {
-                eyeid: 21,
+                id: 21,
                 imageSource: require("@/img/adult/eyes/eyes-2-5.png")
               },
               {
-                eyeid: 31,
+                id: 31,
                 imageSource: require("@/img/adult/eyes/eyes-3-5.png")
               },
               {
-                eyeid: 41,
+                id: 41,
                 imageSource: require("@/img/adult/eyes/eyes-4-5.png")
               },
               {
-                eyeid: 51,
+                id: 51,
                 imageSource: require("@/img/adult/eyes/eyes-5-5.png")
               }
             ],
