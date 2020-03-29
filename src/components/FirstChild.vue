@@ -15,7 +15,7 @@
         />
         <img :src="form.defaultMaleSkin" alt="default-skin" class="img-view img-skin-tone" v-else />
         <!-- Default Hair -->
-        <div class="feault">
+        <div class="default-hair">
           <!-- Visible before selecting Female hair color -->
           <img
             :src="form.defaultFemaleHair"
@@ -53,6 +53,12 @@
           alt="default-eyes"
           class="img-view img-eye-color"
           v-if="!defaultEyesHidden"
+        />
+        <img
+          :src="form.eyeColor.selectedEyes"
+          alt="default-eyes"
+          class="img-view img-eye-color"
+          v-if="defaultEyesHidden && !selectedEyesHidden"
         />
         <!--End Default Images -->
 
@@ -314,7 +320,7 @@
                   <li
                     v-for="(eyeColor, index) in form.eyeColorMale"
                     :key="index.id"
-                    v-on:click="eyeShapeHidden = true"
+                    v-on:click="defaultEyesHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
@@ -333,7 +339,7 @@
                   <li
                     v-for="(eyeColor, index) in form.eyeColorFemale"
                     :key="index.id"
-                    v-on:click="eyeShapeHidden = true"
+                    v-on:click="defaultEyesHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
@@ -351,14 +357,14 @@
             </div>
 
             <transition name="fade" mode="out-in">
-              <div class="eye-shape all-boxes-wrap flex-col py-1" v-if="eyeShapeHidden">
+              <div class="eye-shape all-boxes-wrap flex-col py-1">
                 <h5 class="pt-2 pb-1 flex text-center">Select your Eye Shape</h5>
                 <div class="eye-shape-boxes">
                   <ul class="all-boxes" v-if="form.gender === 'Male'">
                     <li
                       v-for="(eyeShape, index) in form.eyeShapeMale"
                       :key="index.id"
-                      v-on:click="defaultEyesHidden = true"
+                      v-on:click="selectedEyesHidden = true"
                     >
                       <p-input
                         class="p-icon p-jelly p-round p-bigger"
@@ -377,7 +383,7 @@
                     <li
                       v-for="(eyeShape, index) in form.eyeShapeFemale"
                       :key="index.id"
-                      v-on:click="defaultEyesHidden = true"
+                      v-on:click="selectedEyesHidden = true"
                     >
                       <p-input
                         class="p-icon p-jelly p-round p-bigger"
@@ -448,7 +454,7 @@ export default {
       defaultEyesHidden: false,
       defaultHairHidden: false,
       selectedHairHidden: false,
-      eyeShapeHidden: false,
+      selectedEyesHidden: false,
       form: {
         defaultMaleSkin: require("@/img/boy/body-boy-3.png"),
         defaultFemaleSkin: require("@/img/girl/body-girl-3.png"),
@@ -982,6 +988,7 @@ export default {
                 imageSource: require("@/img/child/eyes/eyes-5-1.png")
               }
             ],
+            selectedEyes: require("@/img/child/eyes/eyes-5-1.png"),
             iconSource: require("@/img/icons/ico-eye-color-1.svg")
           },
           {
@@ -1009,6 +1016,7 @@ export default {
                 imageSource: require("@/img/child/eyes/eyes-5-2.png")
               }
             ],
+            selectedEyes: require("@/img/child/eyes/eyes-5-2.png"),
             iconSource: require("@/img/icons/ico-eye-color-2.svg")
           },
           {
@@ -1036,6 +1044,7 @@ export default {
                 imageSource: require("@/img/child/eyes/eyes-5-3.png")
               }
             ],
+            selectedEyes: require("@/img/child/eyes/eyes-5-3.png"),
             iconSource: require("@/img/icons/ico-eye-color-3.svg")
           },
           {
@@ -1063,6 +1072,7 @@ export default {
                 imageSource: require("@/img/child/eyes/eyes-5-4.png")
               }
             ],
+            selectedEyes: require("@/img/child/eyes/eyes-5-4.png"),
             iconSource: require("@/img/icons/ico-eye-color-4.svg")
           },
           {
@@ -1090,6 +1100,7 @@ export default {
                 imageSource: require("@/img/child/eyes/eyes-5-5.png")
               }
             ],
+            selectedEyes: require("@/img/child/eyes/eyes-5-5.png"),
             iconSource: require("@/img/icons/ico-eye-color-5.svg")
           }
         ],
@@ -1120,6 +1131,7 @@ export default {
                 imageSource: require("@/img/child/eyes/eyes-5-1.png")
               }
             ],
+            selectedEyes: require("@/img/child/eyes/eyes-5-1.png"),
             iconSource: require("@/img/icons/ico-eye-color-1.svg")
           },
           {
@@ -1147,6 +1159,7 @@ export default {
                 imageSource: require("@/img/child/eyes/eyes-5-2.png")
               }
             ],
+            selectedEyes: require("@/img/child/eyes/eyes-5-2.png"),
             iconSource: require("@/img/icons/ico-eye-color-2.svg")
           },
           {
@@ -1174,6 +1187,7 @@ export default {
                 imageSource: require("@/img/child/eyes/eyes-5-3.png")
               }
             ],
+            selectedEyes: require("@/img/child/eyes/eyes-5-3.png"),
             iconSource: require("@/img/icons/ico-eye-color-3.svg")
           },
           {
@@ -1201,6 +1215,7 @@ export default {
                 imageSource: require("@/img/child/eyes/eyes-5-4.png")
               }
             ],
+            selectedEyes: require("@/img/child/eyes/eyes-5-4.png"),
             iconSource: require("@/img/icons/ico-eye-color-4.svg")
           },
           {
@@ -1228,6 +1243,7 @@ export default {
                 imageSource: require("@/img/child/eyes/eyes-5-5.png")
               }
             ],
+            selectedEyes: require("@/img/child/eyes/eyes-5-5.png"),
             iconSource: require("@/img/icons/ico-eye-color-5.svg")
           }
         ]
