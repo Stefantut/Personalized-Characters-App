@@ -320,7 +320,7 @@
                   <li
                     v-for="(eyeColor, index) in form.eyeColorMale"
                     :key="index.id"
-                    v-on:click="defaultEyesHidden = true"
+                    v-on:click="defaultEyesHidden = true; eyesOptionsHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
@@ -339,7 +339,7 @@
                   <li
                     v-for="(eyeColor, index) in form.eyeColorFemale"
                     :key="index.id"
-                    v-on:click="defaultEyesHidden = true"
+                    v-on:click="defaultEyesHidden = true; eyesOptionsHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
@@ -357,7 +357,7 @@
             </div>
 
             <transition name="fade" mode="out-in">
-              <div class="eye-shape all-boxes-wrap flex-col py-1">
+              <div class="eye-shape all-boxes-wrap flex-col py-1" v-if="eyesOptionsHidden">
                 <h5 class="pt-2 pb-1 flex text-center">Select your Eye Shape</h5>
                 <div class="eye-shape-boxes">
                   <ul class="all-boxes" v-if="form.gender === 'Male'">
@@ -456,6 +456,7 @@ export default {
       selectedHairHidden: false,
       selectedEyesHidden: false,
       hairOptionsHidden: false,
+      eyesOptionsHidden: false,
       form: {
         defaultMaleSkin: require("@/img/boy/body-boy-3.png"),
         defaultFemaleSkin: require("@/img/girl/body-girl-3.png"),
