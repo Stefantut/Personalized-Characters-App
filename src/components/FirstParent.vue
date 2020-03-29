@@ -90,7 +90,7 @@
         />
       </div>
 
-      <div class="form-container">
+      <div class="form-content">
         <transition name="fade-less" mode="out-in">
           <!-- Step 1 -->
           <section class="step gender name" v-if="step == 1">

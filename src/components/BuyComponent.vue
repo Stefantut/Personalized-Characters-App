@@ -75,11 +75,15 @@ export default {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 100px;
+  padding: 0 20px;
   .buy__item {
     &--title {
       font-family: $secondaryFont;
       color: $primary;
       font-size: 40px;
+    }
+    &--subtitle {
+      text-align: center;
     }
     &--buttons {
       display: flex;

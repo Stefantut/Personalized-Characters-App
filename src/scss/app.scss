@@ -1,6 +1,7 @@
 @import "./_variables.scss";
 @import "./_mixins.scss";
 @import "./_fonts.scss";
+@import "./_responsive.scss";
 
 #app {
   height: calc(100vh);
@@ -64,7 +65,7 @@
           z-index: 6;
         }
       }
-      .form-container {
+      .form-content {
         width: 300px;
         .error {
           color: red;
