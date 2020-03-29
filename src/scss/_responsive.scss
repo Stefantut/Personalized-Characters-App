@@ -52,6 +52,18 @@
   body {
     #app {
       .top-section {
+        .logo {
+          width: 180px;
+          line-height: 1em;
+          .item {
+            &--text {
+              font-size: 14px;
+            }
+            &--image {
+              width: 45px;
+            }
+          }
+        }
         .message {
           position: absolute;
           top: 20%;
@@ -60,10 +72,22 @@
           padding: 0;
           height: auto;
           background-color: transparent;
+          border: none;
+          color: darken($color: $secondary, $amount: 30%);
           .star {
             display: none;
           }
+          .message-text {
+            font-size: 12px;
+          }
         }
+      }
+      .cart {
+        position: absolute;
+        top: 20px;
+        right: 0px;
+        padding-right: 15px;
+        font-size: 14px;
       }
     }
   }
