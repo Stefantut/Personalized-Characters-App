@@ -34,14 +34,14 @@
         <div class="selected-color-hair">
           <!-- Visible after selecting Female hair color -->
           <img
-            :src="form.hairColor.defaultSelectedHair"
+            :src="form.hairColor.selectedHair"
             alt="default-hair"
             class="img-view img-hair-color"
             v-if="form.gender === 'Female' && defaultHairHidden  && !selectedHairHidden"
           />
           <!-- Visible after selecting Male hair color -->
           <img
-            :src="form.hairColor.defaultSelectedHair"
+            :src="form.hairColor.selectedHair"
             alt="default-hair"
             class="img-view img-hair-color"
             v-else-if="defaultHairHidden && !selectedHairHidden"
@@ -694,7 +694,7 @@ export default {
                 imageSource: require("@/img/father/hair-5-1.png")
               }
             ],
-            defaultSelectedHair: require("@/img/father/hair-3-1.png"),
+            selectedHair: require("@/img/father/hair-3-1.png"),
             iconSource: require("@/img/icons/ico-hair-color-1.svg")
           },
           {
@@ -722,7 +722,7 @@ export default {
                 imageSource: require("@/img/father/hair-5-2.png")
               }
             ],
-            defaultSelectedHair: require("@/img/father/hair-3-2.png"),
+            selectedHair: require("@/img/father/hair-3-2.png"),
             iconSource: require("@/img/icons/ico-hair-color-2.svg")
           },
           {
@@ -750,7 +750,7 @@ export default {
                 imageSource: require("@/img/father/hair-5-3.png")
               }
             ],
-            defaultSelectedHair: require("@/img/father/hair-3-3.png"),
+            selectedHair: require("@/img/father/hair-3-3.png"),
             iconSource: require("@/img/icons/ico-hair-color-3.svg")
           },
           {
@@ -778,7 +778,7 @@ export default {
                 imageSource: require("@/img/father/hair-5-4.png")
               }
             ],
-            defaultSelectedHair: require("@/img/father/hair-3-4.png"),
+            selectedHair: require("@/img/father/hair-3-4.png"),
             iconSource: require("@/img/icons/ico-hair-color-4.svg")
           },
           {
@@ -806,7 +806,7 @@ export default {
                 imageSource: require("@/img/father/hair-5-5.png")
               }
             ],
-            defaultSelectedHair: require("@/img/father/hair-3-5.png"),
+            selectedHair: require("@/img/father/hair-3-5.png"),
             iconSource: require("@/img/icons/ico-hair-color-5.svg")
           }
         ],
@@ -837,7 +837,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-1.png")
               }
             ],
-            defaultSelectedHair: require("@/img/mother/hair-3-1.png"),
+            selectedHair: require("@/img/mother/hair-3-1.png"),
             iconSource: require("@/img/icons/ico-hair-color-1.svg")
           },
           {
@@ -865,7 +865,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-2.png")
               }
             ],
-            defaultSelectedHair: require("@/img/mother/hair-3-2.png"),
+            selectedHair: require("@/img/mother/hair-3-2.png"),
             iconSource: require("@/img/icons/ico-hair-color-2.svg")
           },
           {
@@ -893,7 +893,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-3.png")
               }
             ],
-            defaultSelectedHair: require("@/img/mother/hair-3-3.png"),
+            selectedHair: require("@/img/mother/hair-3-3.png"),
             iconSource: require("@/img/icons/ico-hair-color-3.svg")
           },
           {
@@ -921,7 +921,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-4.png")
               }
             ],
-            defaultSelectedHair: require("@/img/mother/hair-3-4.png"),
+            selectedHair: require("@/img/mother/hair-3-4.png"),
             iconSource: require("@/img/icons/ico-hair-color-4.svg")
           },
           {
@@ -949,7 +949,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-5.png")
               }
             ],
-            defaultSelectedHair: require("@/img/mother/hair-3-5.png"),
+            selectedHair: require("@/img/mother/hair-3-5.png"),
             iconSource: require("@/img/icons/ico-hair-color-5.svg")
           }
         ],
