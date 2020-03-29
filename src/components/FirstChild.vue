@@ -86,7 +86,7 @@
       <div class="form-container">
         <!-- Step 1 -->
         <transition name="fade-less" mode="out-in">
-          <section class="step gender name" v-if="step == 1" key="1">
+          <section class="step gender name" v-if="step == 1">
             <div class="step-number-wrap text-success">
               <p class="step-number">
                 {{ step }}
@@ -136,7 +136,7 @@
           </section>
 
           <!-- Step 2 -->
-          <section class="step skin-glasses" v-if="step == 2" :key="2">
+          <section class="step skin-glasses" v-if="step == 2">
             <!-- using direct svg file -->
             <div class="step-number-wrap text-success">
               <p class="step-number">
@@ -149,7 +149,7 @@
               <h5 class="pt-2 pb-1 flex text-center">Select your Skin Tone</h5>
               <div class="skin-tone-boxes">
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li v-for="(skinInfo, index) in form.skinToneMale" :key="index.id">
+                  <li v-for="(skinInfo, index) in form.skinToneMale" :key="index">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -164,7 +164,7 @@
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li v-for="(skinInfo, index) in form.skinToneFemale" :key="index.id">
+                  <li v-for="(skinInfo, index) in form.skinToneFemale" :key="index">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -185,7 +185,7 @@
               <h5 class="pt-2 pb-1 flex text-center">Glasses?</h5>
               <div class="glasses-boxes">
                 <ul class="all-boxes">
-                  <li v-for="(glasses, index) in form.glassesType" :key="index.id">
+                  <li v-for="(glasses, index) in form.glassesType" :key="index">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -203,7 +203,7 @@
           </section>
 
           <!-- Step 3 -->
-          <section class="step hair" v-if="step == 3" :key="3">
+          <section class="step hair" v-if="step == 3">
             <div class="step-number-wrap text-success">
               <p class="step-number">
                 {{ step }}
@@ -219,7 +219,7 @@
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
                   <li
                     v-for="(hairColor, index) in form.hairColorMale"
-                    :key="index.id"
+                    :key="index"
                     v-on:click="defaultHairHidden = true; hairOptionsHidden = true "
                   >
                     <p-input
@@ -238,7 +238,7 @@
                 <ul class="all-boxes" v-else>
                   <li
                     v-for="(hairColor, index) in form.hairColorFemale"
-                    :key="index.id"
+                    :key="index"
                     v-on:click="defaultHairHidden = true; hairOptionsHidden = true"
                   >
                     <p-input
@@ -263,7 +263,7 @@
                   <ul class="all-boxes" v-if="form.gender === 'Male'">
                     <li
                       v-for="(hairType, index) in form.hairTypeMale"
-                      :key="index.hair"
+                      :key="index"
                       v-on:click="selectedHairHidden = true"
                     >
                       <p-input
@@ -303,7 +303,7 @@
           </section>
 
           <!-- Step 4 -->
-          <section class="step eye" v-if="step == 4" :key="4">
+          <section class="step eye" v-if="step == 4">
             <div class="step-number-wrap text-success">
               <p class="step-number">
                 {{ step }}
@@ -319,7 +319,7 @@
                 <ul class="all-boxes" v-if="form.gender === 'Male'">
                   <li
                     v-for="(eyeColor, index) in form.eyeColorMale"
-                    :key="index.id"
+                    :key="index"
                     v-on:click="defaultEyesHidden = true; eyesOptionsHidden = true"
                   >
                     <p-input
@@ -338,7 +338,7 @@
                 <ul class="all-boxes" v-else>
                   <li
                     v-for="(eyeColor, index) in form.eyeColorFemale"
-                    :key="index.id"
+                    :key="index"
                     v-on:click="defaultEyesHidden = true; eyesOptionsHidden = true"
                   >
                     <p-input
@@ -363,7 +363,7 @@
                   <ul class="all-boxes" v-if="form.gender === 'Male'">
                     <li
                       v-for="(eyeShape, index) in form.eyeShapeMale"
-                      :key="index.id"
+                      :key="index"
                       v-on:click="selectedEyesHidden = true"
                     >
                       <p-input
@@ -382,7 +382,7 @@
                   <ul class="all-boxes" v-else>
                     <li
                       v-for="(eyeShape, index) in form.eyeShapeFemale"
-                      :key="index.id"
+                      :key="index"
                       v-on:click="selectedEyesHidden = true"
                     >
                       <p-input
