@@ -245,7 +245,7 @@
                   <li
                     v-for="(hairColor, index) in form.hairColorMale"
                     :key="index.id"
-                    v-on:click="defaultHairHidden = true"
+                    v-on:click="defaultHairHidden = true; hairOptionsHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
@@ -264,7 +264,7 @@
                   <li
                     v-for="(hairColor, index) in form.hairColorFemale"
                     :key="index.id"
-                    v-on:click="defaultHairHidden = true"
+                    v-on:click="defaultHairHidden = true; hairOptionsHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
@@ -281,7 +281,7 @@
               </div>
             </div>
             <transition name="fade" mode="out-in">
-              <div class="hair-type all-boxes-wrap flex-col py-1">
+              <div class="hair-type all-boxes-wrap flex-col py-1" v-if="hairOptionsHidden">
                 <h5 class="pt-2 pb-1 flex text-center">Select Hair Type</h5>
                 <div class="hair-type-boxes">
                   <ul class="all-boxes" v-if="form.gender === 'Male'">
@@ -475,6 +475,7 @@ export default {
       defaultHairHidden: false,
       selectedHairHidden: false,
       selectedEyesHidden: false,
+      hairOptionsHidden: false,
       form: {
         defaultMaleSkin: require("@/img/father/body-father-3.png"),
         defaultFemaleSkin: require("@/img/mother/body-mother-3.png"),
