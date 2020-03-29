@@ -15,24 +15,50 @@
         />
         <img :src="form.defaultMaleSkin" alt="default-skin" class="img-view img-skin-tone" v-else />
         <!-- Default Hair -->
-        <img
-          :src="form.defaultFemaleHair"
-          alt="default-hair"
-          class="img-view img-hair-color"
-          v-if="form.gender === 'Female' && !defaultHairHidden"
-        />
-        <img
-          :src="form.defaultMaleHair"
-          alt="default-hair"
-          class="img-view img-hair-color"
-          v-else-if="!defaultHairHidden"
-        />
+        <div class="default-hair">
+          <!-- Visible before selecting Female hair color -->
+          <img
+            :src="form.defaultFemaleHair"
+            alt="default-hair"
+            class="img-view img-hair-color"
+            v-if="form.gender === 'Female' && !defaultHairHidden"
+          />
+          <!-- Visible before selecting Male hair color -->
+          <img
+            :src="form.defaultMaleHair"
+            alt="default-hair"
+            class="img-view img-hair-color"
+            v-else-if="!defaultHairHidden"
+          />
+        </div>
+        <div class="selected-color-hair">
+          <!-- Visible after selecting Female hair color -->
+          <img
+            :src="form.hairColor.defaultSelectedHair"
+            alt="default-hair"
+            class="img-view img-hair-color"
+            v-if="form.gender === 'Female' && defaultHairHidden  && !selectedHairHidden"
+          />
+          <!-- Visible after selecting Male hair color -->
+          <img
+            :src="form.hairColor.defaultSelectedHair"
+            alt="default-hair"
+            class="img-view img-hair-color"
+            v-else-if="defaultHairHidden && !selectedHairHidden"
+          />
+        </div>
         <!-- Default Eyes -->
         <img
           :src="form.defaultEyes"
           alt="default-eyes"
           class="img-view img-eye-color"
           v-if="!defaultEyesHidden"
+        />
+        <img
+          :src="form.eyeColor.selectedEyes"
+          alt="default-eyes"
+          class="img-view img-eye-color"
+          v-if="defaultEyesHidden && !selectedEyesHidden"
         />
         <!--End Default Images -->
         <!-- Display skin -->
@@ -219,7 +245,7 @@
                   <li
                     v-for="(hairColor, index) in form.hairColorMale"
                     :key="index.id"
-                    v-on:click="hairTypeHidden = true"
+                    v-on:click="defaultHairHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
@@ -238,7 +264,7 @@
                   <li
                     v-for="(hairColor, index) in form.hairColorFemale"
                     :key="index.id"
-                    v-on:click="hairTypeHidden = true"
+                    v-on:click="defaultHairHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
@@ -255,14 +281,14 @@
               </div>
             </div>
             <transition name="fade" mode="out-in">
-              <div class="hair-type all-boxes-wrap flex-col py-1" v-if="hairTypeHidden">
+              <div class="hair-type all-boxes-wrap flex-col py-1">
                 <h5 class="pt-2 pb-1 flex text-center">Select Hair Type</h5>
                 <div class="hair-type-boxes">
                   <ul class="all-boxes" v-if="form.gender === 'Male'">
                     <li
                       v-for="(hairType, index) in form.hairTypeMale"
                       :key="index.hair"
-                      v-on:click="defaultHairHidden = true"
+                      v-on:click="selectedHairHidden = true"
                     >
                       <p-input
                         class="p-icon p-jelly p-round p-bigger"
@@ -281,7 +307,7 @@
                     <li
                       v-for="(hairType, index) in form.hairTypeFemale"
                       :key="index"
-                      v-on:click="defaultHairHidden = true"
+                      v-on:click="selectedHairHidden = true"
                     >
                       <p-input
                         class="p-icon p-jelly p-round p-bigger"
@@ -318,7 +344,7 @@
                   <li
                     v-for="(eyeColor, index) in form.eyeColorMale"
                     :key="index.id"
-                    v-on:click="eyeShapeHidden = true"
+                    v-on:click="defaultEyesHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
@@ -337,7 +363,7 @@
                   <li
                     v-for="(eyeColor, index) in form.eyeColorFemale"
                     :key="index.id"
-                    v-on:click="eyeShapeHidden = true"
+                    v-on:click="defaultEyesHidden = true"
                   >
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
@@ -354,14 +380,14 @@
               </div>
             </div>
             <transition name="fade" mode="out-in">
-              <div class="eye-shape all-boxes-wrap flex-col py-1" v-if="eyeShapeHidden">
+              <div class="eye-shape all-boxes-wrap flex-col py-1">
                 <h5 class="pt-2 pb-1 flex text-center">Select Eye Shape</h5>
                 <div class="eye-shape-boxes">
                   <ul class="all-boxes" v-if="form.gender === 'Male'">
                     <li
                       v-for="(eyeShape, index) in form.eyeShapeMale"
                       :key="index.id"
-                      v-on:click="defaultEyesHidden = true"
+                      v-on:click="selectedEyesHidden = true"
                     >
                       <p-input
                         class="p-icon p-jelly p-round p-bigger"
@@ -380,7 +406,7 @@
                     <li
                       v-for="(eyeShape, index) in form.eyeShapeFemale"
                       :key="index.id"
-                      v-on:click="defaultEyesHidden = true"
+                      v-on:click="selectedEyesHidden = true"
                     >
                       <p-input
                         class="p-icon p-jelly p-round p-bigger"
@@ -447,14 +473,14 @@ export default {
       errors: [],
       defaultEyesHidden: false,
       defaultHairHidden: false,
-      hairTypeHidden: false,
-      eyeShapeHidden: false,
+      selectedHairHidden: false,
+      selectedEyesHidden: false,
       form: {
         defaultMaleSkin: require("@/img/father/body-father-3.png"),
         defaultFemaleSkin: require("@/img/mother/body-mother-3.png"),
         defaultMaleHair: require("@/img/father/hair-3-1.png"),
         defaultFemaleHair: require("@/img/mother/hair-3-1.png"),
-        defaultEyes: require("@/img/adult/eyes/eyes-4-1.png"),
+        defaultEyes: require("@/img/adult/eyes/eyes-5-1.png"),
         gender: "",
         firstName: null,
         skin: "",
@@ -666,7 +692,7 @@ export default {
                 imageSource: require("@/img/father/hair-5-1.png")
               }
             ],
-
+            defaultSelectedHair: require("@/img/father/hair-3-1.png"),
             iconSource: require("@/img/icons/ico-hair-color-1.svg")
           },
           {
@@ -694,6 +720,7 @@ export default {
                 imageSource: require("@/img/father/hair-5-2.png")
               }
             ],
+            defaultSelectedHair: require("@/img/father/hair-3-2.png"),
             iconSource: require("@/img/icons/ico-hair-color-2.svg")
           },
           {
@@ -721,6 +748,7 @@ export default {
                 imageSource: require("@/img/father/hair-5-3.png")
               }
             ],
+            defaultSelectedHair: require("@/img/father/hair-3-3.png"),
             iconSource: require("@/img/icons/ico-hair-color-3.svg")
           },
           {
@@ -748,6 +776,7 @@ export default {
                 imageSource: require("@/img/father/hair-5-4.png")
               }
             ],
+            defaultSelectedHair: require("@/img/father/hair-3-4.png"),
             iconSource: require("@/img/icons/ico-hair-color-4.svg")
           },
           {
@@ -775,6 +804,7 @@ export default {
                 imageSource: require("@/img/father/hair-5-5.png")
               }
             ],
+            defaultSelectedHair: require("@/img/father/hair-3-5.png"),
             iconSource: require("@/img/icons/ico-hair-color-5.svg")
           }
         ],
@@ -805,6 +835,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-1.png")
               }
             ],
+            defaultSelectedHair: require("@/img/mother/hair-3-1.png"),
             iconSource: require("@/img/icons/ico-hair-color-1.svg")
           },
           {
@@ -832,6 +863,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-2.png")
               }
             ],
+            defaultSelectedHair: require("@/img/mother/hair-3-2.png"),
             iconSource: require("@/img/icons/ico-hair-color-2.svg")
           },
           {
@@ -859,6 +891,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-3.png")
               }
             ],
+            defaultSelectedHair: require("@/img/mother/hair-3-3.png"),
             iconSource: require("@/img/icons/ico-hair-color-3.svg")
           },
           {
@@ -886,6 +919,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-4.png")
               }
             ],
+            defaultSelectedHair: require("@/img/mother/hair-3-4.png"),
             iconSource: require("@/img/icons/ico-hair-color-4.svg")
           },
           {
@@ -913,6 +947,7 @@ export default {
                 imageSource: require("@/img/mother/hair-5-5.png")
               }
             ],
+            defaultSelectedHair: require("@/img/mother/hair-3-5.png"),
             iconSource: require("@/img/icons/ico-hair-color-5.svg")
           }
         ],
@@ -1001,7 +1036,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-1.png")
               }
             ],
-
+            selectedEyes: require("@/img/adult/eyes/eyes-5-1.png"),
             iconSource: require("@/img/icons/ico-eye-color-1.svg")
           },
           {
@@ -1029,6 +1064,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-2.png")
               }
             ],
+            selectedEyes: require("@/img/adult/eyes/eyes-5-2.png"),
             iconSource: require("@/img/icons/ico-eye-color-2.svg")
           },
           {
@@ -1056,6 +1092,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-3.png")
               }
             ],
+            selectedEyes: require("@/img/adult/eyes/eyes-5-3.png"),
             iconSource: require("@/img/icons/ico-eye-color-3.svg")
           },
           {
@@ -1083,6 +1120,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-4.png")
               }
             ],
+            selectedEyes: require("@/img/adult/eyes/eyes-5-4.png"),
             iconSource: require("@/img/icons/ico-eye-color-4.svg")
           },
           {
@@ -1110,6 +1148,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-5.png")
               }
             ],
+            selectedEyes: require("@/img/adult/eyes/eyes-5-5.png"),
             iconSource: require("@/img/icons/ico-eye-color-5.svg")
           }
         ],
@@ -1140,6 +1179,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-1.png")
               }
             ],
+            selectedEyes: require("@/img/adult/eyes/eyes-5-1.png"),
             iconSource: require("@/img/icons/ico-eye-color-1.svg")
           },
           {
@@ -1167,6 +1207,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-2.png")
               }
             ],
+            selectedEyes: require("@/img/adult/eyes/eyes-5-2.png"),
             iconSource: require("@/img/icons/ico-eye-color-2.svg")
           },
           {
@@ -1194,6 +1235,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-3.png")
               }
             ],
+            selectedEyes: require("@/img/adult/eyes/eyes-5-3.png"),
             iconSource: require("@/img/icons/ico-eye-color-3.svg")
           },
           {
@@ -1221,6 +1263,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-4.png")
               }
             ],
+            selectedEyes: require("@/img/adult/eyes/eyes-5-4.png"),
             iconSource: require("@/img/icons/ico-eye-color-4.svg")
           },
           {
@@ -1248,6 +1291,7 @@ export default {
                 imageSource: require("@/img/adult/eyes/eyes-5-5.png")
               }
             ],
+            selectedEyes: require("@/img/adult/eyes/eyes-5-5.png"),
             iconSource: require("@/img/icons/ico-eye-color-5.svg")
           }
         ]
@@ -1261,25 +1305,6 @@ export default {
     isHiddenChild: Boolean
   },
   methods: {
-    // getValueAll() {
-    //   var childValues = $("#selectedChild").text();
-    //   var parentValues = $("#selectedParent").text();
-    //   var childName = $(
-    //     "#selectedChild .selected__item--name .selected__item__text"
-    //   ).text();
-    //   var parentName = $(
-    //     "#selectedParent .selected__item--name .selected__item__text"
-    //   ).text();
-    //   // Changes Title
-    //   $("#my-button").attr(
-    //     "data-item-name",
-    //     "The book of " + parentName + " & " + childName
-    //   );
-    //   // Adds Child Values
-    //   $("#my-button").attr("data-item-description", childValues);
-    //   // Adds Parrent
-    //   $("#my-button").attr("data-item-custom1-name", parentValues);
-    // },
     emitToParent() {
       this.$emit("parentGenderPassed", this.form.gender);
       this.$emit("parentNamePassed", this.form.firstName);

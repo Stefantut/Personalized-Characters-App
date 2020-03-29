@@ -451,8 +451,8 @@ export default {
       step: 1,
       totalsteps: 4,
       errors: [],
-      defaultEyesHidden: false,
       defaultHairHidden: false,
+      defaultEyesHidden: false,
       selectedHairHidden: false,
       selectedEyesHidden: false,
       form: {
