@@ -79,6 +79,7 @@
           }
           .message-text {
             font-size: 12px;
+            animation: opacity 2s infinite;
           }
         }
       }
@@ -109,5 +110,35 @@
         }
       }
     }
+  }
+}
+
+// Max 700px  --- Height
+@media only screen and (max-height: 700px) {
+  body {
+    #app {
+      .top-section {
+        .scroll {
+          display: block;
+          font-size: 12px;
+          position: absolute;
+          bottom: 30px;
+          left: 0;
+          writing-mode: vertical-rl;
+          animation: opacity 2s infinite;
+        }
+      }
+    }
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
   }
 }

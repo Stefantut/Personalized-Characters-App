@@ -30,6 +30,7 @@
       </svg>
       <p class="message-text">Sale Now: Use Code SALE15</p>
     </div>
+    <p class="scroll">Scroll</p>
   </div>
 </template>
 <script>
@@ -105,6 +106,10 @@ export default {};
     .message-text {
       margin: 0 auto;
     }
+  }
+  .scroll {
+    display: none;
+    text-transform: uppercase;
   }
 }
 @keyframes rotate {
