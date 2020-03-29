@@ -79,27 +79,27 @@
           </transition>
 
           <transition name="fade">
-            <p class="selected__item selected__item--hairtype" v-if="firstChild.hairType">
-              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Hair type:
-              <span class="selected__item__text">{{ firstChild.hairType }}</span>
-            </p>
-          </transition>
-          <transition name="fade">
             <p class="selected__item selected__item--haircolor" v-if="firstChild.hairColor">
               <span class="selected__item__divider">&nbsp;+&nbsp;</span>Hair color:
               <span class="selected__item__text">{{ firstChild.hairColor }}</span>
             </p>
           </transition>
           <transition name="fade">
-            <p class="selected__item selected__item--eyeshape" v-if="firstChild.eyeShape">
-              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Eye shape:
-              <span class="selected__item__text">{{ firstChild.eyeShape }}</span>
+            <p class="selected__item selected__item--hairtype" v-if="firstChild.hairType">
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Hair type:
+              <span class="selected__item__text">{{ firstChild.hairType }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--eyecolor" v-if="firstChild.eyeColor">
               <span class="selected__item__divider">&nbsp;+&nbsp;</span>Eye color:
               <span class="selected__item__text">{{ firstChild.eyeColor }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="selected__item selected__item--eyeshape" v-if="firstChild.eyeShape">
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Eye shape:
+              <span class="selected__item__text">{{ firstChild.eyeShape }}</span>
             </p>
           </transition>
         </div>
@@ -144,27 +144,27 @@
             </p>
           </transition>
           <transition name="fade">
-            <p class="selected__item selected__item--hairtype" v-if="firstParent.hairType">
-              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Hair type:
-              <span class="selected__item__text">{{ firstParent.hairType }}</span>
-            </p>
-          </transition>
-          <transition name="fade">
             <p class="selected__item selected__item--haircolor" v-if="firstParent.hairColor">
               <span class="selected__item__divider">&nbsp;+&nbsp;</span>Hair color:
               <span class="selected__item__text">{{ firstParent.hairColor }}</span>
             </p>
           </transition>
           <transition name="fade">
-            <p class="selected__item selected__item--eyeshape" v-if="firstParent.eyeShape">
-              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Eye shape:
-              <span class="selected__item__text">{{ firstParent.eyeShape }}</span>
+            <p class="selected__item selected__item--hairtype" v-if="firstParent.hairType">
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Hair type:
+              <span class="selected__item__text">{{ firstParent.hairType }}</span>
             </p>
           </transition>
           <transition name="fade">
             <p class="selected__item selected__item--eyecolor" v-if="firstParent.eyeColor">
               <span class="selected__item__divider">&nbsp;+&nbsp;</span>Eye color:
               <span class="selected__item__text">{{ firstParent.eyeColor }}</span>
+            </p>
+          </transition>
+          <transition name="fade">
+            <p class="selected__item selected__item--eyeshape" v-if="firstParent.eyeShape">
+              <span class="selected__item__divider">&nbsp;+&nbsp;</span>Eye shape:
+              <span class="selected__item__text">{{ firstParent.eyeShape }}</span>
             </p>
           </transition>
         </div>
