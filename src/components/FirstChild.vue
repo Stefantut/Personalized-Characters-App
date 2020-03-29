@@ -8,38 +8,38 @@
         <!-- Start Default Images -->
         <!-- Default Skin -->
         <img
-          :src="form.defaultFemaleSkin"
+          :src="form.defaultGirlSkin"
           alt="default-skin"
           class="img-view img-skin-tone"
-          v-if="form.gender === 'Female'"
+          v-if="form.gender === 'Girl'"
         />
-        <img :src="form.defaultMaleSkin" alt="default-skin" class="img-view img-skin-tone" v-else />
+        <img :src="form.defaultBoySkin" alt="default-skin" class="img-view img-skin-tone" v-else />
         <!-- Default Hair -->
         <div class="default-hair">
-          <!-- Visible before selecting Female hair color -->
+          <!-- Visible before selecting Girl hair color -->
           <img
-            :src="form.defaultFemaleHair"
+            :src="form.defaultGirlHair"
             alt="default-hair"
             class="img-view img-hair-color"
-            v-if="form.gender === 'Female' && !defaultHairHidden"
+            v-if="form.gender === 'Girl' && !defaultHairHidden"
           />
-          <!-- Visible before selecting Male hair color -->
+          <!-- Visible before selecting Boy hair color -->
           <img
-            :src="form.defaultMaleHair"
+            :src="form.defaultBoyHair"
             alt="default-hair"
             class="img-view img-hair-color"
             v-else-if="!defaultHairHidden"
           />
         </div>
         <div class="selected-color-hair">
-          <!-- Visible after selecting Female hair color -->
+          <!-- Visible after selecting Girl hair color -->
           <img
             :src="form.hairColor.selectedHair"
             alt="default-hair"
             class="img-view img-hair-color"
-            v-if="form.gender === 'Female' && defaultHairHidden  && !selectedHairHidden"
+            v-if="form.gender === 'Girl' && defaultHairHidden  && !selectedHairHidden"
           />
-          <!-- Visible after selecting Male hair color -->
+          <!-- Visible after selecting Boy hair color -->
           <img
             :src="form.hairColor.selectedHair"
             alt="default-hair"
@@ -101,10 +101,10 @@
               <p-input
                 type="radio"
                 class="p-icon p-jelly p-round p-bigger ml-4 mr-1"
-                id="male"
-                value="Male"
+                id="boy"
+                value="Boy"
                 v-model="form.gender"
-                name="male"
+                name="boy"
               >
                 <label class="d-flex align-items-center">
                   Boy
@@ -115,10 +115,10 @@
               <p-input
                 class="p-icon p-jelly p-round p-bigger ml-5"
                 type="radio"
-                id="female"
-                value="Female"
+                id="girl"
+                value="Girl"
                 v-model="form.gender"
-                name="female"
+                name="girl"
               >
                 <label class="d-flex flex-row-reverse align-items-center">
                   Girl
@@ -148,8 +148,8 @@
             <div class="skin-tone all-boxes-wrap flex-col py-1">
               <h5 class="pt-2 pb-1 flex text-center">Select your Skin Tone</h5>
               <div class="skin-tone-boxes">
-                <ul class="all-boxes" v-if="form.gender === 'Male'">
-                  <li v-for="(skinInfo, index) in form.skinToneMale" :key="index">
+                <ul class="all-boxes" v-if="form.gender === 'Boy'">
+                  <li v-for="(skinInfo, index) in form.skinToneBoy" :key="index">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -164,7 +164,7 @@
                 </ul>
 
                 <ul class="all-boxes" v-else>
-                  <li v-for="(skinInfo, index) in form.skinToneFemale" :key="index">
+                  <li v-for="(skinInfo, index) in form.skinToneGirl" :key="index">
                     <p-input
                       class="p-icon p-jelly p-round p-bigger"
                       type="radio"
@@ -216,9 +216,9 @@
             <div class="hair-color all-boxes-wrap flex-col py-1">
               <h5 class="pt-2 pb-1 flex text-center">Select your Hair Color</h5>
               <div class="hair-color-boxes">
-                <ul class="all-boxes" v-if="form.gender === 'Male'">
+                <ul class="all-boxes" v-if="form.gender === 'Boy'">
                   <li
-                    v-for="(hairColor, index) in form.hairColorMale"
+                    v-for="(hairColor, index) in form.hairColorBoy"
                     :key="index"
                     v-on:click="defaultHairHidden = true; hairOptionsHidden = true "
                   >
@@ -237,7 +237,7 @@
 
                 <ul class="all-boxes" v-else>
                   <li
-                    v-for="(hairColor, index) in form.hairColorFemale"
+                    v-for="(hairColor, index) in form.hairColorGirl"
                     :key="index"
                     v-on:click="defaultHairHidden = true; hairOptionsHidden = true"
                   >
@@ -260,9 +260,9 @@
               <div class="hair-type all-boxes-wrap flex-col py-1" v-if="hairOptionsHidden">
                 <h5 class="pt-2 pb-1 flex text-center">Select your Hair Type</h5>
                 <div class="hair-type-boxes">
-                  <ul class="all-boxes" v-if="form.gender === 'Male'">
+                  <ul class="all-boxes" v-if="form.gender === 'Boy'">
                     <li
-                      v-for="(hairType, index) in form.hairTypeMale"
+                      v-for="(hairType, index) in form.hairTypeBoy"
                       :key="index"
                       v-on:click="selectedHairHidden = true"
                     >
@@ -281,7 +281,7 @@
 
                   <ul class="all-boxes" v-else>
                     <li
-                      v-for="(hairType, index) in form.hairTypeFemale"
+                      v-for="(hairType, index) in form.hairTypeGirl"
                       :key="index"
                       v-on:click="selectedHairHidden = true"
                     >
@@ -316,9 +316,9 @@
             <div class="eye-color all-boxes-wrap flex-col py-1">
               <h5 class="pt-2 pb-1 flex text-center">Select your Eye Color</h5>
               <div class="eye-color-boxes">
-                <ul class="all-boxes" v-if="form.gender === 'Male'">
+                <ul class="all-boxes" v-if="form.gender === 'Boy'">
                   <li
-                    v-for="(eyeColor, index) in form.eyeColorMale"
+                    v-for="(eyeColor, index) in form.eyeColorBoy"
                     :key="index"
                     v-on:click="defaultEyesHidden = true; eyesOptionsHidden = true"
                   >
@@ -337,7 +337,7 @@
 
                 <ul class="all-boxes" v-else>
                   <li
-                    v-for="(eyeColor, index) in form.eyeColorFemale"
+                    v-for="(eyeColor, index) in form.eyeColorGirl"
                     :key="index"
                     v-on:click="defaultEyesHidden = true; eyesOptionsHidden = true"
                   >
@@ -360,9 +360,9 @@
               <div class="eye-shape all-boxes-wrap flex-col py-1" v-if="eyesOptionsHidden">
                 <h5 class="pt-2 pb-1 flex text-center">Select your Eye Shape</h5>
                 <div class="eye-shape-boxes">
-                  <ul class="all-boxes" v-if="form.gender === 'Male'">
+                  <ul class="all-boxes" v-if="form.gender === 'Boy'">
                     <li
-                      v-for="(eyeShape, index) in form.eyeShapeMale"
+                      v-for="(eyeShape, index) in form.eyeShapeBoy"
                       :key="index"
                       v-on:click="selectedEyesHidden = true"
                     >
@@ -381,7 +381,7 @@
 
                   <ul class="all-boxes" v-else>
                     <li
-                      v-for="(eyeShape, index) in form.eyeShapeFemale"
+                      v-for="(eyeShape, index) in form.eyeShapeGirl"
                       :key="index"
                       v-on:click="selectedEyesHidden = true"
                     >
@@ -458,78 +458,78 @@ export default {
       hairOptionsHidden: false,
       eyesOptionsHidden: false,
       form: {
-        defaultMaleSkin: require("@/img/boy/body-boy-3.png"),
-        defaultFemaleSkin: require("@/img/girl/body-girl-3.png"),
-        defaultMaleHair: require("@/img/boy/hair-3-1.png"),
-        defaultFemaleHair: require("@/img/girl/hair-4-5.png"),
+        defaultBoySkin: require("@/img/boy/body-boy-3.png"),
+        defaultGirlSkin: require("@/img/girl/body-girl-3.png"),
+        defaultBoyHair: require("@/img/boy/hair-3-1.png"),
+        defaultGirlHair: require("@/img/girl/hair-4-5.png"),
         defaultEyes: require("@/img/child/eyes/eyes-5-1.png"),
         gender: "",
         firstName: null,
         skin: "",
-        //Skin Tone Male
-        skinToneMale: [
+        //Skin Tone Boy
+        skinToneBoy: [
           {
             name: "Warm Light",
             image: require("@/img/boy/body-boy-1.png"),
             iconSource: require("@/img/icons/ico-skin-1.svg"),
-            gender: "Male"
+            gender: "Boy"
           },
           {
             name: "Light",
             image: require("@/img/boy/body-boy-2.png"),
             iconSource: require("@/img/icons/ico-skin-2.svg"),
-            gender: "Male"
+            gender: "Boy"
           },
           {
             name: "Medium",
             image: require("@/img/boy/body-boy-3.png"),
             iconSource: require("@/img/icons/ico-skin-3.svg"),
-            gender: "Male"
+            gender: "Boy"
           },
           {
             name: "Warm Dark",
             image: require("@/img/boy/body-boy-4.png"),
             iconSource: require("@/img/icons/ico-skin-4.svg"),
-            gender: "Male"
+            gender: "Boy"
           },
           {
             name: "Dark",
             image: require("@/img/boy/body-boy-5.png"),
             iconSource: require("@/img/icons/ico-skin-5.svg"),
-            gender: "Male"
+            gender: "Boy"
           }
         ],
-        // Skin Tone Female
-        skinToneFemale: [
+        // Skin Tone Girl
+        skinToneGirl: [
           {
             name: "Warm Light",
             image: require("@/img/girl/body-girl-1.png"),
             iconSource: require("@/img/icons/ico-skin-1.svg"),
-            gender: "Female"
+            gender: "Girl"
           },
           {
             name: "Light",
             image: require("@/img/girl/body-girl-2.png"),
             iconSource: require("@/img/icons/ico-skin-2.svg"),
-            gender: "Female"
+            gender: "Girl"
           },
           {
             name: "Medium",
             image: require("@/img/girl/body-girl-3.png"),
             iconSource: require("@/img/icons/ico-skin-3.svg"),
-            gender: "Female"
+            gender: "Girl"
           },
           {
             name: "Warm Dark",
             image: require("@/img/girl/body-girl-4.png"),
             iconSource: require("@/img/icons/ico-skin-4.svg"),
-            gender: "Female"
+            gender: "Girl"
           },
           {
             name: "Dark",
             image: require("@/img/girl/body-girl-5.png"),
             iconSource: require("@/img/icons/ico-skin-5.svg"),
-            gender: "Female"
+            gender: "Girl"
           }
         ],
         //Glasses
@@ -562,8 +562,8 @@ export default {
           }
         ],
         hairType: "",
-        // Hair Type Male
-        hairTypeMale: [
+        // Hair Type Boy
+        hairTypeBoy: [
           {
             name: "Option 1",
             iconSource: require("@/img/icons/boy/ico-hair-boy-1.svg"),
@@ -590,8 +590,8 @@ export default {
             id: 5
           }
         ],
-        // Hair Type Female
-        hairTypeFemale: [
+        // Hair Type Girl
+        hairTypeGirl: [
           {
             name: "Option 1",
             iconSource: require("@/img/icons/girl/ico-hair-girl-1.svg"),
@@ -619,8 +619,8 @@ export default {
           }
         ],
         hairColor: "",
-        // Hair Color Male
-        hairColorMale: [
+        // Hair Color Boy
+        hairColorBoy: [
           {
             name: "Blonde",
             imageSource: "",
@@ -762,8 +762,8 @@ export default {
             iconSource: require("@/img/icons/ico-hair-color-5.svg")
           }
         ],
-        // Hair Color Female
-        hairColorFemale: [
+        // Hair Color Girl
+        hairColorGirl: [
           {
             name: "Blonde",
             imageSource: "",
@@ -906,8 +906,8 @@ export default {
           }
         ],
         eyeShape: "",
-        // Eye Shape Male
-        eyeShapeMale: [
+        // Eye Shape Boy
+        eyeShapeBoy: [
           {
             name: "Round Full",
             iconSource: require("@/img/icons/ico-eye-shape-1.svg"),
@@ -934,8 +934,8 @@ export default {
             id: 51
           }
         ],
-        // Eye Shape Female
-        eyeShapeFemale: [
+        // Eye Shape Girl
+        eyeShapeGirl: [
           {
             name: "Round Full",
             iconSource: require("@/img/icons/ico-eye-shape-1.svg"),
@@ -963,8 +963,8 @@ export default {
           }
         ],
         eyeColor: "",
-        // Eye Color Male
-        eyeColorMale: [
+        // Eye Color Boy
+        eyeColorBoy: [
           {
             name: "Blue",
             imageSource: "",
@@ -1106,8 +1106,8 @@ export default {
             iconSource: require("@/img/icons/ico-eye-color-5.svg")
           }
         ],
-        // Eye Color Female
-        eyeColorFemale: [
+        // Eye Color Girl
+        eyeColorGirl: [
           {
             name: "Blue",
             imageSource: "",
