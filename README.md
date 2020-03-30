@@ -2,8 +2,7 @@
 
 ### About
 
-![Preview](/img/preview.png)
-Format: ![Preview](url)
+![Preview Image](src/img/preview.png)
 
 Fully resoponsive app. You can create your own virtual characters. It has 2 characters (child + parent) but can be added more if needed.
 
