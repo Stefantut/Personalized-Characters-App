@@ -1,4 +1,4 @@
-# :family_woman_woman_girl_boy: Personalized Characters App - 2020
+## :family_woman_woman_girl_boy: Personalized Characters App - 2020
 
 ![Preview Image](src/img/preview.png)
 
@@ -20,6 +20,8 @@ Each component is a multi step form with validation.
 For the animation of checkboxes I have used pretty-checkbox-vue version 1.1 .
 The data is passed between components through \$emit and props. I haven't used Vuex.
 The app has Snipcart integrated which will pass the final selections as product description.
+
+Vue dev tools is disabled, to enable: main.js change `Vue.config.devtools = true;`
 
 ### Project setup
 
