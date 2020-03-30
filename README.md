@@ -1,10 +1,11 @@
-# Personalized Characters App - 2020
-
-### About
+# :family_woman_woman_girl_boy: Personalized Characters App - 2020
 
 ![Preview Image](src/img/preview.png)
 
+### About
+
 Fully resoponsive app. You can create your own virtual characters. It has 2 characters (child + parent) but can be added more if needed.
+Each character can have different: Gender, Skin Tone, Hair color & type, Beard(just for parent Male), Glasses, Eye Color & Shape.
 
 The characters can be fully customized (the functionality exists). I have reused some ilustrations.
 
@@ -44,4 +45,4 @@ npm run build
 npm run lint
 ```
 
-##### _Author:_ Stefan Tutuianu
+##### _Author: Stefan Tutuianu_ :green_heart:
