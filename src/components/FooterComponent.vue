@@ -1,6 +1,6 @@
 <template>
   <div class="bottom-section">
-    <footer class="footer">
+    <footer class="footer" v-b-tooltip.hover title="Made By STD">
       <p class="item item__text">Made with</p>
       <svg
         class="item item__image"

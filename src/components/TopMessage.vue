@@ -28,7 +28,12 @@
 	l138-100l138,100l-54-160L480,208z"
         />
       </svg>
-      <p class="message-text" @click.stop.prevent="copySaleCode">
+      <p
+        class="message-text"
+        @click.stop.prevent="copySaleCode"
+        v-b-tooltip.hover
+        title="Copy to clipboard Sale Code"
+      >
         Sale Now: Use Code
         <span class="sale">{{ saleCode }}</span>
         <input type="hidden" id="saleCode" :value="saleCode" />
@@ -149,6 +154,7 @@ export default {
   .scroll {
     display: none;
     text-transform: uppercase;
+    user-select: none;
   }
 }
 @keyframes rotate {
