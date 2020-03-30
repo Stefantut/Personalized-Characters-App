@@ -35,6 +35,7 @@ export default {};
   align-items: center;
   justify-content: center;
   margin-top: auto;
+  user-select: none;
   .footer {
     display: flex;
     .item {

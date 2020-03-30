@@ -28,13 +28,45 @@
 	l138-100l138,100l-54-160L480,208z"
         />
       </svg>
-      <p class="message-text">Sale Now: Use Code SALE15</p>
+      <p class="message-text" @click.stop.prevent="copySaleCode">
+        Sale Now: Use Code
+        <span class="sale">{{ saleCode }}</span>
+        <input type="hidden" id="saleCode" :value="saleCode" />
+      </p>
     </div>
     <p class="scroll">Scroll</p>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data: function() {
+    return {
+      saleCode: "SALE15"
+    };
+  },
+  methods: {
+    copySaleCode() {
+      // find the sale code
+      let saleCodeToCopy = document.querySelector("#saleCode");
+      // converts to text
+      saleCodeToCopy.setAttribute("type", "text");
+      // select the range
+      saleCodeToCopy.select();
+
+      try {
+        var successful = document.execCommand("copy");
+        var msg = successful ? "successful" : "unsuccessful";
+        console.log("Sale code copy was " + msg);
+        document.querySelector(".sale").classList.toggle("copied");
+      } catch (err) {
+        console.log("Unable to copy sale code");
+      }
+      saleCodeToCopy.setAttribute("type", "hidden");
+      // unselect the range
+      window.getSelection().removeAllRanges();
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
 @import ".././scss/_variables.scss";
@@ -86,7 +118,7 @@ export default {};
     border: 1px solid $tertiary;
     border-bottom-left-radius: 20px;
     @include default-transition;
-    cursor: default;
+    cursor: grabbing;
     &:hover {
       .star {
         transform: translateX(-10px) rotate(160deg);
@@ -105,6 +137,13 @@ export default {};
     }
     .message-text {
       margin: 0 auto;
+      .sale {
+        color: white;
+        @include default-transition;
+        &.copied {
+          color: chartreuse;
+        }
+      }
     }
   }
   .scroll {
