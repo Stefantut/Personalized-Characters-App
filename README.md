@@ -4,7 +4,7 @@
 
 ### About
 
-Fully resoponsive app. You can create your own virtual characters. It has 2 characters (child + parent) but can be added more if needed.
+Fully responsive app. You can create your own virtual characters. It has 2 characters (child & parent). More characters can be added if needed.
 Each character can have different: Gender, Skin Tone, Hair color & type, Beard(just for parent Male), Glasses, Eye Color & Shape.
 
 The characters can be fully customized (the functionality exists). I have reused some ilustrations.
