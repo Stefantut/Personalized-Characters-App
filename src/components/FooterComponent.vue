@@ -1,6 +1,6 @@
 <template>
   <div class="bottom-section">
-    <footer class="footer" v-b-tooltip.hover title="Made By STD">
+    <footer class="footer" v-tooltip.hover title="Made By STD">
       <p class="item item__text">Made with</p>
       <svg
         class="item item__image"
@@ -23,8 +23,11 @@
   </div>
 </template>
 
-
 <script>
+import Vue from "vue";
+import VTooltip from "v-tooltip";
+Vue.use(VTooltip);
+
 export default {};
 </script>
 

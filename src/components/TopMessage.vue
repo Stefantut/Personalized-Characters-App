@@ -31,7 +31,7 @@
       <p
         class="message-text"
         @click.stop.prevent="copySaleCode"
-        v-b-tooltip.hover
+        v-tooltip.hover
         title="Copy to clipboard Sale Code"
       >
         Sale Now: Use Code
@@ -43,6 +43,9 @@
   </div>
 </template>
 <script>
+import Vue from "vue";
+import VTooltip from "v-tooltip";
+Vue.use(VTooltip);
 export default {
   data: function() {
     return {
